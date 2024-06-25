@@ -1,0 +1,24 @@
+@import url("./variable.css"); /*변수*/
+@import url("./mixin.css"); /*믹스인*/
+
+@import url("./reset.css"); /*리셋*/
+@import url("./typography.css"); /*텍스트*/
+
+/*custom*/
+@import url("./common.css"); /* bs5.3 모자란 것 + tailwind 대처 */
+
+/*layout*/
+@import url("layout/header.css"); /* 헤더 */
+
+/*component*/
+@import url("component/button.css"); /* 헤더 */
+
+
+
+
+/* animation */
+@import url("./anim.css"); /* duration을 맨 뒤에 정의 */
+
+
+
+

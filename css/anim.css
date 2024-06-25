@@ -1,0 +1,33 @@
+/* translate */
+.translate-x-0 {
+    transform: translateX(0);
+}
+.translate-x-full {
+    transform: translateX(100%);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* transition timing */
+.ease-gentle {
+    transition-timing-function: cubic-bezier(0.38, 0.25, 0.99);
+}
+
+/* duration */
+.duration-300 {
+    transition-property: all;
+    transition-duration: 300ms;
+}
+.duration-500 {
+    transition-property: all;
+    transition-duration: 500ms;
+}
+
+
+.duration-1000 {
+    transition-property: all;
+    /*transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/
+    transition-duration: 1000ms;
+}

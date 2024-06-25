@@ -1,0 +1,6 @@
+.button-close {
+    width: 58px;
+    height: 58px;
+
+    background-image: url("../../images/svg/icons/button-close.svg");
+}

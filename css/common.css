@@ -1,0 +1,44 @@
+/*
+Breakpoint	Class infix	Dimensions
+Extra small	None	<576px
+Small	sm	≥576px
+Medium	md	≥768px
+Large	lg	≥992px
+Extra large	xl	≥1200px
+Extra extra large	xxl	≥1400px
+*/
+
+/* alpinejs */
+[x-cloak] { display: none !important; }
+
+/* position */
+.position-md-absolute {
+    @media (min-width: 768px) {
+        position: absolute!important;
+    }
+}
+
+/* width */
+.w-10\/12 {
+    width: 83.333333%
+}
+.w-11\/12 {
+    width: 91.666667%
+}
+
+/* z-index */
+.z-1000 {
+    z-index: 1000;
+}
+
+/* backdrop */
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+/* backdrop 위의 offcanvas 그림자 */
+.drop-shadow-2xl {
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+
+

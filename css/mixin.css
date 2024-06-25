@@ -1,0 +1,33 @@
+/* mixin by native css: https://mjswensen.com/blog/you-might-not-need-sass-modern-css-techniques/ */
+/* ~ 767  md 768 ~ */
+
+.bg-img {
+    background: no-repeat var(--bg-x, center) var(--bg-y, center) var(--bg-color, transparent);
+    background-size: var(--bg-img-width, auto) var(--bg-img-height, auto);
+}
+
+.bg-md-img-none {
+    @media (min-width: 768px) {
+        background: none !important;
+    }
+}
+
+.bg-img-x-center {
+    --bg-x: center;
+}
+
+.bg-img-y-center {
+    --bg-y: center;
+}
+
+.bg-img-color-transparent {
+    --bg-color: transparent;
+}
+
+.bg-img-width-auto {
+    --bg-img-width: auto;
+}
+
+.bg-img-height-auto {
+    --bg-img-height: auto;
+}
