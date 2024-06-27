@@ -7,28 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>우아한의원</title>
     <!-- font -->
-    <link
-            rel="stylesheet"
-            as="style"
-            crossorigin
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
+    <link rel="stylesheet" as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!--   <link rel="stylesheet" href="css/reset.css">
-       <link rel="stylesheet" href="css/typography.css">
-       <link rel="stylesheet" href="css/common.css">
-
-       <link rel="stylesheet" href="css/mixin.css">-->
     <link rel="stylesheet" href="css/style.css">
-
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Alpine Plugins 1. collapse -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Alpine Core -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
 
 </head>
 <body x-data>
@@ -94,11 +79,11 @@
         </nav>
     </div>
 </header>
-
 <!-- 모바일 전체화면 -->
 <aside class="megamenu z-1000">
-    <div class="megamenu-offcanvas z-1 position-absolute w-10/12 top-0 end-0 bottom-0 overflow-y-auto"
+    <div class="megamenu-offcanvas z-2 position-absolute w-10/12 top-0 end-0 bottom-0 overflow-y-auto"
          x-show="$store.megamenu.isOpen"
+         x-cloak
          x-transition:enter="ease-gentle duration-500"
          x-transition:enter-start="translate-x-full"
          x-transition:enter-end="translate-x-0"
@@ -203,76 +188,49 @@
     </div>
 
     <!-- backdrop -->
-    <div class="megamenu-backdrop z-0 position-fixed top-0 bottom-0 start-0 end-0"
+    <div class="megamenu-backdrop z-1 position-fixed top-0 bottom-0 start-0 end-0"
          x-show="$store.megamenu.isOpen"
          @click="$store.megamenu.close()"
     ></div>
 </aside>
 
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
-sd<br/>
 
-<!-- header -->
+<!-- main -->
+<main>
+    <!-- visual banner -->
+    <section class="swiper visual z-0">
+        <div class="swiper-wrapper">
+<!--            <div class="swiper-slide d-flex justify-content-center align-items-center">-->
+<!--                <div class="slide-bg" style="background-color: #d3e3df">-->
+<!--                    <picture>-->
+<!--                        &lt;!&ndash; mobile &ndash;&gt;-->
+<!--                        <source media="(max-width: 767px)"-->
+<!--                                srcset="./images/webp/banner/slide_main01_m.webp"-->
+<!--                        />-->
+<!--                        &lt;!&ndash; web &ndash;&gt;-->
+<!--                        <img src="./images/webp/banner/slide_main01.webp" alt=""/>-->
+<!--                    </picture>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="swiper-slide">Slide 1</div>-->
+        </div>
+        <div class="swiper-pagination visual-paging d-flex justify-content-center align-items-center"></div>
+    </section>
+</main>
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Alpine Plugins 1. collapse -->
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<!-- Alpine Core -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- layout -->
 <script src="./js/header.js"></script>
+<script src="./js/mainVisual.js"></script>
+
 </body>
 </html>

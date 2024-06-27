@@ -9,9 +9,11 @@
 
 /*layout*/
 @import url("layout/header.css"); /* 헤더 */
+@import url("layout/main.css"); /* 헤더 */
 
 /*component*/
 @import url("component/button.css"); /* 헤더 */
+@import url("component/slide.css"); /* swiper */
 
 
 

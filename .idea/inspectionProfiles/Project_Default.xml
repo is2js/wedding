@@ -16,9 +16,11 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="2">
+          <list size="4">
             <item index="0" class="java.lang.String" itemvalue="pys-onclick" />
             <item index="1" class="java.lang.String" itemvalue="x-data" />
+            <item index="2" class="java.lang.String" itemvalue="x-transition:enter" />
+            <item index="3" class="java.lang.String" itemvalue="x-show" />
           </list>
         </value>
       </option>

@@ -1,0 +1,91 @@
+
+.visual {
+    /*height: 560px;*/
+    /*background-color: var(--lightorange);*/
+    /* 이미지가 들어온 순간부터 알아서 높이 차지하도록 변경*/
+    height: auto;
+    background-color: var(--black);
+
+    & .slide-bg {
+        width: 100%;
+
+        & img {
+            width: 100%;
+            max-width: 1440px;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    & .visual-paging {
+        background-color: var(--white-20);
+
+        /* .swiper-pagination 기본 속성 */
+        /*z-index: 10;*/
+        /*position: absolute;*/
+        /*width: 100%;*/
+        width: fit-content;
+        /*text-align: center;*/
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+
+        padding: 4px;
+        border-radius: 8px;
+
+        font-size: 17px;
+        line-height: 30px;
+
+        /* 모바일 */
+        @media (max-width: 767px) {
+            /* left/transform가 기존에 있었기 때문에, right만 넣지말고 left: inherit로 초기화해준 뒤 right를 써야한다. */
+            left: inherit;
+            transform: inherit;
+            right: 10px;
+
+            font-size: 14px;
+            padding: 0 15px;
+            line-height: 25px;
+            border-radius: 7px;
+
+            width: fit-content;
+            background-color: var(--black-40);
+            color: var(--white);
+            box-shadow: rgba(0, 0, 0, 0.16) 0 0 0.8rem;
+            backdrop-filter: blur(0.2rem);
+            white-space: nowrap;
+
+            & .swiper-pagination-total {
+                &::after {
+                    content: "모두보기";
+                    padding-left: 5px;
+                }
+            }
+        }
+
+
+        & button {
+            /* bullet 기본 속성 */
+            /*margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);*/
+            margin: 0 !important;
+
+            width: auto; /* 필수 */
+            height: 30px;
+            padding: 0 30px;
+            border-radius: 10px;
+
+            white-space: nowrap;
+
+            background-color: transparent;
+            transition: background .3s;
+
+            &[aria-current="true"] {
+                background-color: var(--white);
+                box-shadow: 1px 1px 3px var(--black-20);
+            }
+        }
+
+    }
+}

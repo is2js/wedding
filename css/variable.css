@@ -7,7 +7,14 @@
     --greydd: #dddfe2;
     --greyf6: #f6f8fb;
 
+    /* swiper */
+    --lightorange: #ebddc4;
+    --green: #c8e3d6;
+
     --white: #fff;
     --black: #000;
+    --black-20: rgba(0, 0, 0, .2);
+    --black-40: rgba(0, 0, 0, .4);
+    --white-20: rgba(255, 255, 255, 0.2);
 }
 

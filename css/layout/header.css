@@ -5,7 +5,8 @@
 .header {
     /*padding: 0 40px;*/
     /* 위쪽 abs spot-menu를 위한, 위쪽 여백 48px 추가(위 | 좌=우 | 아래)*/
-    padding: 48px 40px 0;
+    /*padding: 48px 40px 0;*/
+    padding: 48px 40px 15px;
     /* 모바일에선 static spot-menu가 내부로 들어가 다시 위쪽 여백을 제거한다.*/
     @media (max-width: 767px) {
         padding: 0 15px;

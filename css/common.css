@@ -9,12 +9,14 @@ Extra extra large	xxl	≥1400px
 */
 
 /* alpinejs */
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
 
 /* position */
 .position-md-absolute {
     @media (min-width: 768px) {
-        position: absolute!important;
+        position: absolute !important;
     }
 }
 
@@ -22,6 +24,7 @@ Extra extra large	xxl	≥1400px
 .w-10\/12 {
     width: 83.333333%
 }
+
 .w-11\/12 {
     width: 91.666667%
 }
@@ -35,10 +38,10 @@ Extra extra large	xxl	≥1400px
 .backdrop-blur-sm {
     backdrop-filter: blur(4px);
 }
+
 /* backdrop 위의 offcanvas 그림자 */
 .drop-shadow-2xl {
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
-
 
 
