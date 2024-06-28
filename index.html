@@ -200,23 +200,119 @@
     <!-- visual banner -->
     <section class="swiper visual z-0">
         <div class="swiper-wrapper">
-<!--            <div class="swiper-slide d-flex justify-content-center align-items-center">-->
-<!--                <div class="slide-bg" style="background-color: #d3e3df">-->
-<!--                    <picture>-->
-<!--                        &lt;!&ndash; mobile &ndash;&gt;-->
-<!--                        <source media="(max-width: 767px)"-->
-<!--                                srcset="./images/webp/banner/slide_main01_m.webp"-->
-<!--                        />-->
-<!--                        &lt;!&ndash; web &ndash;&gt;-->
-<!--                        <img src="./images/webp/banner/slide_main01.webp" alt=""/>-->
-<!--                    </picture>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="swiper-slide d-flex justify-content-center align-items-center">-->
+            <!--                <div class="slide-bg" style="background-color: #d3e3df">-->
+            <!--                    <picture>-->
+            <!--                        &lt;!&ndash; mobile &ndash;&gt;-->
+            <!--                        <source media="(max-width: 767px)"-->
+            <!--                                srcset="./images/webp/banner/slide_main01_m.webp"-->
+            <!--                        />-->
+            <!--                        &lt;!&ndash; web &ndash;&gt;-->
+            <!--                        <img src="./images/webp/banner/slide_main01.webp" alt=""/>-->
+            <!--                    </picture>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
-<!--            <div class="swiper-slide">Slide 1</div>-->
+            <!--            <div class="swiper-slide">Slide 1</div>-->
         </div>
         <div class="swiper-pagination visual-paging d-flex justify-content-center align-items-center"></div>
     </section>
+
+    <section class="favorite-nav layout-center">
+        <ul class="d-grid">
+            <!-- 우측 센터 아이콘: .cls 주고 + style bg-image: url()-->
+            <!-- w  50~99px: bg-img-favorite-nav -->
+            <!--    100~149px: bg-img-favorite-nav-md -->
+            <!--    150px ~: bg-img-favorite-nav-lg -->
+            <!-- bottom부터 시작시 -->
+            <!-- 기본: bg-img-favorite-nav-y-bottom-100 -->
+            <!-- 120% 꽉채운다면 : bg-img-favorite-nav-y-bottom-100-lg -->
+
+            <!-- type1) li에 동적 배경색 없음-->
+            <li>
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%"
+                   style="background-image: url('./images/png/favorite_nav/부부의료진.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">10년 이상을 같이한</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">부부 의료진</b>
+                </a>
+                <div class="d-md-none">의료진</div>
+            </li>
+            <li>
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%-lg"
+                   style="background-image: url('./images/png/favorite_nav/menu_diet.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">대표원장의 변화로 보는</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">한약 다이어트</b>
+                </a>
+                <div class="d-md-none">다이어트</div>
+            </li>
+            <li>
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-lg"
+                   style="background-image: url('./images/png/favorite_nav/menu_herb.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">우리 가족이 먹을</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">보약/소아/수험생</b>
+                </a>
+                <div class="d-md-none">한약/보약</div>
+            </li>
+            <li>
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
+                   style="background-image: url('./images/svg/favorite_nav/bogun.svg');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">보험으로 부담없는</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">첩약건강보험</b>
+                </a>
+                <div class="d-md-none">건강보험한약</div>
+            </li>
+            <!-- type2) li에 동적 배경색 style 지정 + .bgc-dark시 text 하얀 테마로 -->
+<!--            <li class="bgc-dark" style="background-color: #2b5cd2;">-->
+            <!-- type2) li에 동적 배경색ㅇ을 -menu + menu-{색}으로 지정하면,
+                        내부에서 1) 밝은글씨 2) 웹 li배경 -> 모바일 a에 배경으로 작동 -->
+            <li class="favorite-nav-color-menu menu-blue">
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-md"
+                   style="background-image: url('./images/png/favorite_nav/초음파.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">운동하다 다쳤어요</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">스포츠손상</b>
+                </a>
+                <div class="d-md-none">스포츠손상</div>
+            </li>
+            <li class="favorite-nav-color-menu menu-red">
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
+                   style="background-image: url('./images/png/favorite_nav/디스크클리닉.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">허리/목이 뜨끔!...</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">디스크클리닉</b>
+                </a>
+                <div class="d-md-none">디스크</div>
+            </li>
+            <li class="favorite-nav-color-menu menu-purple">
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
+                   style="background-image: url('./images/png/favorite_nav/관절클리닉.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">어깨/무릎/턱이...</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">관절 클리닉</b>
+                </a>
+                <div class="d-md-none">관절통</div>
+            </li>
+            <li class="favorite-nav-color-menu menu-green">
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
+                   style="background-image: url('./images/png/favorite_nav/교통사고클리닉.png');"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">뒤에서 차가 꽈앙!</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">교통사고</b>
+                </a>
+                <div class="d-md-none">교통사고</div>
+            </li>
+        </ul>
+    </section>
+    aasdfasd<br/>
+    asdfas</br>
+    dfa<br/>
+    sdf<br/>
+    asd<br/>
+<br/>
 </main>
 
 <!-- Bootstrap -->

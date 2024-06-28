@@ -1,11 +1,11 @@
 :root {
     --purple: #6024c6;
-    --grey28: #282a2e;
-    --grey96: #96989c;
     --greye7: #e7e9ec;
-    --grey6f: #6f736f;
-    --greydd: #dddfe2;
     --greyf6: #f6f8fb;
+    --greydd: #dddfe2;
+    --grey96: #96989c;
+    --grey6f: #6f736f;
+    --grey28: #282a2e;
 
     /* swiper */
     --lightorange: #ebddc4;
@@ -16,5 +16,13 @@
     --black-20: rgba(0, 0, 0, .2);
     --black-40: rgba(0, 0, 0, .4);
     --white-20: rgba(255, 255, 255, 0.2);
+
+
+    /* 즐겨찾는 메뉴 */
+    --blueeb: #2b5cd2;
+    --rede4: #E4032F;
+    --purple6f:#6f49fa;
+    --green05: #053863;
+
 }
 

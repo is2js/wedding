@@ -1,0 +1,183 @@
+/* 즐겨찾는 메뉴 */
+.favorite-nav {
+    /* .layout-center로 이관 */
+    /*width: 1185px;*/
+    /*margin: 0 auto;*/
+
+    /* layout-center 공통 으로 이관 */
+    /*margin-top: 60px;*/
+
+    & ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px 24px;
+        @media (max-width: 767px) {
+            /* 모바일에선 카드형이 아이콘으로 5개씩 */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px 12px;
+            /*grid-template-columns: repeat(5, 1fr);*/
+            /*gap: 12px 10px;*/
+        }
+
+
+        & li {
+            box-shadow: 1px 1px 5px var(--black-20);
+            border-radius: 15px;
+
+            /* 기본 회색 배경 + hover/focus시 좀더 어둡게 + 약간 크기 키우기 */
+            background-color: #F1F3F6;
+            text-shadow: 1px 1px 2px var(--black-20);
+            @media (max-width: 767px) {
+                border-radius: 0;
+                box-shadow: none;
+                background-color: transparent;
+
+                /* 모바일용 div글자 가운데 정렬 */
+                > div {
+                    text-align: center;
+                    font-size: 11px;
+                    color: var(--grey28);
+                    font-weight: 600;
+                    text-shadow: none;
+
+                    /*padding: 10px 0 0;*/
+                    /* new */
+                    padding: 6px 0 0;
+                    letter-spacing: -0.5px;
+
+                    /* new */
+                    white-space: nowrap;
+                }
+            }
+
+            transition: all .3s;
+
+            &:hover, &:focus {
+                /*border: 1px solid var(--greye7);*/
+                background-color: var(--greydd);
+                transform: scale(1.01);
+                @media (max-width: 767px) {
+                    border: 0;
+                    background-color: transparent;
+                    transform: none;
+                }
+            }
+
+
+            &.favorite-nav-color-menu {
+                /* 1. 글자 밝게 (공통)*/
+
+                > div {
+                    text-shadow: 1px 1px 2px var(--black-40);
+                    @media (max-width: 767px) {
+                        text-shadow: none;
+                    }
+                }
+
+                & a .favorite-nav-text-sub {
+                    color: var(--greydd);
+                }
+
+                & a .favorite-nav-text-main {
+                    color: var(--greyf6);
+                }
+
+                /* 2. 개별 배경색은 동시 클래스 추가
+                    1) li의 배경색
+                    2) 모바일에선 li 투명색 + 자식a 해당 배경색
+                */
+
+                &.menu-blue {
+                    background-color: var(--blueeb);
+                    @media (max-width: 767px) {
+                        background-color: transparent;
+                        & a {
+                            background-color: var(--blueeb);
+                        }
+                    }
+                }
+
+                &.menu-red {
+                    background-color: var(--rede4);
+                    @media (max-width: 767px) {
+                        background-color: transparent;
+                        & a {
+                            background-color: var(--rede4);
+                        }
+                    }
+                }
+
+                &.menu-purple {
+                    background-color: var(--purple6f);
+                    @media (max-width: 767px) {
+                        background-color: transparent;
+                        & a {
+                            background-color: var(--purple6f);
+                        }
+                    }
+                }
+
+                &.menu-green {
+                    background-color: var(--green05);
+                    @media (max-width: 767px) {
+                        background-color: transparent;
+                        & a {
+                            background-color: var(--green05);
+                        }
+                    }
+                }
+            }
+
+            & a {
+
+                padding: 0 30px;
+
+                /* 글자사기 간격을 gap으로 처리하기 위해 간격초기화 */
+                line-height: 1;
+                gap: 12px;
+                border-radius: inherit;
+                height: 120px;
+
+                @media (max-width: 767px) {
+                    background-color: #F1F3F6;
+                    padding: 0;
+
+                    border-radius: 18px;
+                    width: 100%;
+                    max-width: 55px;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    margin: 0 auto;
+                }
+
+                /* height를 줄 때, border들어갈 예쩡이면 필수로 넣어주자. */
+                box-sizing: border-box;
+
+
+                & .favorite-nav-text-sub {
+                    font-size: 14px;
+                    color: var(--grey6f);
+                }
+
+                & .favorite-nav-text-main {
+                    font-size: 24px;
+                    color: var(--black);
+                }
+
+                /* 부모인 li태그에 .bg-dark 가 찍혀있으면 찐한 색이 들어가니 -> a태그 속 텍스트를 밝게 */
+
+                /*.bgc-dark & {*/
+                /*    text-shadow: 1px 1px 2px var(--black-40);*/
+                /*    !*text-shadow: 1px 1px 2px var(--white);*!*/
+
+                /*    & .favorite-nav-text-sub {*/
+                /*        color: var(--greydd);*/
+                /*    }*/
+
+                /*    & .favorite-nav-text-main {*/
+                /*        color: var(--greyf6);*/
+                /*    }*/
+                /*}*/
+            }
+        }
+    }
+}

@@ -31,3 +31,73 @@
 .bg-img-height-auto {
     --bg-img-height: auto;
 }
+
+/* 즐겨찾기 메뉴 */
+
+.bg-img-favorite-nav {
+    background: no-repeat right 30px center transparent;
+    background-size: 50px auto;
+
+    @media (max-width: 767px) {
+        background-position: center;
+        background-size: auto 65%;
+    }
+}
+
+.bg-img-favorite-nav-md {
+    background: no-repeat right 15px center transparent;
+    background-size: 100px auto;
+
+    @media (max-width: 767px) {
+        background-position: center;
+        background-size: auto 75%;
+    }
+}
+
+.bg-img-favorite-nav-lg {
+    background: no-repeat right 0 center transparent;
+    background-size: 150px auto;
+
+    @media (max-width: 767px) {
+        background-position: center;
+        background-size: auto 70%;
+    }
+}
+
+.bg-img-favorite-nav-y-bottom-100\% {
+    background: no-repeat right 5px bottom transparent;
+    background-size: auto 100%;
+
+    @media (max-width: 767px) {
+        background-position: center;
+        background-size: 90% auto;
+    }
+}
+
+.bg-img-favorite-nav-y-bottom-100\%-lg {
+    background: no-repeat right -5px bottom -15px transparent;
+    background-size: auto 120%;
+
+    @media (max-width: 767px) {
+        background-position: center;
+        background-size: 100% auto;
+    }
+}
+
+
+/* container */
+.layout-center {
+    width: 1185px;
+    /*margin: 0 auto;*/
+    /* 기본 위쪽 여백 추가 */
+    margin: 60px auto 0;
+
+    @media (max-width: 767px) {
+        margin: 0;
+        width: 100%;
+        /* header 모바일 패딩과 동일한 값 */
+        /*padding: 0 15px 0 ;*/
+        /* 모바일에서 section mt까지 대체 */
+        padding: 15px;
+    }
+}
