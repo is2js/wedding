@@ -29,6 +29,41 @@ Extra extra large	xxl	≥1400px
     width: 91.666667%
 }
 
+/* margin */
+.mt0 {
+    margin-top: 0;
+}
+
+.mt12 {
+    margin-top: 12px;
+    @media (max-width: 767px) {
+        margin-top: 8px;
+    }
+}
+
+.mt16 {
+    margin-top: 16px;
+    @media (max-width: 767px) {
+        margin-top: 14px;
+    }
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt35 {
+    margin-top: 35px;
+}
+
+.mt65 {
+    margin-top: 65px;
+    /* layout-center에 추가될 웹용 mt로서 모바일에선 상하 padding으로 대체되니 0 */
+    @media (max-width: 767px) {
+        margin-top: 0;
+    }
+}
+
 /* z-index */
 .z-1000 {
     z-index: 1000;
@@ -43,5 +78,3 @@ Extra extra large	xxl	≥1400px
 .drop-shadow-2xl {
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
-
-

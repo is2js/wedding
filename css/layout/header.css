@@ -3,54 +3,20 @@
 }
 
 .header {
-    /*padding: 0 40px;*/
     /* 위쪽 abs spot-menu를 위한, 위쪽 여백 48px 추가(위 | 좌=우 | 아래)*/
-    /*padding: 48px 40px 0;*/
     padding: 48px 40px 15px;
     /* 모바일에선 static spot-menu가 내부로 들어가 다시 위쪽 여백을 제거한다.*/
     @media (max-width: 767px) {
         padding: 0 15px;
     }
 
-    /* new */
     gap: 4rem;
+
 
     & .header-nav {
         gap: 40px;
-
-        & .search {
-            height: 48px;
-            border-radius: 48px;
-            border: 1px solid var(--purple);
-
-            padding: 0 5px;
-
-            line-height: 46px;
-
-            > input {
-                width: 345px;
-                /*height: 46px;*/
-                height: 35px;
-                border-radius: inherit;
-
-                position: relative;
-                top: 1px;
-
-                &::placeholder {
-                    font-size: 17px;
-                    color: var(--grey96);
-                    line-height: 35px;
-                }
-            }
-
-            & .btn-search {
-                width: 46px;
-                height: 46px;
-                border-radius: 100%;
-
-                background-image: url("../../images/svg/icons/search_off.svg");
-            }
-        }
+        /* search가 빠졌더니 작은놈들만 남아 좁아진 header를  abs로 search 띄우기 위해 높이 배정 */
+        height: 48px;
 
         .gnb {
             > ul {

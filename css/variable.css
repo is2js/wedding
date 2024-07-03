@@ -1,10 +1,13 @@
 :root {
     --purple: #6024c6;
     --greye7: #e7e9ec;
+    --greyf1: #f1f3f6;
     --greyf6: #f6f8fb;
     --greydd: #dddfe2;
+    --greybe: #bec0c4; /* 더보기 모바일외곽선 */
     --grey96: #96989c;
     --grey6f: #6f736f;
+    --grey5a: #5a5c60;
     --grey28: #282a2e;
 
     /* swiper */
@@ -23,6 +26,9 @@
     --rede4: #E4032F;
     --purple6f:#6f49fa;
     --green05: #053863;
+    --orangef8: #F8633F;
 
+    /* 상품 카드 */
+    --skyblue: #28aeed;
 }
 

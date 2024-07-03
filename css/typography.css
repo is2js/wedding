@@ -11,8 +11,9 @@
 /*  font-size: 62.5%;*/
 /*}*/
 body {
-  font-size: 1rem;
+    font-size: 1rem;
 }
+
 li,
 a,
 p,
@@ -20,7 +21,7 @@ span,
 div,
 button,
 label {
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -28,5 +29,27 @@ label {
 
 
 .text-purple {
-  color: var(--purple);
+    color: var(--purple);
 }
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--grey28);
+    @media (max-width: 767px) {
+        font-size: 17px;
+    }
+}
+
+/*
+.section-title {
+    padding-bottom: 2.4rem;
+    line-height: 3.4rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: $ black;
+    @include mobile {
+        padding-bottom: 1.6rem;
+        @include font17;
+    }
+}*/

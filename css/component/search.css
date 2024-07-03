@@ -1,0 +1,76 @@
+
+:root {
+}
+
+.search {
+    height: 48px;
+    /*line-height: 46px;*/
+
+    border-radius: 48px;
+    border: 1px solid var(--purple);
+
+    padding: 0 5px;
+
+
+    /* 웹에선 abs로 -> 모바일에선 html정의한 위치로 */
+    position: absolute;
+    top: 48px;
+    /* header 좌우여백과 동일한 만큼 오른쪽에서 띄워주기*/
+    right: 40px;
+
+    @media (max-width: 767px) {
+        position: static; /* abs 초기화 */
+        margin: 10px 20px;
+
+        height: 35px;
+        /*line-height: 35px;*/
+        border-radius: 35px;
+
+        background-color: var(--greyf1);
+        border: 1px solid var(--greydd);
+    }
+
+    > input {
+        /* 동적으로 width 삽입 -> 기존 너비는 max-width로 */
+        /*width: 365px;*/
+        max-width: 365px;
+        height: 35px;
+        @media (max-width: 767px) {
+            /* 웹 동적 input조절로 바뀌니, 모바일에선 !impotant로 고정 */
+            /*width: 100%;*/
+            width: 100%!important;
+            max-width: 100%;
+            height: 27px;
+            background-color: inherit;
+        }
+        border-radius: inherit;
+
+        position: relative;
+        top: 1px;
+
+        &::placeholder {
+            font-size: 17px;
+            color: var(--grey96);
+            line-height: 35px;
+            padding: 0 10px;
+        }
+
+        @media (max-width: 767px) {
+            &::placeholder {
+                font-size: 14px;
+                line-height: 27px;
+            }
+        }
+    }
+
+    & .btn-search {
+        width: 46px;
+        height: 46px;
+        border-radius: 100%;
+
+        background-image: url("../../images/svg/icons/search_off.svg");
+        @media (max-width: 767px) {
+            background-image: url("../../images/svg/icons/search_off_16.svg");
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.product-list {
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+
+        /* 모바일에선 flex로 rollback해서 swiper로 작동 */
+        @media (max-width: 767px) {
+            display: flex;
+            gap: 0;
+        }
+
+        .product {
+            /* 3개 항목에 대해 모바일에서 1줄 제한  */
+
+            & .product-category,
+            & .product-title,
+            & .product-description {
+                @media (max-width: 767px) {
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+
+    /* swiper가 아닌 웹grid에서는 4개 제한 */
+    .swiper-slide {
+        @media (min-width: 768px) {
+            &:nth-child(4) ~ div {
+                display: none;
+            }
+        }
+    }
+}

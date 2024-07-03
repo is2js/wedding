@@ -1,3 +1,15 @@
+:root {
+
+}
+
+/* 모바일 section 구분 border-bottom */
+.section-border {
+    @media (min-width: 0px) and (max-width: 769px) {
+        border-bottom: .8rem solid var(--greyf1);
+    }
+}
+
+
 /* 즐겨찾는 메뉴 */
 .favorite-nav {
     /* .layout-center로 이관 */
@@ -122,6 +134,16 @@
                         background-color: transparent;
                         & a {
                             background-color: var(--green05);
+                        }
+                    }
+                }
+
+                &.menu-orange {
+                    background-color: var(--orangef8);
+                    @media (max-width: 767px) {
+                        background-color: transparent;
+                        & a {
+                            background-color: var(--orangef8);
                         }
                     }
                 }

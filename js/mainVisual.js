@@ -83,7 +83,8 @@ const initVisualSwiper = (data) => {
 
     // 2. 크기보고 paginationType 결정
     const screenWidth = window.innerWidth;
-    const paginationType = screenWidth <= 768 ? 'fraction' : 'bullets';
+    const mobileMaxWidth = 768;
+    const paginationType = screenWidth <= mobileMaxWidth ? 'fraction' : 'bullets';
 
 
 

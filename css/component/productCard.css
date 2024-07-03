@@ -1,0 +1,130 @@
+.product {
+    /* 상하간격 초기화(lh가 안주어졌다면 글자크기만 only) */
+    line-height: 1;
+    /* 모바일에서는 .swiper-slide가 인지할 최상위부모 a.product의 크기가 중요 */
+    @media (max-width: 767px) {
+        width: 140px;
+    }
+
+    /* 상품카드 이미지 */
+
+    & .product-thumbnail {
+        width: 278px;
+        height: 278px;
+        /* 모바일에서는 최상위부모 a.product의 크기가 중요 -> 따르도록 변경 */
+        @media (max-width: 767px) {
+            width: 100%;
+            /*height: 140px;*/
+            height: auto;
+            aspect-ratio: 1/1;
+        }
+
+        border-radius: 8px;
+        background-color: var(--greyf6);
+
+        & .product-thumbnail-category {
+            height: 11px;
+
+            top: 20px;
+            right: 20px;
+        }
+
+        & .product-thumbnail-image {
+            width: 100%;
+            height: 100%;
+
+            /*object-fit: cover;*/ /* 짤려도 되는 배경 용 */
+            object-fit: contain;
+        }
+    }
+
+    /* 각 텍스트들*/
+
+    & .product-category {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--grey5a);
+        @media (max-width: 767px) {
+            font-size: 13px;
+        }
+    }
+
+    & .product-title {
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--grey28);
+        @media (max-width: 767px) {
+            font-size: 15px;
+        }
+    }
+
+    & .product-description {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--grey5a);
+        @media (max-width: 767px) {
+            font-size: 13px;
+        }
+    }
+
+    & .product-price {
+        font-size: 17px;
+        font-weight: 700;
+        gap: 8px;
+
+        @media (max-width: 767px) {
+            font-size: 15px;
+            gap: 4px;
+        }
+
+        & .product-discount {
+            color: var(--skyblue);
+        }
+
+        & .product-value {
+            color: var(--grey5a);
+        }
+    }
+
+    & .product-review {
+        background-image: url("../../images/svg/icons/review-star.svg");
+        /* 16x16 + 4px 띄우기 */
+        padding-left: 20px;
+        gap: 2px;
+
+        color: var(--grey28);
+
+        & .product-rating {
+            font-size: 15px;
+            font-weight: 700;
+            @media (max-width: 767px) {
+                font-size: 13px;
+            }
+        }
+
+        & .product-review-count {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--grey5a);
+            @media (max-width: 767px) {
+                font-size: 11px;
+            }
+        }
+    }
+
+    & .product-hashtag {
+        gap: 4px;
+
+        > span {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--grey28);
+
+            /* 해쉬태그 모양잡기 */
+            /*line-height: 11px;*/
+            padding: 3px 5px;
+            border-radius: 4px;
+            background-color: var(--greyf1);
+        }
+    }
+}

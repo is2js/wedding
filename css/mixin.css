@@ -1,3 +1,6 @@
+:root {
+}
+
 /* mixin by native css: https://mjswensen.com/blog/you-might-not-need-sass-modern-css-techniques/ */
 /* ~ 767  md 768 ~ */
 
@@ -16,6 +19,7 @@
     --bg-x: center;
 }
 
+
 .bg-img-y-center {
     --bg-y: center;
 }
@@ -31,6 +35,17 @@
 .bg-img-height-auto {
     --bg-img-height: auto;
 }
+
+/* 더보기 > 버튼을 위해, 배경이미지를 x right에 붙히도록 넣어주는 mixin */
+.bg-img-x-right {
+    background-position: right center;
+}
+
+/* 별점 배경이미지를 x left에 붙이기 */
+.bg-img-x-left {
+    background-position: left center;
+}
+
 
 /* 즐겨찾기 메뉴 */
 
@@ -84,6 +99,25 @@
     }
 }
 
+/* 말줄임표 */
+.ellipsis {
+    /* div-block이라 가로크기가 들어가야함. */
+    /* inline이라면 display:block; 까지 추가 */
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-2 {
+    width: 100%;
+    white-space: normal; /* 여러 줄을 위해 normal로 설정 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 원하는 줄 수 */
+}
 
 /* container */
 .layout-center {
@@ -95,9 +129,14 @@
     @media (max-width: 767px) {
         margin: 0;
         width: 100%;
+        /* w100%에  추가로 padding을 주면, box-sizing: border-box 안주면 가로스크롤이 생긴다.*/
+        /* -> 여기선 bootstrap reboot에서 처리해줘서 생략했다.*/
+        box-sizing: border-box;
         /* header 모바일 패딩과 동일한 값 */
         /*padding: 0 15px 0 ;*/
         /* 모바일에서 section mt까지 대체 */
-        padding: 15px;
+        /* 특히 section-border도 반영하려면, margin대신 padding으로 */
+        padding: 20px;
     }
 }
+

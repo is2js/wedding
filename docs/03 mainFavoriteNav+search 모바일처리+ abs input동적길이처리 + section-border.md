@@ -1196,3 +1196,378 @@ bg-img-favorite-nav-y-bottom-100\% {
 
 
 
+## 2 header 검색창을 모바일에서 mainViusal 아래 favoriteNav 위로 처리하기
+
+
+
+### 모바일 처리하기
+
+1. 일단 position을 static으로 초기화하고
+
+   ```css
+   .search {
+   
+       /* 웹에선 abs로 -> 모바일에선 html정의한 위치로 */
+       position: absolute;
+       top: 48px;
+       /* header 좌우여백과 동일한 만큼 오른쪽에서 띄워주기*/
+       right: 40px;
+   
+       @media (max-width: 767px) {
+           position: static; /* abs 초기화 */
+       }
+   
+   ```
+
+   ![image-20240701000640316](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701000640316.png)
+
+   - **이 때, input과 button이 flex-item으로 정렬이 안되어있어서, 왼쪽으로 차지하게 된다.**
+
+2. 일단 section들 처럼 좌우 여백을 준다.
+
+   - `section들의 .layout-center`는 **모바일에서, w100% + padding 좌우 15px을 줬었다.**
+     - **하지만 `input밖 border`까지가 포함되어야하기 때문에 padding이 아니라 `margin`으로 15보다 좀 더 20px까지 준다.**
+
+   ```css
+   .search {
+       height: 48px;
+       border-radius: 48px;
+       border: 1px solid var(--purple);
+   
+       padding: 0 5px;
+   
+       line-height: 46px;
+       @media (max-width: 767px) {
+           position: static; /* abs 초기화 */
+           margin: 0 20px;
+       }
+   ```
+
+   ![image-20240701005515821](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701005515821.png)
+
+
+
+
+
+3. **내부 `자식 input의 크기`도 `부모의 margin 등을 제외하고 꽉채우도록 w100%`로** 
+
+   ```css
+   > input {
+       width: 210px;
+       @media (max-width: 767px) {
+           width: 100%;
+       }
+   ```
+
+   
+
+   ![image-20240701005610779](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701005610779.png)
+
+
+
+
+
+4. border밖으로 10px씩 여백을 margin을 추가한다.
+
+   ```css
+   search {
+       @media (max-width: 767px) {
+           position: static; /* abs 초기화 */
+           margin: 10px 20px;
+       }
+   ```
+
+   ![image-20240701005741847](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701005741847.png)
+
+
+
+
+
+5. 이제 모바일용 border 및 배경색을 걸어준다.
+
+   ```css
+   .search {
+       
+       @media (max-width: 767px) {
+           position: static; /* abs 초기화 */
+           margin: 10px 20px;
+   
+           background-color: var(--greyf1);
+           border: 1px solid var(--greydd);
+       }
+   
+   ```
+
+   ![image-20240701010113340](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701010113340.png)
+
+
+
+6. input의 배경도 동일한 색으로 되도록 상속한다?!
+
+   - 안되면 같은색 배경 주기
+
+   ```css
+   > input {
+           width: 210px;
+           @media (max-width: 767px) {
+               width: 100%;
+               background-color: inherit;
+           }
+   ```
+
+   ![image-20240701010246646](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701010246646.png)
+
+
+
+
+
+
+
+7. 만약 높이가 달라진다면 or 색이 달라진다면, 배경버튼의 image도달라질 수 있다
+
+   ```css
+   & .btn-search {
+       width: 46px;
+       height: 46px;
+       border-radius: 100%;
+   
+       background-image: url("../../images/svg/icons/search_off.svg");
+       @media (max-width: 767px) {
+           background-image: url("../../images/svg/icons/search_off_16.svg");
+       }
+   }
+   ```
+
+   ![image-20240701010957532](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701010957532.png)
+
+
+
+8. 바꾼김에 높이랑 글자크기를 줄여보자.
+
+   - 박스의 height + border-radius를 줄인다.
+   - input의 높이를 35 -> 27로 줄인다.
+   - **placholder는 input의 높이로 lh를 잡고 + fz를 줄인다.**
+
+   ```css
+   .search {
+   
+       height: 48px;
+       border-radius: 48px;
+   
+       @media (max-width: 767px) {
+           height: 35px;
+           border-radius: 35px;
+       }
+   
+       > input {
+           height: 35px;
+           @media (max-width: 767px){
+               height: 27px;
+           }
+   
+           &::placeholder {
+               font-size: 17px;
+               line-height: 35px;
+           }
+   
+           @media (max-width: 767px) {
+               &::placeholder {
+                   font-size: 14px;
+                   line-height: 27px;
+               }
+           }
+   
+   ```
+
+   ![image-20240701014119968](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701014119968.png)
+
+
+
+
+
+## ✨3 alpinejs로 동적으로 검색 input길이 넣기
+
+1. **메뉴**의 너비와 관련되어있으므로 **Alpine.store**에서 처리하려고 함.
+
+   - **x-ref로 각 너비를 구하려했으나 store에서 사용 불가**
+
+   - **그래서 `header에 x-data를 이용해 x-ref로 querySelector를 대신`하고, `전역변수에 할당`해준 뒤 -> `form에서 :style로 input 동적할당`할 예정이다.**
+
+2. **header에 `x-data="header"`를 넣고, 하위 `h1.logo` + `nav.gnb`에 x-ref를 넣어준다.**
+
+   ```html
+   <header x-data="header" class="header d-flex justify-content-between justify-content-lg-start align-items-center">
+       <h1 class="logo" x-ref="logo">
+           <a href="" tabindex="1">
+               <img src="images/logo.svg" alt="타이어픽">
+           </a>
+       </h1>
+       <div class="header-nav d-none d-md-flex flex-grow-1 align-items-center justify-content-between">
+           <h2 class="sr-only">메뉴</h2>
+           <nav class="gnb" x-ref="gnb">
+   ```
+
+   
+
+3. header.js에서 x-ref를 사용하기 위한 Alpine.data("header")내부에서 
+
+   - `this.$refs.logo` + `.gnb`의 `.offsetWidth`를 구한다.
+   - **이 때, Dom이 다 load되는 것을 기다리기 위해 `this.$nextTick(()=>{})`안에서 처리하게 한다.**
+
+   ```js
+   Alpine.data('header', () => ({
+       calculateWidths() {
+           this.$nextTick(() => {
+               const logoWidth = this.$refs.logo.offsetWidth;
+               const gnbWidth = this.$refs.gnb.offsetWidth;
+   
+           },
+   ```
+
+
+
+4. **이제 header의 너비를 구해서, `-logo - gnb`뿐만 아니라, `gap` - `양쪽padding`도 빼줘야한다.**
+
+   ![image-20240701164340850](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701164340850.png)
+
+   - **x-ref를 이미 logo에 두었으니, `자식에서 부모찾기 by element.closest('.클래스')`를 이용해서 부모element를 찾을 수 있다.**
+   - **`gap과 padding은 window.getComputedStyle(element))` 이후 `.gap, .paddingLeft, .paddingRight`를 하면 px까지 붙어서 나오므로 `parseInt()`까지 붙혀서 int값을 얻어 합산되게 한다.**
+   - `header길이 - 좌우패딩- 사이gap`으로 남은 **headerContentWidth**를 구한다.
+
+   ```js
+   Alpine.data('header', () => ({
+       calculateWidths() {
+           this.$nextTick(() => {
+               const logoWidth = this.$refs.logo.offsetWidth;
+               const gnbWidth = this.$refs.gnb.offsetWidth;
+   
+               const header = this.$refs.logo.closest('.header');
+               const headerWidth = header.offsetWidth;
+               const headerPadding = parseInt(window.getComputedStyle(header).paddingLeft) + parseInt(window.getComputedStyle(header).paddingRight);
+               const headerGap = parseInt(window.getComputedStyle(header).gap);
+               const headerContentWidth = headerWidth - headerPadding - headerGap;
+   
+           });
+       },
+   }));
+   ```
+
+   - **logo길이와 gnb길이를 빼면 `Search의 길이`가 나오지만, `this.$store`의 전역에 넘겨서 계산하게 한다.**
+     - **Search - 버튼너비를 빼면, `input의 길이`**
+
+5. 일단 전역으로 `logoWidth, gnbWidth, headerContentWidth` 외 **logo <-> gnb와 똑같은 너비로 띄우기 위해 `headerGap`도 같이 넘겨준다.**
+
+   - init()에서 실행하고 resize될때마다 실행한다.
+   - **setter로 메서드를 짓는다.**
+
+   ```js
+   Alpine.data('header', () => ({
+       calculateWidths() {
+           this.$nextTick(() => {
+               const logoWidth = this.$refs.logo.offsetWidth;
+               const gnbWidth = this.$refs.gnb.offsetWidth;
+   
+               const header = this.$refs.logo.closest('.header');
+               const headerWidth = header.offsetWidth;
+               const headerPadding = parseInt(window.getComputedStyle(header).paddingLeft) + parseInt(window.getComputedStyle(header).paddingRight);
+               const headerGap = parseInt(window.getComputedStyle(header).gap);
+               const headerContentWidth = headerWidth - headerPadding - headerGap;
+   
+               this.$store.megamenu.setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, headerGap);
+           });
+       },
+       init() {
+           this.calculateWidths();
+           window.addEventListener('resize', () => {
+               this.calculateWidths();
+           })
+       },
+   }));
+   ```
+
+6. **전역에서는 받은 변수들로 searchWidth, searchInputWidth를 계산한다.**
+
+   - 이 때, search안에 검색버튼의 길이를 빼줘야하니, querySelector로 찾는다.
+     - 버튼길이땜에 x-data를 form에 넣기는 보류. 일단 headers.js에 넣을순 없다.
+
+   ```js
+   Alpine.store('megamenu', {
+   
+       setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, gapBetweenLogoAndGnb) {
+           this.searchWidth = headerContentWidth - logoWidth - gnbWidth - gapBetweenLogoAndGnb; 
+   
+           const searchBtnWidth = document.querySelector('.search .btn-search').offsetWidth;
+   
+           this.searchInputWidth = this.searchWidth - searchBtnWidth; 
+       },
+   ```
+
+7. **이제 search input태그에 `:style=`로 width를 동적으로 준다.**
+
+   - **이 때 한도까지 커질 수 있기 때문에 , `원래 css에서 줬던 width를 max-width로 바꿔`준다.**
+
+   ```css
+   .search {
+       > input {
+           /* 동적으로 width 삽입 -> 기존 너비는 max-width로 */
+           /*width: 365px;*/
+           max-width: 365px;
+   ```
+
+   ```html
+   <form action="">
+       <h2 class="sr-only">검색</h2>
+       <div class="search d-flex align-items-center">
+           <input type="search" placeholder="참석여부 알려주기"
+                  title="검색어 입력"
+                  :style="`width: ${$store.megamenu.searchInputWidth}px`"
+                  >
+           <button aria-label="검색" class="btn-search bg-img"></button>
+       </div>
+   </form>
+   ```
+
+   ![image-20240701171555895](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701171555895.png)
+
+   ![image-20240701171603438](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701171603438.png)
+
+8. **이제 모바일에서도 width가 동적으로 조정되고 있으니**
+
+   ![image-20240701171800953](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701171800953.png)
+
+   - **w100%를 `important`로 안바뀌게 만든다.**
+     - 동적인 width삽입은 모바일에서만 적용되도록은 못하므로..
+     - **max-width도 정해놨으니 100%로 바꾼다.**
+
+   ```css
+   > input {
+       /* 동적으로 width 삽입 -> 기존 너비는 max-width로 */
+       /*width: 365px;*/
+       max-width: 365px;
+       height: 35px;
+       @media (max-width: 767px) {
+           /* 웹 동적 input조절로 바뀌니, 모바일에선 !impotant로 고정 */
+           /*width: 100%;*/
+   		width: 100%!important;
+   		max-width: 100%;
+           height: 27px;
+           background-color: inherit;
+       }
+   ```
+
+   
+
+## 4 border-bottom으로 모바일 섹션구분 추가하기
+
+1. 여러section에  공통으로 적용될 예정이니 `main.css`에 추가한다.
+
+   ```css
+   /* 모바일 section 구분 border-bottom */
+   .section-border {
+       @media (min-width: 0px) and (max-width: 769px) {
+           border-bottom: .8rem solid var(--greyf1);
+       }
+   }
+   ```
+
+   ![image-20240701032404658](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240701032404658.png)

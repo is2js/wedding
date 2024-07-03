@@ -1,6 +1,38 @@
+:root {
+
+}
+
 .button-close {
     width: 58px;
     height: 58px;
 
     background-image: url("../../images/svg/icons/button-close.svg");
+}
+
+.button-more {
+    /* a는 인라인 요소며, 글자크기에 의해 결정되는 상황이므로 w/h가 불필요 */
+    /*width: 14px;*/
+    /*height: 14px;*/
+
+    background-image: url("../../images/svg/icons/button-more.svg");
+    padding-right: 17px;
+
+    font-size: 14px;
+    color: var(--grey28);
+
+    /* 모바일시 block으로 가득 채우도록 */
+    @media (max-width: 767px) {
+        /* 모바일 버튼의 높이는 글자 수직정렬을 고려해 height대신 lh로 처리 */
+        line-height: 42px;
+        border: 1px solid var(--greybe);
+        border-radius: 8px;
+
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        background: none;
+        padding: 0;
+
+    }
 }

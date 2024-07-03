@@ -21,8 +21,6 @@ document.addEventListener('alpine:init', () => {
         },
         /* gnb 메뉴 토글 관련  */
         isGnbOpens: [],
-
-
         init() {
             /* megamenu toggle 관련  */
             // Watch for resize and close megamenu if window width >= 768
@@ -34,9 +32,46 @@ document.addEventListener('alpine:init', () => {
             /* gnb 메뉴 토글 관련  */
             // TODO: Array(this.data.length).fill(false);
             this.isGnbOpens = Array.from({length: 5}, () => false);
-
+        },
+        /* header abs search width 계산용 */
+        searchWidth: 0,
+        searchInputWidth: 0,
+        setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, gapBetweenLogoAndGnb) {
+            this.searchWidth = headerContentWidth - logoWidth - gnbWidth - gapBetweenLogoAndGnb;
+            const searchBtnWidth = document.querySelector('.search .btn-search').offsetWidth;
+            this.searchInputWidth = this.searchWidth - searchBtnWidth;
         },
     });
+
+    Alpine.data('header', () => ({
+        calculateWidths() {
+            this.$nextTick(() => {
+                const logoWidth = this.$refs.logo.offsetWidth;
+                const gnbWidth = this.$refs.gnb.offsetWidth;
+
+                const header = this.$refs.logo.closest('.header');
+                const headerWidth = header.offsetWidth;
+                const headerPadding = parseInt(window.getComputedStyle(header).paddingLeft) + parseInt(window.getComputedStyle(header).paddingRight);
+                const headerGap = parseInt(window.getComputedStyle(header).gap);
+                const headerContentWidth = headerWidth - headerPadding - headerGap;
+
+                // console.log('logoWidth', logoWidth);
+                // console.log('gnbWidth', gnbWidth);
+                // console.log('totalWidth', headerWidth);
+                // console.log('headerPadding', headerPadding);
+                // console.log('headerGap', headerGap);
+                // console.log('headerContentWidth', headerContentWidth);
+
+                this.$store.megamenu.setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, headerGap);
+            });
+        },
+        init() {
+            this.calculateWidths();
+            window.addEventListener('resize', () => {
+                this.calculateWidths();
+            })
+        },
+    }));
 
     Alpine.data('gnb_dropdown', (index) => ({
         isOpen: false,
