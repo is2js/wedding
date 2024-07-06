@@ -1,77 +1,10 @@
-// let titles = [
-//     "새해 이벤트",
-//     "리뷰 이벤트",
-//     "앱 설치 혜택",
-//     "앱피렐리 무상교환",
-//     "삼성화재 이벤트",
-// ];
-// /*"자동세차 100원",*/
-// const data = [
-//     {
-//         title: "1부 예식을 소개할게요",
-//         alt: "1부 예식 그림",
-//         color: "#d3e3df",
-//         image: "./images/webp/banner/slide_main01.webp",
-//         mobileImage: "./images/webp/banner/slide_main01_m.webp",
-//     },
-//     {
-//         title: "2부 예식",
-//         alt: "2부 예식 그림",
-//         color: "#ecf2fb",
-//         image: "./images/webp/banner/slide_main02.webp",
-//         mobileImage: "./images/webp/banner/slide_main02_m.webp",
-//     },
-//     {
-//         title: "3부 예식",
-//         alt: "3부 예식 그림",
-//         color: "#2b5cd2",
-//         image: "./images/webp/banner/slide_main03.webp",
-//         mobileImage: "./images/webp/banner/slide_main03_m.webp",
-//     },
-//     {
-//         title: "4부 예식",
-//         alt: "4부 예식 그림",
-//         color: "#6f49fa",
-//         image: "./images/webp/banner/slide_main04.webp",
-//         mobileImage: "./images/webp/banner/slide_main04_m.webp",
-//     },
-//     {
-//         title: "5부 예식",
-//         alt: "5부 예식 그림",
-//         color: "#21273c",
-//         image: "./images/webp/banner/slide_main05.webp",
-//         mobileImage: "./images/webp/banner/slide_main05_m.webp",
-//     },
-//     {
-//         title: "6부 예식",
-//         alt: "6부 예식 그림",
-//         color: "#070707",
-//         image: "./images/webp/banner/slide_main06.webp",
-//         mobileImage: "./images/webp/banner/slide_main06_m.webp",
-//     },
-// ];
-//
-// const createSlides = (data) => {
-//     const visualSwiperWrapper = document.querySelector('.swiper.visual .swiper-wrapper');
-//
-//     data.forEach((item) => {
-//         visualSwiperWrapper.insertAdjacentHTML('beforeend',
-//             `<div class="swiper-slide d-flex justify-content-center align-items-center">
-//                 <div class="slide-bg" style="background-color: ${item.color}">
-//                     <picture>
-//                         <!-- mobile -->
-//                         <source media="(max-width: 767px)"
-//                                 srcset="${item.mobileImage}"
-//                         />
-//                         <!-- web -->
-//                         <img src="${item.image}"" alt="${item.alt}"/>
-//                     </picture>
-//                 </div>
-//          </div>`
-//         )
-//     });
-// }
+import {
+    brideData,
+    groomData,
+} from "./mainProductData.js";
+import {createFamilyCard} from "./mainProductCardTemplate.js";
 
+// console.log(brideData);
 
 const mobileMaxWidth = 768;
 const baseClass = '.swiper.product-list';
@@ -142,10 +75,14 @@ const initProductSwiper = (type = 'default', sectionName, data) => {
     } else {
         console.log("web / sectionName - type ", sectionName, type)
     }
+
+    window.addEventListener("resize", () => {
+        initProductSwiper(type, sectionName);
+    }, {once: true});
+
 };
 
-
-const initProductSwiperArray = (type = 'default', sectionName, data = []) => {
+const initProductSwiperMultipleWrapper = (type = 'default', sectionName, data = []) => {
     // 0. section별 swiper 배열 초기화( forEach사용대기 )
     if (!productSwiperArraysPerSection[sectionName]) {
         productSwiperArraysPerSection[sectionName] = [];
@@ -217,6 +154,10 @@ const initProductSwiperArray = (type = 'default', sectionName, data = []) => {
         }
     });
 
+    window.addEventListener("resize", () => {
+        initProductSwiperMultipleWrapper(type, sectionName);
+    }, {once: true});
+
 };
 
 // 처음 실행
@@ -224,15 +165,60 @@ const initProductSwiperArray = (type = 'default', sectionName, data = []) => {
 // initProductSwiper(data);
 // initProductSwiper();
 initProductSwiper('more', 'herb-medicine');
-// initProductSwiper('default', 'herb-medicine');
-initProductSwiper('default', 'family');
-initProductSwiperArray('default', 'families');
+
+// const createFamilySlides = (data) => {
+// const createFamilySlides = (sectionName, data) => {
+const createProductSlides = (sectionSwiperWrapper, data) => {
+    // const familySwiperWrapper = document.querySelector('.family .swiper .swiper-wrapper');
+    // console.log(sectionSwiperWrapper);
+
+    data.forEach((item) => {
+        const familySlide = createFamilyCard(item);
+        sectionSwiperWrapper.insertAdjacentHTML('beforeend', familySlide);
+    });
+}
+
+// createFamilySlides(brideData);
+// createFamilySlides(groomData);
+const createProductSwiper = (sectionName, type = 'default', data) => {
+    // 1. slide들을 매달 wrapper 1개 찾기
+    const sectionSwiperWrapper = document.querySelector(`.${sectionName} .swiper .swiper-wrapper`);
+
+    // 2. wrapper가 찾아졌으면, data기반으로 slide만들어서 wrapper에 붙혀주기
+    if (sectionSwiperWrapper) {
+        createProductSlides(sectionSwiperWrapper, data);
+    }
+    // 3. swiper객체 생성 및 resize 이벤트
+    initProductSwiper(type, sectionName);
+}
+
+// createFamilySlides('family', groomData);
+createProductSwiper('family', 'default', groomData);
+
+
+
+const createProductSwiperMultipleWrapper = (sectionName, type = 'default', data) => {
+    // 1. slide들을 매달 wrapper 2개 이상 찾기
+    const sectionSwiperWrappers = document.querySelectorAll(`.${sectionName} .swiper .swiper-wrapper`);
+
+    // 2. 순회하며  wrapper에 슬라이드 생성
+    sectionSwiperWrappers.forEach((swiperWrapper, index) => {
+        createProductSlides(swiperWrapper, data[index]);
+    });
+    //3. swiper 객체 초기화
+    initProductSwiperMultipleWrapper('default', 'families', data);
+}
+
+
+const familyData = [brideData, groomData]
+
+createProductSwiperMultipleWrapper('families', 'default', familyData);
 // 리사이즈 될 때마다 재실행
 window.addEventListener("resize", () => {
     // initProductSwiper(data);
     // initProductSwiper();
     // initProductSwiper('more');
-    initProductSwiper('more', 'herb-medicine');
-    initProductSwiper('default', 'family');
-    initProductSwiperArray('default', 'families');
+    // initProductSwiper('more', 'herb-medicine');
+    // initProductSwiper('default', 'family');
+    // initProductSwiperMultipleWrapper('default', 'families');
 });
