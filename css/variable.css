@@ -28,7 +28,17 @@
     --green05: #053863;
     --orangef8: #F8633F;
 
-    /* 상품 카드 */
+    /* 상품 텍스트 */
     --skyblue: #28aeed;
+    /* 상품 label */
+    --yellowff: #ffcc00;
+    --purple7b: #7b3ff1;
+    --green00: #00b5b2;
+    --pinkfc: #FC5230;
+    --pinkff: #FF5252;
+
+    /* 광고 */
+    --yellowkakao: #FEE500;
+
 }
 

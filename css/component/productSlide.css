@@ -10,27 +10,51 @@
             gap: 0;
         }
 
-        .product {
+        /*.product {*/
             /* 3개 항목에 대해 모바일에서 1줄 제한  */
 
-            & .product-category,
-            & .product-title,
-            & .product-description {
-                @media (max-width: 767px) {
-                    width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+            /*& .product-category,*/
+            /*& .product-title,*/
+            /*& .product-description {*/
+            /*    @media (max-width: 767px) {*/
+            /*        width: 100%;*/
+            /*        white-space: nowrap;*/
+            /*        overflow: hidden;*/
+            /*        text-overflow: ellipsis;*/
+            /*    }*/
+            /*}*/
+        /*}*/
+    }
+
+    /* swiper가 아닌 웹grid에서는 4개 제한 */
+    /*.swiper-slide {*/
+    /* more type 아니라면 -> grid 4열 + n행으로 다보이게 */
+    /* more type -> 웹에선 4개만 보이게 */
+
+    &.list-more .swiper-slide {
+        @media (min-width: 768px) {
+            &:nth-child(4) ~ div {
+                display: none;
             }
         }
     }
 
-    /* swiper가 아닌 웹grid에서는 4개 제한 */
-    .swiper-slide {
-        @media (min-width: 768px) {
-            &:nth-child(4) ~ div {
-                display: none;
+    /* pagination이 붙을 경우(more아니고 모바일) */
+
+    &:not(.list-more) .swiper-pagination {
+        @media (max-width: 767px) {
+            .swiper-pagination-bullet {
+                width: 6px;
+                height: 6px;
+                margin: 0 2.4px;
+                background-color: var(--grey96);
+                transition: all 0.3s ease 0s;
+            }
+
+            .swiper-pagination-bullet-active {
+                width: 15px;
+                border-radius: 100px;
+                background-color: #282a2e;
             }
         }
     }

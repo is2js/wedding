@@ -34,10 +34,28 @@ Extra extra large	xxl	≥1400px
     margin-top: 0;
 }
 
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+    @media (max-width: 767px) {
+        margin-top: 6px;
+    }
+}
+
 .mt12 {
     margin-top: 12px;
     @media (max-width: 767px) {
         margin-top: 8px;
+    }
+}
+
+.mt14 {
+    margin-top: 14px;
+    @media (max-width: 767px) {
+        margin-top: 10px;
     }
 }
 
@@ -50,10 +68,21 @@ Extra extra large	xxl	≥1400px
 
 .mt30 {
     margin-top: 30px;
+    @media (max-width: 767px) {
+        margin-top: 20px;
+    }
 }
 
 .mt35 {
     margin-top: 35px;
+}
+
+.mt60 {
+    margin-top: 60px;
+    /* banner 에 추가될 웹용 mt로서 모바일에선 padding은 없지만 윗 bb / 나의 bb으로 구분되어 모바일에선 0 */
+    @media (max-width: 767px) {
+        margin-top: 0;
+    }
 }
 
 .mt65 {

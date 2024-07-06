@@ -1628,7 +1628,34 @@
 
 
 
+#### ✨ 웹에서도 grid에 따라 말줄임표 적용되도록, slide.css가 아닌 card.css에 웹/모바일 전체 적용 + figcaption도 웹에서 크기지정하여 내부 텍스트들 말줄임표 적용시키기
 
+- hasatags div만 제외하고 말줄임표 적용되도록 한다.
+
+```css
+.product {
+	
+    /* figure도 웹에서는 크기가 제한되어있어야, ellipsis시 grid 1열을 튀어나가는 것을 방지한다.*/
+
+    & figcaption {
+        width: 278px;
+        height: auto;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
+        /* figcaption 텍스트들은 tag제외하곤 ellipsis를 준다.*/
+        > div:not(.product-hashtag) {
+            width: 100%;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+```
+
+![image-20240705004406828](C:\Users\is2js\AppData\Roaming\Typora\typora-user-images\image-20240705004406828.png)
 
 ## 4 mobile에서만 swiperjs 작동하기 => new Swiper를 init:false로 선언하고, 웹에서는 destory된 체 두기 / 모바일시에만 init()
 

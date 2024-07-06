@@ -103,6 +103,7 @@
 .ellipsis {
     /* div-block이라 가로크기가 들어가야함. */
     /* inline이라면 display:block; 까지 추가 */
+    /*display: block;*/
     width: 100%;
 
     white-space: nowrap;
@@ -139,4 +140,3 @@
         padding: 20px;
     }
 }
-

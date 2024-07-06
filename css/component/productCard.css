@@ -1,7 +1,12 @@
+:root {
+}
+
 .product {
     /* 상하간격 초기화(lh가 안주어졌다면 글자크기만 only) */
     line-height: 1;
     /* 모바일에서는 .swiper-slide가 인지할 최상위부모 a.product의 크기가 중요 */
+    /* 웹 : a.product X -> div.product-thumbnail 에서 w/h */
+    /* 모바일 : a.product @media w -> div.product-thumbnail @media w100%+hAuto+ratio1/1 */
     @media (max-width: 767px) {
         width: 140px;
     }
@@ -11,6 +16,7 @@
     & .product-thumbnail {
         width: 278px;
         height: 278px;
+
         /* 모바일에서는 최상위부모 a.product의 크기가 중요 -> 따르도록 변경 */
         @media (max-width: 767px) {
             width: 100%;
@@ -22,6 +28,70 @@
         border-radius: 8px;
         background-color: var(--greyf6);
 
+        /* 자식 img태그 scale 1.1시 넘치는 것 잡기 */
+        overflow: hidden;
+
+        /* 품절 클래스 붙을 시 */
+
+        &.sold-out {
+            &::after {
+                content: "품절";
+                position: absolute;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: var(--white);
+                font-size: 20px;
+                font-weight: 400;
+                /*z-index: 1;*/
+                border-radius: inherit;
+
+                /* text 가운데 정렬 */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        & .product-thumbnail-label {
+            background-color: var(--grey28);
+            color: #fff;
+
+            border-radius: 8px 0;
+            padding: 5px 10px;
+
+            line-height: 20px;
+            font-size: 15px;
+            font-weight: 500;
+
+            @media (max-width: 767px) {
+                padding: 3px 6px;
+                line-height: 15px;
+                font-size: 11px;
+            }
+
+            &.label-new {
+                background-color: var(--yellowff);
+                color: var(--grey28);
+            }
+
+            &.label-hot {
+                background-color: var(--purple7b);
+            }
+
+            &.label-grey {
+                background-color: var(--greybe);
+            }
+
+            &.label-bride {
+                background-color: var(--pinkff);
+            }
+
+            &.label-groom {
+                background-color: var(--green00);
+            }
+        }
+
+
         & .product-thumbnail-category {
             height: 11px;
 
@@ -29,12 +99,44 @@
             right: 20px;
         }
 
+
         & .product-thumbnail-image {
             width: 100%;
             height: 100%;
 
             /*object-fit: cover;*/ /* 짤려도 되는 배경 용 */
             object-fit: contain;
+
+            /* 웹에서만 scale 크게 */
+
+            &:hover {
+                transform: scale(1.1);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            @media (max-width: 767px) {
+                transform: none;
+            }
+        }
+    }
+
+    /* figure도 웹에서는 크기가 제한되어있어야, ellipsis시 grid 1열을 튀어나가는 것을 방지한다.*/
+
+    & figcaption {
+        width: 278px;
+        height: auto;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
+        /* figcaption 텍스트들은 tag제외하곤 ellipsis를 준다.*/
+
+        > div:not(.product-hashtag) {
+            width: 100%;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
@@ -109,6 +211,66 @@
             @media (max-width: 767px) {
                 font-size: 11px;
             }
+        }
+    }
+
+    & .product-family-name {
+        font-weight: 800;
+        gap: 8px;
+
+        @media (max-width: 767px) {
+            gap: 6px;
+        }
+
+        & .product-family {
+            margin: auto 0 0;
+            color: var(--skyblue);
+            font-size: 18px;
+            font-weight: 650;
+            @media (max-width: 767px) {
+                font-size: 13px;
+            }
+
+        }
+
+        & .product-name {
+            font-size: 21px;
+            color: var(--grey28);
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    & .product-account {
+        background-image: url("../../images/svg/icons/event-account-purplef6.svg");
+        /* 20x20 + 5px 띄우기 */
+        padding-left: 25px;
+
+        line-height: 20px;
+        font-size: 15px;
+        color: var(--grey28);
+        font-weight: 600;
+
+        @media (max-width: 767px) {
+            line-height: 20px;
+            font-size: 12px;
+        }
+    }
+
+    & .product-mobile {
+        background-image: url("../../images/svg/icons/event-mobile.svg");
+        /* 20x20 + 5px 띄우기 */
+        padding-left: 25px;
+
+        line-height: 20px;
+        font-size: 15px;
+        color: var(--grey5a);
+        font-weight: 600;
+
+        @media (max-width: 767px) {
+            line-height: 20px;
+            font-size: 12px;
         }
     }
 

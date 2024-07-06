@@ -4,7 +4,7 @@
 
 /* 모바일 section 구분 border-bottom */
 .section-border {
-    @media (min-width: 0px) and (max-width: 769px) {
+    @media (min-width: 0px) and (max-width: 767px) {
         border-bottom: .8rem solid var(--greyf1);
     }
 }
@@ -200,6 +200,20 @@
                 /*    }*/
                 /*}*/
             }
+        }
+    }
+}
+
+
+/* 광고 영역 */
+.advertisement {
+    background-color: var(--yellowkakao);
+    /* img는 inline이라서 가운데정렬을 text-align으로만 해도 된다.*/
+    text-align: center;
+
+    img {
+        @media (max-width: 767px) {
+            width: 100%;
         }
     }
 }
