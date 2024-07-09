@@ -1,8 +1,5 @@
-import {
-    brideData,
-    groomData,
-} from "./mainProductData.js";
-import {createFamilyCard} from "./mainProductCardTemplate.js";
+import {brideData, groomData, productData,} from "./mainProductData.js";
+import {createProductCard} from "./mainProductCardTemplate.js";
 
 // console.log(brideData);
 
@@ -160,27 +157,21 @@ const initProductSwiperMultipleWrapper = (type = 'default', sectionName, data = 
 
 };
 
-// 처음 실행
-// createSlides(data);
-// initProductSwiper(data);
-// initProductSwiper();
-initProductSwiper('more', 'herb-medicine');
 
 // const createFamilySlides = (data) => {
 // const createFamilySlides = (sectionName, data) => {
+// const createFamilySlides = (sectionSwiperWrapper, data) => {
 const createProductSlides = (sectionSwiperWrapper, data) => {
-    // const familySwiperWrapper = document.querySelector('.family .swiper .swiper-wrapper');
-    // console.log(sectionSwiperWrapper);
 
     data.forEach((item) => {
-        const familySlide = createFamilyCard(item);
+        const familySlide = createProductCard(item);
         sectionSwiperWrapper.insertAdjacentHTML('beforeend', familySlide);
     });
 }
 
 // createFamilySlides(brideData);
 // createFamilySlides(groomData);
-const createProductSwiper = (sectionName, type = 'default', data) => {
+const createProductSwiperSection = (sectionName, type = 'default', data) => {
     // 1. slide들을 매달 wrapper 1개 찾기
     const sectionSwiperWrapper = document.querySelector(`.${sectionName} .swiper .swiper-wrapper`);
 
@@ -192,12 +183,30 @@ const createProductSwiper = (sectionName, type = 'default', data) => {
     initProductSwiper(type, sectionName);
 }
 
-// createFamilySlides('family', groomData);
-createProductSwiper('family', 'default', groomData);
 
 
+// const createProductSlides = (sectionSwiperWrapper, data) => {
+//
+//     data.forEach((item) => {
+//         // const familySlide = createProductCard(item);
+//         const familySlide = createProductCard(item);
+//         sectionSwiperWrapper.insertAdjacentHTML('beforeend', familySlide);
+//     });
+// }
+// const createProductSwiper = (sectionName, type = 'default', data) => {
+//     // 1. slide들을 매달 wrapper 1개 찾기
+//     const sectionSwiperWrapper = document.querySelector(`.${sectionName} .swiper .swiper-wrapper`);
+//
+//     // 2. wrapper가 찾아졌으면, data기반으로 slide만들어서 wrapper에 붙혀주기
+//     if (sectionSwiperWrapper) {
+//         createProductSlides(sectionSwiperWrapper, data);
+//     }
+//     // 3. swiper객체 생성 및 resize 이벤트
+//     initProductSwiper(type, sectionName);
+// }
 
-const createProductSwiperMultipleWrapper = (sectionName, type = 'default', data) => {
+
+const createProductSwiperMultipleWrapperSection = (sectionName, type = 'default', data) => {
     // 1. slide들을 매달 wrapper 2개 이상 찾기
     const sectionSwiperWrappers = document.querySelectorAll(`.${sectionName} .swiper .swiper-wrapper`);
 
@@ -206,13 +215,20 @@ const createProductSwiperMultipleWrapper = (sectionName, type = 'default', data)
         createProductSlides(swiperWrapper, data[index]);
     });
     //3. swiper 객체 초기화
-    initProductSwiperMultipleWrapper('default', 'families', data);
+    initProductSwiperMultipleWrapper(type, sectionName, data);
 }
 
 
-const familyData = [brideData, groomData]
+// 처음 실행
+// createSlides(data);
+// initProductSwiper(data);
 
-createProductSwiperMultipleWrapper('families', 'default', familyData);
+// initProductSwiper();
+// initProductSwiper('more', 'herb-medicine');
+// createFamilySlides('family', groomData);
+createProductSwiperSection('herb-medicine', 'more', productData);
+createProductSwiperSection('family', 'default', groomData);
+createProductSwiperMultipleWrapperSection('families', 'default', [brideData, groomData]);
 // 리사이즈 될 때마다 재실행
 window.addEventListener("resize", () => {
     // initProductSwiper(data);
