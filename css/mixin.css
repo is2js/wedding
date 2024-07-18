@@ -45,6 +45,14 @@
 .bg-img-x-left {
     background-position: left center;
 }
+/* 불가피하게 좌우공통여백이 20px 추가된 경우 -> 왼쪽에서 20px에 위치하는 왼쪽 아이콘 */
+.bg-img-x-left-20px {
+    background-position: left 20px center;
+    @media (max-width: 767px) {
+        background-position: left 0 center;
+    }
+}
+
 
 
 /* 즐겨찾기 메뉴 */
@@ -138,5 +146,20 @@
         /* 모바일에서 section mt까지 대체 */
         /* 특히 section-border도 반영하려면, margin대신 padding으로 */
         padding: 20px;
+    }
+}
+
+
+/* 모바일 section 구분 border-bottom */
+.section-border {
+    @media (min-width: 0px) and (max-width: 767px) {
+        border-bottom: .8rem solid var(--greyf1);
+    }
+}
+
+
+.position-md-static {
+    @media (min-width: 768px) {
+        position: static!important;
     }
 }

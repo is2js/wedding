@@ -10,10 +10,12 @@
 /*layout*/
 @import url("layout/header.css"); /* 헤더 */
 @import url("layout/main.css"); /* main with secetions */
+@import url("layout/modal.css"); /* modal */
 
 /*component*/
 @import url("component/button.css"); /* 헤더 */
 @import url("component/search.css"); /* 검색 */
+@import url("component/form.css"); /* form */
 @import url("component/slide.css"); /* manner banner */
 @import url("component/productCard.css"); /* 상품 thumbnail 카드 */
 @import url("component/productSlide.css"); /* 상품 thumbnail 카드의 swiper 제어 */

@@ -2,13 +2,75 @@
 
 }
 
-/* 모바일 section 구분 border-bottom */
-.section-border {
-    @media (min-width: 0px) and (max-width: 767px) {
-        border-bottom: .8rem solid var(--greyf1);
+
+.register {
+    /* 기본 section의 pb를 제거하여 section-bottom없이 다음 section의 pt와 어울림 */
+    padding-bottom: 0;
+
+    & a {
+        background-image: url("../../images/svg/icons/register-plus.svg");
+
+        gap: 20px;
+
+        /* 24x24 + 6px 띄우기 */
+        padding: 8px 24px;
+        padding-left: 54px;
+
+        background-color: #fff;
+        /*border: 1px solid var(--greyec);*/
+        /*border-radius: 8px;*/
+        /*box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem 0;*/
+        border: 1px solid rgb(236, 238, 241);
+        border-radius: 8px;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+            padding: 10px 0;
+            padding-left: 30px;
+
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            border-bottom: 1px solid var(--greyf1);
+        }
+
+        & .register-text {
+            & .register-text-title {
+                font-size: 15px;
+                font-weight: 700;
+                color: var(--grey28);
+
+                margin-right: 12px;
+
+                @media (max-width: 767px) {
+                    font-size: 13px;
+                }
+            }
+
+            & .register-text-subtitle {
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--grey5a);
+
+                @media (max-width: 767px) {
+                    font-size: 12px;
+                }
+
+                & strong {
+                    margin-left: 4px;
+                    color: var(--purple6f);
+                }
+            }
+        }
+
+        & .register-icon {
+            width: 32px;
+            height: 32px;
+
+            background-image: url("../../images/svg/icons/register-form-32x32.svg");
+        }
     }
 }
-
 
 /* 즐겨찾는 메뉴 */
 .favorite-nav {

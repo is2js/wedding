@@ -36,3 +36,57 @@
 
     }
 }
+
+.button-modal {
+    padding: 12px 12px;
+    line-height: 24px;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    white-space: pre-line;
+    word-break: keep-all;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease 0s;
+}
+
+.modal-cancel {
+    color: var(--black28);
+
+    background: none;
+    border: 1px solid var(--greybe);
+
+    &:hover,
+    &:focus {
+        border: 1px solid var(--grey96);
+    }
+}
+
+.modal-purple {
+    color: var(--white);
+
+    border: none;
+    background-color: var(--purple6f);
+
+    &:hover,
+    &:focus {
+        background: var(--purple);
+    }
+}
+
+
+.button-number-handler-up {
+    width: 8px;
+    height: 8px;
+
+    background-image: url("../../images/svg/icons/form-number-handler-up.svg");
+}
+
+.button-number-handler-down {
+    width: 8px;
+    height: 8px;
+
+    background-image: url("../../images/svg/icons/form-number-handler-down.svg");
+}

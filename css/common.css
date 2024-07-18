@@ -107,3 +107,7 @@ Extra extra large	xxl	≥1400px
 .drop-shadow-2xl {
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

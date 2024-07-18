@@ -1,4 +1,11 @@
-import { addComma } from "./utils.js";
+import { addComma, copyToClipboardAndAlert } from "./utils.js";
+
+// Make the function globally accessible
+// window.copyToClipboardAndAlert = copyToClipboardAndAlert;
+
+// alpinejs 유틸(magic, directive)은 함수명이 아니라 통째로 임의의 변수명으로 통째로 가져와서 Alpine.plugin()에 등록
+import AlpineUtil  from "./utils.js";
+Alpine.plugin(AlpineUtil);
 
 function renderThumbnail(thumbnail, label, isSoldOut, category) {
     if (!thumbnail) return '';
@@ -27,8 +34,17 @@ const renderThumbnailLabel = (label) => {
 
 function renderAccount(account, familyName) {
     if (!account) return '';
-    return `<div class="product-account bg-img bg-img-x-left d-flex align-items-center mt10 ellipsis"
-                onclick="alert('${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.')"
+    // return `<div class="product-account bg-img bg-img-x-left d-flex align-items-center mt10 ellipsis"
+    //             onclick="alert('${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.')"
+    // >
+    //     계좌번호 복사
+    // </div>`;
+                /*onclick="copyToClipboardAndAlert(*/
+    return `<div class="product-account bg-img bg-img-x-left d-flex align-items-center mt10 ellipsis cursor-pointer"
+                @click="$clipboard(
+                    '${account.number}', 
+                    '${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.'
+                )"
     >
         계좌번호 복사
     </div>`;
@@ -60,14 +76,19 @@ function renderFamilyName(familyName) {
     </div>`;
 }
 
-function renderPhone(phone, familyName) {
+function renderPhone(phone) {
     if (!phone) return '';
 
-    return `<div class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt14 ellipsis"
-                onclick="alert('${familyName.family} ${familyName.name}님의 번호 \\n${phone}\\n가 복사되었습니다.')"
-    >
+    // return `<div class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt14 ellipsis"
+    //             onclick="alert('${familyName.family} ${familyName.name}님의 번호 \\n${phone}\\n가 복사되었습니다.')"
+    // >
+    //     전화 걸기
+    // </div>`;
+    return `<a class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt14 ellipsis cursor-pointer"
+href="tel:${phone}"
+>
         전화 걸기
-    </div>`;
+    </a>`;
 }
 
 
@@ -135,8 +156,12 @@ const createProductCard = (data) => {
         category, isSoldOut, name, description, price, review,
         tags,
     } = data;
+
+    // product면 slide 전체를 a태그로
+    // family라면, slide 전체를 div로 가져 -> 내부 a태그 for tel: 가져도 에러 안나게
+    // <a class="product d-block">
     return `<div class="swiper-slide">
-    <a class="product d-block">
+    <div class="product d-block">
         <figure>
             ${renderThumbnail(thumbnail, label, isSoldOut, category)}
             <figcaption>
@@ -149,14 +174,14 @@ const createProductCard = (data) => {
 
                 <!-- family -->
                 ${renderFamilyName(familyName)}
-                ${renderPhone(phone, familyName)}
+                ${renderPhone(phone)}
                 ${renderAccount(account, familyName)}
                 
                 <!-- common -->
                 ${renderTags(tags)}
             </figcaption>
         </figure>
-    </a>
+    </div>
 </div>
 `
 };

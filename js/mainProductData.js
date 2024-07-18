@@ -15,7 +15,7 @@ const brideData = [
             bank: '신한',
             number: '110-123-456789'
         },
-        phone: '010-1234-5678',
+        phone: '010-1111-1111',
         tags: [],
     },
     {

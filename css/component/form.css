@@ -1,0 +1,391 @@
+:root {
+
+}
+
+form {
+    /* 부모에 꽉차게 만들어주기 */
+    width: 100%; /* 부모 요소의 전체 너비를 차지 */
+    box-sizing: border-box; /* 패딩과 경계를 포함하여 너비를 계산 */
+    /* .row 자체의 마진을 제거해야 부모에서 자체 margin으로 안벗어난다 */
+
+    &.row {
+        margin: 0 !important;
+    }
+
+    & .row {
+        margin: 0 !important;
+    }
+
+    & .form-buttons-wrapper {
+        /* 좌우패딩은 div.col-12로서 row의 자식들은 자동 패딩이 있다. 상하 패딩만 준다.*/
+        /* -> 상패딩도 grandient가 적용되려면 삭제한다.*/
+        /*padding-top: 24px;*/
+        /* -> 하 패딩도 sticky 아래로 oveflow가 보이게 되시 buttons에 배정한다. */
+        /* -> wrapper에서 배경을 가지면 gradient가 안먹히기 때문에,
+           --> wrapper는 무색 + 패딩없음 */
+        /*padding-bottom: 24px;A*/
+
+
+        & .form-buttons-bottom-gradient {
+            /* wrapper 상 패딩 대신, 위쪽의 gradient */
+            height: 24px;
+            background: linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));;
+        }
+
+        & .form-buttons {
+            background-color: var(--white);
+            /* wrapper 하 패딩 대신, [배경을 가진] 버튼부모div에 하패딩 */
+            @media (max-width: 767px) {
+                padding-bottom: 24px;
+            }
+        }
+    }
+
+
+    & .form-group {
+        /* 모바일에선 mb 좀 줄이지만, d-flex 버튼들과 inline에서 수직정렬을 위해 기존 큰값 웹에서 유지 */
+        margin-bottom: 15px;
+        @media (min-width: 768px) {
+            margin-bottom: 24px;
+
+        }
+
+        & .form-label {
+            color: rgb(60, 62, 66);
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 18px;
+        }
+    }
+
+    & .form-input-wrapper {
+        width: 100%;
+        /* 웹에서 inline인 경우 input의 너비 제한 걸기 */
+        @media (min-width: 768px) {
+            &.md-max-width-80 {
+                /* 동행인 수 */
+                max-width: 80px;
+            }
+
+            &.md-max-width-200 {
+                /* 이름 */
+                max-width: 200px;
+            }
+        }
+        max-height: 48px;
+        overflow: hidden;
+
+        border: 1px solid var(--greydd);
+        border-radius: 8px;
+
+        /* 추가요소 대비 */
+        position: relative;
+
+        & .form-input {
+            display: block;
+            width: 100%;
+
+            border: none;
+            outline: none;
+            /* 버튼처럼 안에 가두기*/
+            padding: 10px 12px;
+
+            line-height: 24px;
+            font-size: 17px;
+            font-weight: 400;
+
+            &.form-select {
+                /* 부트스트랩 select 아이콘용 padding-right 그대로 적용 */
+                padding-right: 2.75rem;
+            }
+        }
+
+
+        /* number handler 관련 추가 */
+
+        &:hover, &:focus {
+            border-color: var(--greycd);
+            border-right-width: 1px;
+
+            /*최상위부모 hover시 up/down wrapper를 보이게*/
+
+            & .form-input-number-handler-wrapper {
+                opacity: 1 !important;
+            }
+        }
+
+        & .form-input-number-handler-wrapper {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 22px;
+            height: 100%;
+
+            background: var(--white);
+            border-radius: 0 8px 8px 0;
+
+            /*opacity: 1;*/
+            opacity: 0;
+            transition: opacity .24s linear .1s;
+
+            /* hover/focus시 자식 중 1개가 60%될 예정 -> 미리 hover/focus시 40%로 만들어놓기 */
+
+            &:hover .form-input-number-handler,
+            &:focus .form-input-number-handler {
+                height: 40% !important;
+            }
+
+            & .form-input-number-handler {
+                height: 50%;
+                line-height: 0;
+
+                border-left: 1px solid var(--greycd);
+                overflow: hidden;
+
+                cursor: pointer;
+
+                text-align: center;
+                color: var(--black-45);
+
+                position: relative;
+                transition: all .1s linear;
+
+                &:active {
+                    background: var(--greyf4);
+                }
+
+                &.form-input-number-handler-up:hover,
+                &.form-input-number-handler-up:focus,
+                &.form-input-number-handler-down:hover,
+                &.form-input-number-handler-down:focus {
+                    height: 60% !important;
+                }
+
+                &.form-input-number-handler-up {
+                    border-top-right-radius: 8px;
+                }
+
+                &.form-input-number-handler-down {
+                    border-bottom-right-radius: 8px;
+                    border-top: 1px solid var(--greycd);
+                }
+            }
+        }
+    }
+
+
+    & .form-radio-wrapper {
+        width: 100%;
+        max-height: 48px;
+        overflow: hidden;
+
+        /* 추가요소 대비 */
+        position: relative;
+
+        & .form-radio {
+            /* flex w100  */
+            width: 100%;
+            /* 각 항목별 gap */
+            gap: 8px;
+
+            & .form-radio-input-wrapper {
+                cursor: pointer;
+
+                display: inline-flex;
+                flex-wrap: wrap;
+                gap: 8px; /* input circle <-> text */
+
+                color: var(--black-85);
+
+                font-size: 17px;
+                line-height: 24px;
+                padding: 10px 0;
+
+                position: relative;
+
+                /* gap을 text뒤에도 적용시키기 위해, :after로 width0 자식 추가하기 */
+                /* -> 부모 flex에 gap을 안줘도 되게 된다. */
+
+                &:after {
+                    content: "\a0";
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 0;
+                }
+
+                & .form-radio-input-and-circle {
+                    /* inner circle은 after로 그릴 예정*/
+                    position: relative;
+
+                    /*& .form-radio-input {*/
+                    /*    position: absolute;*/
+                    /*    inset: 0;*/
+                    /*    opacity: 0;*/
+
+                    /*    cursor: pointer;*/
+                    /*    z-index: 1;*/
+                    /*}*/
+
+                    & .form-radio-circle {
+                        display: block;
+                        width: 17px;
+                        height: 17px;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        border: 1px solid #cdcdcd;
+                        border-radius: 50%;
+                        background-color: var(--white);
+
+                        position: relative;
+                        transition: all .3s; /* 보더색변화시  transition*/
+                    }
+
+
+                    /* inner circle op 0으로 미리 만들어놓기 for transition적용 */
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        left: 50%;
+                        top: 50%;
+                        /* scale 0.5가 적용될 예정이라, 절반만큼 중심을 좌상단으로 다시 옮긴다.*/
+                        margin-top: -8.5px;
+                        margin-left: -8.5px;
+
+                        width: 17px;
+                        height: 17px;
+                        border-radius: 17px;
+
+                        background-color: var(--purple6f);
+
+                        opacity: 0;
+                        transform: scale(0);
+                        transition: all .3s;
+                    }
+
+
+                    /* -> after는 형제선택자로 input:checked가 적용안되서, 부모checked클래스 적용후 after를 변화시킨다. */
+                    /* alpinejs로 부모에 .checked를 넣어줘야한다.*/
+                    /*& input[type="radio"]:checked + .form-radio-circle {*/
+
+                    /* input check시 부모에 .checked 추가 후 -> circle 변화 */
+
+                    .checked & .form-radio-circle {
+                        border-color: var(--purple6f);
+                    }
+
+                    /* input check시 부모에 .checked 추가 후 -> inner circle 변화 */
+
+                    .checked &::after {
+                        opacity: 1;
+                        transform: scale(0.5); /* 내부는 바깥선 너비폭을 가진상태로 1/2로 줄임*/
+                    }
+                }
+            }
+        }
+    }
+
+    & .form-toggle-wrapper {
+        width: 100%;
+        max-height: 48px;
+        overflow: hidden;
+
+        /* 추가요소 대비 */
+        position: relative;
+
+        & .form-toggle {
+            /*display: block;*/
+            width: 100%;
+            /* inline에서 최소한의 간격*/
+            gap: 8px;
+
+
+            /* 1. 토글 텍스트 */
+
+            .form-toggle-text {
+                flex: 2 0 80px;
+                @media (min-width: 768px) {
+                    flex: 1 0 auto;
+                }
+
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 24px;
+                /* inline에서 .form-input과 높이 맞추기 위해 */
+                padding: 10px 0;
+
+                white-space: pre-wrap;
+                word-break: keep-all;
+
+                color: var(--grey96);
+                transition: color .3s
+            }
+
+            /* 2. 토글 input */
+
+            .form-toggle-input-wrapper {
+                flex: 0 0 auto;
+                /*position: relative;*/
+
+                /*display: block;*/
+                /*width: 2.25rem;*/
+                /*height: 1.25rem;*/
+
+                & .form-toggle-dot {
+                    display: inline-block;
+                    min-width: 50px;
+                    height: 30px;
+
+                    cursor: pointer;
+
+                    border-radius: 16px;
+                    border: 1px solid var(--greydd);
+                    background: var(--greydd);
+
+                    position: relative;
+
+                    transition: all 0.3s ease 0s;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+
+                        width: 26px;
+                        /* 쪼그라들지 않게 추가 ? */
+                        min-width: 26px;
+                        height: 26px;
+                        margin: auto;
+
+                        left: 2px;
+                        top: 0;
+                        bottom: 0;
+
+                        border-radius: 100%;
+                        background: var(--white);
+                        box-shadow: rgba(0, 0, 0, 0.15) 0 3px 8px, rgba(0, 0, 0, 0.06) 0 3px 1px;
+
+                        cursor: pointer;
+                        transition: all 0.3s ease 0s;
+                    }
+                }
+
+                & input[type="checkbox"]:checked + .form-toggle-dot {
+
+                    border: 1px solid rgb(123, 63, 241);
+                    background: rgb(123, 63, 241);
+
+                    &:before {
+                        /*left: inherit;*/
+                        /*right: 2px;*/
+                        /* right로 이동시키면 transition 적용이 안된다.*/
+                        transform: translateX(calc(100% - 8px));
+                    }
+                }
+            }
+        }
+    }
+}
+

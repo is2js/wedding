@@ -131,7 +131,7 @@
 
         /* figcaption 텍스트들은 tag제외하곤 ellipsis를 준다.*/
 
-        > div:not(.product-hashtag) {
+        > div:not(.product-hashtag), a:not(.product-hashtag) {
             width: 100%;
 
             white-space: nowrap;

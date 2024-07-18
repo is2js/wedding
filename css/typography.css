@@ -29,7 +29,7 @@ label {
 
 
 .text-purple {
-    color: var(--purple);
+    color: var(--purple)!important;
 }
 
 .section-title {

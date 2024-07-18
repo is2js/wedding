@@ -38,7 +38,9 @@ document.addEventListener('alpine:init', () => {
         searchInputWidth: 0,
         setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, gapBetweenLogoAndGnb) {
             this.searchWidth = headerContentWidth - logoWidth - gnbWidth - gapBetweenLogoAndGnb;
-            const searchBtnWidth = document.querySelector('.search .btn-search').offsetWidth;
+            const searchBtnElement = document.querySelector('.search .btn-search');
+            if (!searchBtnElement) return;
+            const searchBtnWidth = searchBtnElement.offsetWidth;
             this.searchInputWidth = this.searchWidth - searchBtnWidth;
         },
     });

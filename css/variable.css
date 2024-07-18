@@ -3,8 +3,11 @@
     --greye7: #e7e9ec;
     --greyf1: #f1f3f6;
     --greyf6: #f6f8fb;
+    --greyf4: #f4f4f4; /* number handler active */
     --greydd: #dddfe2;
+    --greyec: #eceef1; /* register a버튼 외곽선 */
     --greybe: #bec0c4; /* 더보기 모바일외곽선 */
+    --greycd: #cdcdcd; /* number handler left border */
     --grey96: #96989c;
     --grey6f: #6f736f;
     --grey5a: #5a5c60;
@@ -16,8 +19,11 @@
 
     --white: #fff;
     --black: #000;
+    --black28: rgb(40, 42, 46);
     --black-20: rgba(0, 0, 0, .2);
     --black-40: rgba(0, 0, 0, .4);
+    --black-45: rgba(0, 0, 0, .45); /* number handler */
+    --black-85: rgba(0, 0, 0, .85);
     --white-20: rgba(255, 255, 255, 0.2);
 
 
