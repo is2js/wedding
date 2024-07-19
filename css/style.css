@@ -10,6 +10,7 @@
 /*layout*/
 @import url("layout/header.css"); /* 헤더 */
 @import url("layout/main.css"); /* main with secetions */
+@import url("layout/footer.css"); /* footer */
 @import url("layout/modal.css"); /* modal */
 
 /*component*/

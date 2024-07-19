@@ -1,0 +1,185 @@
+:root {
+}
+
+.footer {
+    border-top: 1px solid var(--greye7);
+    /* 모바일용 bottom tab을 위해, mb를 남겨놓고 거기에 fixed 만들 예정 */
+    /*@media (max-width: 767px) {*/
+    margin-bottom: 56px;
+    /*}*/
+
+    /*& .footer-top {*/
+    & .footer-top, .footer-bottom {
+        @media (max-width: 767px) {
+            gap: 24px;
+        }
+    }
+
+    /* top-left/right 공통 -> 각 row 간격 + 공통span 글자크기 */
+
+    & .footer-top-left, .footer-top-right {
+        gap: 8px;
+        @media (max-width: 767px) {
+            gap: 2px;
+        }
+
+        /* 기본 글자크기 */
+
+        & span, a {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--grey28);
+
+            @media (max-width: 767px) {
+                line-height: 16px;
+                font-size: 11px;
+            }
+        }
+    }
+
+    & .footer-top-left {
+        & div {
+            /* 가운데 | 가 있는 1, 2번째 div는 flex로서 gap을 벌려놓고 그 중간에 abs로 |를 걸어놓는다. */
+
+            &:first-child, &:nth-child(2) {
+                gap: 12px;
+                @media (max-width: 767px) {
+                    gap: 10px;
+                }
+
+                & span {
+                    position: relative;
+
+                    & ~ span::before {
+                        position: absolute;
+                        content: "";
+                        width: 1px;
+                        height: 12px;
+                        background-color: var(--grey28);
+
+                        top: 3px;
+                        left: -6px;
+                        @media (max-width: 767px) {
+                            top: 2px;
+                            left: -5px;
+                        }
+                    }
+                }
+            }
+
+            /* 2번째 div의 주소span + 사업자span은 웹에서는 column 방향으로 + |는 안보이게 */
+
+            &:nth-child(2) {
+                @media (min-width: 768px) {
+                    flex-direction: column;
+                    /* 웹에서만 세로로 가면서, 부모의 gap과 동일하게 */
+                    gap: 8px;
+                    /* | 웹에서는 안보이게 */
+                    & span {
+                        & ~ span::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            /* 주소+사업자(2) / 사업자정보(3)은 글자 회색 */
+
+            &:nth-child(2), &:nth-child(3) {
+                span {
+                    color: var(--grey96);
+                }
+            }
+
+            /* 3번째도 d-flex의 가로 gap 주고, span옆 a태그 밑줄 꾸미기 */
+
+            &:nth-child(3) {
+                gap: 8px;
+
+                & a {
+                    text-decoration: underline;
+                }
+            }
+
+            /* div 없는 span을 .copyright 클래스로 바로 꾸미기 */
+
+            & .copyright {
+                font-weight: 600;
+                @media (max-width: 767px) {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    & .footer-top-right {
+        /* 고객센터 */
+
+        > span:first-child {
+            font-weight: 700;
+            font-size: 17px;
+            @media (max-width: 767px) {
+                font-size: 15px;
+                margin-bottom: 6px;
+            }
+        }
+
+        /* 이메일 / 블로그 span + a 조합의 div는 flex */
+
+        & div {
+            gap: 4px;
+
+            & a {
+                line-height: 16px;
+                font-size: 11px;
+                color: var(--grey96);
+
+                text-decoration: underline;
+                @media (max-width: 767px) {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    & .footer-bottom {
+        border-top: 1px solid var(--greye7);
+        /* 모바일에선 .layout-center로 인해 상여백이 있지만,
+        웹에서는 패딩이 없는데, 직접 줘서 border-top과 떨어뜨리기 */
+        @media (min-width: 768px) {
+            padding-top: 24px;
+        }
+
+        & .footer-bottom-left {
+            gap: 16px;
+            @media (max-width: 767px) {
+                gap: 8px;
+            }
+
+            & li {
+                font-size: 15px;
+                font-weight: 400;
+                color: var(--grey3c);
+
+                &:nth-child(2) {
+                    font-weight: 700;
+                }
+
+                @media (max-width: 767px) {
+                    line-height: 16px;
+                    font-size: 11px;
+                }
+            }
+        }
+
+        & .footer-bottom-right {
+            gap: 12px;
+
+            & li a.bg-img {
+                display: block;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}

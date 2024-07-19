@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
     Alpine.store('modal', {
-        // isOpen: false,
-        isOpen: true,
+        // isOpen: true,
+        isOpen: false,
         handleBodyScroll() {
             if (this.isOpen) {
                 document.body.style.overflow = 'hidden';
@@ -20,8 +20,8 @@ document.addEventListener('alpine:init', () => {
     });
 
     Alpine.data('mobileModal', () => ({
-        // isOpen: false,
-        isOpen: true,
+        // isOpen: true,
+        isOpen: false,
         init() {
             this.$watch(() => Alpine.store('modal').isOpen, value => {
                 this.isOpen = value;

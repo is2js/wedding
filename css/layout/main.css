@@ -20,7 +20,7 @@
         /*border: 1px solid var(--greyec);*/
         /*border-radius: 8px;*/
         /*box-shadow: rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem 0;*/
-        border: 1px solid rgb(236, 238, 241);
+        border: 1px solid var(--greyec);
         border-radius: 8px;
         cursor: pointer;
 
