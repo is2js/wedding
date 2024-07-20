@@ -57,7 +57,7 @@
 
 /* 즐겨찾기 메뉴 */
 
-.bg-img-favorite-nav {
+.bg-img-favorite-nav-type4 {
     background: no-repeat right 30px center transparent;
     background-size: 50px auto;
 
@@ -67,7 +67,7 @@
     }
 }
 
-.bg-img-favorite-nav-md {
+.bg-img-favorite-nav-type5 {
     background: no-repeat right 15px center transparent;
     background-size: 100px auto;
 
@@ -77,7 +77,7 @@
     }
 }
 
-.bg-img-favorite-nav-lg {
+.bg-img-favorite-nav-type3 {
     background: no-repeat right 0 center transparent;
     background-size: 150px auto;
 
@@ -87,7 +87,7 @@
     }
 }
 
-.bg-img-favorite-nav-y-bottom-100\% {
+.bg-img-favorite-nav-type1 {
     background: no-repeat right 5px bottom transparent;
     background-size: auto 100%;
 
@@ -97,7 +97,7 @@
     }
 }
 
-.bg-img-favorite-nav-y-bottom-100\%-lg {
+.bg-img-favorite-nav-type2 {
     background: no-repeat right -5px bottom -15px transparent;
     background-size: auto 120%;
 

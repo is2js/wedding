@@ -288,7 +288,7 @@
      - **부모크기를 사용안하니 w/h는 지정안해도 되고, style에서 bgimageurl만 지정해준다.**
 
    ```css
-   .bg-img-favorite-nav {
+   .bg-img-favorite-nav-type4 {
        background: no-repeat right 20px center transparent;
        background-size: 40px auto;
    }
@@ -296,7 +296,7 @@
 
    ```html
    <li class="favorite-nav-icon1">
-       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
+       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"
           style="background-image: url('./images/png/favorite_nav/menu09_herb.png');"
           >
            <span class="favorite-nav-text-sub">이번 달에만!</span>
@@ -433,7 +433,7 @@
      <ul class="d-grid">
          <!-- type1) li에 동적 배경색 없음-->
          <li>
-             <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%"
+             <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
                 style="background-image: url('./images/png/favorite_nav/부부의료진.png');"
                 >
                  <span class="favorite-nav-text-sub">10년 이상을 같이한</span>
@@ -449,7 +449,7 @@
      ```html
      <!-- type2) li에 동적 배경색 style 지정 -->
      <li class="bgc-dark" style="background-color: #2b5cd2;">
-         <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-md"
+         <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
             style="background-image: url('./images/png/favorite_nav/초음파.png');"
             >
              <span class="favorite-nav-text-sub">운동하다 다쳤어요</span>
@@ -501,17 +501,17 @@
 ### a태그 배경이미지마다 사이즈가 다를 수 있으니, -md, -lg를 구현해놓고 맞춰본다.
 
 ```css
-.bg-img-favorite-nav {
+.bg-img-favorite-nav-type4 {
     background: no-repeat right 30px center transparent;
     background-size: 50px auto;
 }
 
-.bg-img-favorite-nav-md {
+.bg-img-favorite-nav-type5 {
     background: no-repeat right 15px center transparent;
     background-size: 100px auto;
 }
 
-.bg-img-favorite-nav-lg {
+.bg-img-favorite-nav-type3 {
     background: no-repeat right 0 center transparent;
     background-size: 150px auto;
 }
@@ -562,7 +562,7 @@ bg-img-favorite-nav-y-bottom-100\% {
      
      <!-- type1) li에 동적 배경색 없음-->
      <li>
-         <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%"
+         <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
             style="background-image: url('./images/png/favorite_nav/부부의료진.png');"
             >
              <span class="favorite-nav-text-sub">10년 이상을 같이한</span>
@@ -588,7 +588,7 @@ bg-img-favorite-nav-y-bottom-100\% {
 
    ```html
    <li>
-       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%"
+       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
           style="background-image: url('./images/png/favorite_nav/부부의료진.png');"
           >
            <span class="favorite-nav-text-sub d-none d-md-block">10년 이상을 같이한</span>
@@ -733,7 +733,7 @@ bg-img-favorite-nav-y-bottom-100\% {
 
    ```html
    <li class="bgc-dark" style="background-color: #2b5cd2;">
-       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-md"
+       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
           style="background-image: url('./images/png/favorite_nav/초음파.png');"
           >
    ```
@@ -789,7 +789,7 @@ bg-img-favorite-nav-y-bottom-100\% {
    <!-- type2) li에 동적 배경색ㅇ을 -menu + menu-{색}으로 지정하면, 
    내부에서 1) 밝은글씨 2) 웹 li배경 -> 모바일 a에 배경으로 작동 -->
    <li class="favorite-nav-color-menu menu-blue">
-       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-md"
+       <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
           style="background-image: url('./images/png/favorite_nav/초음파.png');"
           >
            <span class="favorite-nav-text-sub d-none d-md-block">운동하다 다쳤어요</span>
@@ -884,7 +884,7 @@ bg-img-favorite-nav-y-bottom-100\% {
         }
     }
     
-    .bg-img-favorite-nav-lg {
+    .bg-img-favorite-nav-type3 {
         background: no-repeat right 0 center transparent;
         background-size: 150px auto;
     

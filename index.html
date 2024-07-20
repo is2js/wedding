@@ -21,7 +21,8 @@
 <header x-data="header" class="header d-flex justify-content-between justify-content-lg-start align-items-center">
     <h1 class="logo" x-ref="logo">
         <a href="" tabindex="1">
-            <img src="images/logo.svg" alt="타이어픽">
+            <!--<img src="images/logo.svg" alt="결혼">-->
+            <img src="images/logo.png" alt="결혼">
         </a>
     </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
@@ -29,10 +30,10 @@
         <h2 class="sr-only">메뉴</h2>
         <nav class="gnb" x-ref="gnb">
             <ul class="d-flex">
-                <li><a href="">병원소개</a></li>
-                <li><a href="">질환별</a></li>
-                <li><a href="">치료별</a></li>
-                <li><a href="" class="new bg-img">고객센터</a></li>
+                <li><a href="">신랑/신부</a></li>
+                <li><a href="">가족소개</a></li>
+                <li><a href="">예식정보</a></li>
+                <li><a href="" class="new bg-img">자주묻는질문</a></li>
             </ul>
         </nav>
         <!-- 검색을 form에 씌워서 section사이로 이동-->
@@ -51,18 +52,24 @@
                 <!-- before(content="")가 inline(flex-item사이에서 표시안되고 공백추가) -> block으로 만들어 공백제거 및 자리 차지 하기 위해 부모li에 flex-->
 
                 <!-- type1) md에서만 a>텍스트 flex(for before to block )-->
-                <li class="d-none d-md-flex align-items-center"><a href="">비급여안내</a></li>
+                <!--                <li class="d-none d-md-flex align-items-center"><a href="" class="cursor-pointer">비급여안내</a></li>-->
+
                 <!-- type2) 모바일에서 icon(배경+높이), md에서는 a>span>텍스트 -->
                 <!--        모바일 아이콘화 spot-menu-xxx(bgurl) + .bg-img + .bg-md-img-none-->
                 <!--        + 모바일에선 글자감추기 -->
                 <li class="d-flex align-items-center">
-                    <a href="" class="bg-img bg-md-img-none"
-                       style="background-image: url('/images/svg/icons/phone_solid.svg');"
+                    <a class="bg-img bg-md-img-none cursor-pointer"
+                       @click="$store.modal.open()"
+                       style="background-image: url('/images/svg/icons/register-person-plus.svg');"
                     >
-                        <span class="d-none d-md-inline">문의하기</span>
+                        <!--style="background-image: url('/images/svg/icons/phone_solid.svg');"-->
+                        <!--<span class="d-none d-md-inline">문의하기</span>-->
+                        <span class="d-none d-md-inline">참석여부 알려주기</span>
                     </a>
                 </li>
-                <li class="d-none d-md-flex align-items-center"><a href="">마이페이지</a></li>
+
+                <!--                <li class="d-none d-md-flex align-items-center"><a href="" class="cursor-pointer">마이페이지</a></li>-->
+
                 <!-- type3) 모바일에서 icon(배경+높이) + dmd-none + aria-hidden="true" md부턴 아예 안보이는 button>span>텍스트 -->
                 <li class="d-flex d-md-none align-items-center"
                     aria-hidden="true"
@@ -74,8 +81,9 @@
                         <span class="d-none d-md-inline">전체메뉴</span>
                     </button>
                 </li>
+
                 <!-- type1) -->
-                <li class="d-none d-md-flex align-items-center"><a href="">로그인</a></li>
+                <!--                <li class="d-none d-md-flex align-items-center"><a href="">로그인</a></li>-->
             </ul>
         </nav>
     </div>
@@ -235,9 +243,9 @@
            @click="$store.modal.open()"
         >
             <div class="register-text d-flex flex-column flex-md-row align-items-md-center">
-                <span class="register-text-title">참석여부 등록하기</span>
+                <span class="register-text-title">참석여부 알려주기</span>
                 <span class="register-text-subtitle">
-                    참석여부/동행인원을 알려주세요 <strong class="d-none d-md-inline">예식준비에 큰힘이 됩니다!</strong>
+                    참석여부 / 동행인원을 알려주세요 <strong class="d-none d-md-inline">예식준비에 큰힘이 됩니다!</strong>
                 </span>
             </div>
             <div class="register-icon bg-img"></div>
@@ -256,82 +264,132 @@
 
             <!-- type1) li에 동적 배경색 없음-->
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%"
-                   style="background-image: url('./images/png/favorite_nav/부부의료진.png');"
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
+                   style="background-image: url('./images/png/favorite_nav/type1_신랑신부.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">10년 이상을 같이한</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">부부 의료진</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">10년을 같이한</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">신랑신부</b>
                 </a>
-                <div class="d-md-none">부부 의료진</div>
+                <div class="d-md-none">신랑/신부</div>
             </li>
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-y-bottom-100%-lg"
-                   style="background-image: url('./images/png/favorite_nav/menu_diet.png');"
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type2"
+                   style="background-image: url('./images/png/favorite_nav/type2_가족.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">대표원장의 변화로 보는</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">한약 다이어트</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">새롭게 하나 된</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">가족소개</b>
                 </a>
-                <div class="d-md-none">원장다이어트</div>
+                <div class="d-md-none">가족소개</div>
             </li>
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-lg"
-                   style="background-image: url('./images/png/favorite_nav/menu_herb.png');"
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type3"
+                   style="background-image: url('images/png/favorite_nav/type3_신랑신부_하트.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">우리 가족이 먹을</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">보약/소아/수험생</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">하객들을 위한</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">예식 정보</b>
                 </a>
-                <div class="d-md-none">한약/보약</div>
+                <div class="d-md-none">예식정보</div>
             </li>
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
-                   style="background-image: url('./images/svg/favorite_nav/bogun.svg');"
+                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"
+                   style="background-image: url('images/png/favorite_nav/type4_faq.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">보험으로 부담없는</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">첩약건강보험</b>
+                    <!--style="background-image: url('images/svg/favorite_nav/type4_협회.svg');"-->
+                    <span class="favorite-nav-text-sub d-none d-md-block">궁금한 부분 해결!</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">자주묻는질문</b>
                 </a>
-                <div class="d-md-none">건강보험한약</div>
+                <div class="d-md-none">자주묻는질문</div>
             </li>
+
             <!-- type2) li에 동적 배경색 style 지정 + .bgc-dark시 text 하얀 테마로 -->
             <!--            <li class="bgc-dark" style="background-color: #2b5cd2;">-->
             <!-- type2) li에 동적 배경색ㅇ을 -menu + menu-{색}으로 지정하면,
                         내부에서 1) 밝은글씨 2) 웹 li배경 -> 모바일 a에 배경으로 작동 -->
-            <li class="favorite-nav-color-menu menu-blue">
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-md"
-                   style="background-image: url('./images/png/favorite_nav/초음파.png');"
+            <!--            <li class="favorite-nav-color-menu menu-blue">-->
+            <!--                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"-->
+            <!--                   style="background-image: url('images/png/favorite_nav/type5_초음파.png');"-->
+            <!--                >-->
+            <!--                    <span class="favorite-nav-text-sub d-none d-md-block">운동하다 다쳤어요</span>-->
+            <!--                    <b class="favorite-nav-text-main d-none d-md-block">스포츠손상</b>-->
+            <!--                </a>-->
+            <!--                <div class="d-md-none">스포츠손상</div>-->
+            <!--            </li>-->
+
+            <li class="favorite-nav menu-kakaomap">
+                <a class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
+                   style="background-image: url('images/png/favorite_nav/type5_kakaomap.png');"
+                   href="https://kko.to/-66lel-mSC"
+                   target="_blank" rel="noopener noreferrer"
+
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">운동하다 다쳤어요</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">스포츠손상</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">길찾기 네비1</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">카카오맵</b>
                 </a>
-                <div class="d-md-none">스포츠손상</div>
+                <div class="d-md-none">카카오맵</div>
             </li>
-            <li class="favorite-nav-color-menu menu-red">
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
-                   style="background-image: url('./images/png/favorite_nav/디스크클리닉.png');"
+            <!--            <li class="favorite-nav-color-menu menu-red">-->
+            <!--                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"-->
+            <!--                   style="background-image: url('images/png/favorite_nav/type4_디스크클리닉.png');"-->
+            <!--                >-->
+            <!--                    <span class="favorite-nav-text-sub d-none d-md-block">허리/목이 뜨끔!...</span>-->
+            <!--                    <b class="favorite-nav-text-main d-none d-md-block">디스크클리닉</b>-->
+            <!--                </a>-->
+            <!--                <div class="d-md-none">목허리디스크</div>-->
+            <!--            </li>-->
+            <li class="favorite-nav">
+                <a class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
+                   style="background-image: url('images/png/favorite_nav/type5_tmap.png');"
+                   href="https://tmap.life/208c3519"
+                   target="_blank" rel="noopener noreferrer"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">허리/목이 뜨끔!...</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">디스크클리닉</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">길찾기 네비2</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">티맵</b>
                 </a>
-                <div class="d-md-none">목허리디스크</div>
+                <div class="d-md-none">티맵</div>
             </li>
+            <li class="favorite-nav">
+                <a class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
+                   style="background-image: url('images/png/favorite_nav/type5_navermap.png');"
+                   href="https://naver.me/5LosMQqZ"
+                   target="_blank" rel="noopener noreferrer"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">길찾기 네비3</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">네이버맵</b>
+                </a>
+                <div class="d-md-none">네이버맵</div>
+            </li>
+            <li class="favorite-nav">
+                <a class="d-flex flex-column justify-content-center bg-img-favorite-nav-type5"
+                   style="background-image: url('images/png/favorite_nav/type5_googlemap.png');"
+                   href="https://maps.app.goo.gl/AvVxxsLWvbaVVZ8MA"
+                   target="_blank" rel="noopener noreferrer"
+                >
+                    <span class="favorite-nav-text-sub d-none d-md-block">길찾기 네비4</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">구글맵</b>
+                </a>
+                <div class="d-md-none">구글맵</div>
+            </li>
+
+
             <!--            <li class="favorite-nav-color-menu menu-purple">-->
-            <li class="favorite-nav-color-menu menu-orange">
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
-                   style="background-image: url('./images/png/favorite_nav/관절클리닉.png');"
-                >
-                    <span class="favorite-nav-text-sub d-none d-md-block">어깨/무릎/턱이...</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">관절 클리닉</b>
-                </a>
-                <div class="d-md-none">어깨무릎관절</div>
-            </li>
-            <li class="favorite-nav-color-menu menu-green">
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav"
-                   style="background-image: url('./images/png/favorite_nav/교통사고클리닉.png');"
-                >
-                    <span class="favorite-nav-text-sub d-none d-md-block">뒤에서 차가 꽈앙!</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">교통사고</b>
-                </a>
-                <div class="d-md-none">교통사고</div>
-            </li>
+            <!--            <li class="favorite-nav-color-menu menu-orange">-->
+            <!--                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"-->
+            <!--                   style="background-image: url('images/png/favorite_nav/type4_관절클리닉.png');"-->
+            <!--                >-->
+            <!--                    <span class="favorite-nav-text-sub d-none d-md-block">어깨/무릎/턱이...</span>-->
+            <!--                    <b class="favorite-nav-text-main d-none d-md-block">관절 클리닉</b>-->
+            <!--                </a>-->
+            <!--                <div class="d-md-none">어깨무릎관절</div>-->
+            <!--            </li>-->
+            <!--            <li class="favorite-nav-color-menu menu-green">-->
+            <!--                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"-->
+            <!--                   style="background-image: url('images/png/favorite_nav/type4_교통사고클리닉.png');"-->
+            <!--                >-->
+            <!--                    <span class="favorite-nav-text-sub d-none d-md-block">뒤에서 차가 꽈앙!</span>-->
+            <!--                    <b class="favorite-nav-text-main d-none d-md-block">교통사고</b>-->
+            <!--                </a>-->
+            <!--                <div class="d-md-none">교통사고</div>-->
+            <!--            </li>-->
         </ul>
     </section>
 

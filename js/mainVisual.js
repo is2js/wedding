@@ -8,47 +8,57 @@ let titles = [
 /*"자동세차 100원",*/
 const data = [
     {
-        title: "1부 예식을 소개할게요",
-        alt: "1부 예식 그림",
+        title: "1부 예식",
+        alt: "1부 예식",
         color: "#d3e3df",
-        image: "./images/webp/banner/slide_main01.webp",
-        mobileImage: "./images/webp/banner/slide_main01_m.webp",
+        image: "./images/webp/banner/001.png",
+        // mobileImage: "./images/webp/banner/slide_main01_m.webp",
+        mobileImage: "./images/webp/banner/mobile_001.png",
+    },
+    {
+        title: "촬영 및 식사",
+        alt: "촬영 및 식사",
+        color: "#FBD9D9",
+        image: "./images/webp/banner/002.png",
+        mobileImage: "./images/webp/banner/mobile_002.png",
     },
     {
         title: "2부 예식",
-        alt: "2부 예식 그림",
-        color: "#ecf2fb",
-        image: "./images/webp/banner/slide_main02.webp",
-        mobileImage: "./images/webp/banner/slide_main02_m.webp",
-    },
-    {
-        title: "3부 예식",
-        alt: "3부 예식 그림",
-        color: "#2b5cd2",
-        image: "./images/webp/banner/slide_main03.webp",
-        mobileImage: "./images/webp/banner/slide_main03_m.webp",
-    },
-    {
-        title: "4부 예식",
-        alt: "4부 예식 그림",
+        alt: "2부 예식",
         color: "#6f49fa",
-        image: "./images/webp/banner/slide_main04.webp",
-        mobileImage: "./images/webp/banner/slide_main04_m.webp",
+        image: "./images/webp/banner/003.png",
+        // image: "./images/webp/banner/slide_main04.webp",
+        mobileImage: "./images/webp/banner/mobile_003.png",
     },
-    {
-        title: "5부 예식",
-        alt: "5부 예식 그림",
-        color: "#21273c",
-        image: "./images/webp/banner/slide_main05.webp",
-        mobileImage: "./images/webp/banner/slide_main05_m.webp",
-    },
-    {
-        title: "6부 예식",
-        alt: "6부 예식 그림",
-        color: "#070707",
-        image: "./images/webp/banner/slide_main06.webp",
-        mobileImage: "./images/webp/banner/slide_main06_m.webp",
-    },
+    // {
+    //     title: "2부 예식",
+    //     alt: "2부 예식 그림",
+    //     color: "#ecf2fb",
+    //     // image: "./images/webp/banner/slide_main02.webp",
+    //     image: "./images/webp/banner/slide_main02.png",
+    //     mobileImage: "./images/webp/banner/slide_main02_m.webp",
+    // },
+    // {
+    //     title: "3부 예식",
+    //     alt: "3부 예식 그림",
+    //     color: "#2b5cd2",
+    //     image: "./images/webp/banner/slide_main03.webp",
+    //     mobileImage: "./images/webp/banner/slide_main03_m.webp",
+    // },
+    // {
+    //     title: "5부 예식",
+    //     alt: "5부 예식 그림",
+    //     color: "#21273c",
+    //     image: "./images/webp/banner/slide_main05.webp",
+    //     mobileImage: "./images/webp/banner/slide_main05_m.webp",
+    // },
+    // {
+    //     title: "6부 예식",
+    //     alt: "6부 예식 그림",
+    //     color: "#070707",
+    //     image: "./images/webp/banner/slide_main06.webp",
+    //     mobileImage: "./images/webp/banner/slide_main06_m.webp",
+    // },
 ];
 
 const createSlides = (data) => {
@@ -87,7 +97,6 @@ const initVisualSwiper = (data) => {
     const paginationType = screenWidth <= mobileMaxWidth ? 'fraction' : 'bullets';
 
 
-
     visualSwiper = new Swiper('.swiper.visual', {
         pagination: {
             /*el: ".swiper-pagination",*/
@@ -102,12 +111,18 @@ const initVisualSwiper = (data) => {
         },
         grabCursor: true,
     });
+
+
+    // 리사이즈 될 때마다 재실행
+    window.addEventListener("resize", () => {
+        initVisualSwiper(data);
+    }, {once: true});
 };
 
 // 처음 실행
 createSlides(data);
 initVisualSwiper(data);
 // 리사이즈 될 때마다 재실행
-window.addEventListener("resize", () => {
-    initVisualSwiper(data);
-});
+// window.addEventListener("resize", () => {
+//     initVisualSwiper(data);
+// });

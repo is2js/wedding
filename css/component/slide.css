@@ -57,12 +57,12 @@
             backdrop-filter: blur(0.2rem);
             white-space: nowrap;
 
-            & .swiper-pagination-total {
+            /*& .swiper-pagination-total {
                 &::after {
                     content: "모두보기";
                     padding-left: 5px;
                 }
-            }
+            }*/
         }
 
 

@@ -44,6 +44,8 @@
 
                 @media (max-width: 767px) {
                     font-size: 13px;
+                    /* 모바일에선 subtitle이 사라지므로 title을 메인색으로 */
+                    color: var(--purple6f);
                 }
             }
 
@@ -154,8 +156,11 @@
                 & a .favorite-nav-text-main {
                     color: var(--greyf6);
                 }
+            }
 
-                /* 2. 개별 배경색은 동시 클래스 추가
+            &.favorite-nav,
+            &.favorite-nav-color-menu {
+                 /* 2. 개별 배경색은 동시 클래스 추가
                     1) li의 배경색
                     2) 모바일에선 li 투명색 + 자식a 해당 배경색
                 */
@@ -206,6 +211,15 @@
                         background-color: transparent;
                         & a {
                             background-color: var(--orangef8);
+                        }
+                    }
+                }
+                &.menu-kakaomap {
+                    background-color: var(--yellokakakomap);
+                    @media (max-width: 767px) {
+                        background-color: transparent;
+                        & a {
+                            background-color: var(--yellokakakomap);
                         }
                     }
                 }
