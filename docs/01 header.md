@@ -1089,7 +1089,7 @@
      ```html
      <li class="d-flex align-items-center">
          <a href="" class="bg-img bg-md-img-none"
-            style="background-image: url('/images/svg/icons/phone_solid.svg');"
+            style="background-image: url('./images/svg/icons/phone_solid.svg');"
             >
              <span class="d-none d-md-inline">고객센터</span>
          </a>
@@ -1099,7 +1099,7 @@
          aria-hidden="true"
          >
          <button href="" class="bg-img bg-md-img-none"
-                 style="background-image: url('/images/svg/icons/total_menu.svg');"
+                 style="background-image: url('./images/svg/icons/total_menu.svg');"
                  >
              <span class="d-none d-md-inline">전체메뉴</span>
          </button>
@@ -1792,7 +1792,7 @@
 
    ```html
    <button href="" class="bg-img bg-md-img-none"
-           style="background-image: url('/images/svg/icons/total_menu.svg');"
+           style="background-image: url('./images/svg/icons/total_menu.svg');"
            @click="$store.megamenu.toggle()"
            >
        <span class="d-none d-md-inline">전체메뉴</span>
