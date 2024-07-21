@@ -160,10 +160,10 @@
 
             &.favorite-nav,
             &.favorite-nav-color-menu {
-                 /* 2. 개별 배경색은 동시 클래스 추가
-                    1) li의 배경색
-                    2) 모바일에선 li 투명색 + 자식a 해당 배경색
-                */
+                /* 2. 개별 배경색은 동시 클래스 추가
+                   1) li의 배경색
+                   2) 모바일에선 li 투명색 + 자식a 해당 배경색
+               */
 
                 &.menu-blue {
                     background-color: var(--blueeb);
@@ -214,6 +214,7 @@
                         }
                     }
                 }
+
                 &.menu-kakaomap {
                     background-color: var(--yellokakakomap);
                     @media (max-width: 767px) {
@@ -280,6 +281,284 @@
     }
 }
 
+
+/* profile swiper */
+.profile {
+    /* profile swiper */
+
+    & .swiper[x-ref="profile_swiper"] {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        & .swiper-wrapper {
+            & .swiper-slide {
+                height: auto !important;
+
+                & img {
+                    /*width: 8rem;*/
+                    /*@media (min-width: 768px) {*/
+                    /*    width: 11.5rem;*/
+                    /*}*/
+                    /*height: auto !important;*/
+                    height: 8.5rem;
+                    @media (min-width: 768px) {
+                        height: 15rem;
+                    }
+                    width: auto !important;
+
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                & h3 {
+                    font-size: 15px;
+                    font-family: 'Noto Serif KR', serif;
+                    color: var(--gold);
+                    font-weight: 600;
+                    text-transform: uppercase;
+
+                    display: inline-block;
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 40%;
+                        right: -50%;
+                        height: 1.5px;
+                        background: var(--gold);
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    /* test */
+                    /* 우측 thumbnail 사진 생기고부터..*/
+                    /*@media (max-width: 576px) {
+                        &::after {
+                            width: 20%;
+                            right: -25%;
+                        }
+                    }*/
+                }
+
+                & h1 {
+                    font-family: 'Noto Serif KR', serif;
+                    font-size: 24px;
+                    @media (min-width: 768px) {
+                        font-size: 27px;
+                    }
+
+                    color: white;
+                    text-shadow: var(--profile-shadow);
+                    text-transform: uppercase;
+                    letter-spacing: 0.4rem;
+                }
+
+                & span {
+                    /*font-family: 'Noto Serif KR', serif;*/
+                    color: white;
+                    text-shadow: var(--profile-shadow);
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    @media (min-width: 768px) {
+                        font-size: 17px;
+                    }
+                }
+
+                & p {
+                    font-family: 'Noto Serif KR', serif;
+                    color: var(--grey-zinc);
+                    text-shadow: var(--profile-shadow);
+                    font-weight: 350;
+
+                    font-size: 13px;
+                    @media (min-width: 768px) {
+                        font-size: 17px;
+                    }
+
+                    line-height: 1.7;
+                    /* 버티컬 swiper에서 높이가 달라질 수 있는 요소 -> 높이 3lh 넘으면 ellipsis */
+                    -webkit-line-clamp: 3; /* 3 줄을 넘어가면 자르기 */
+                    /* 세로정렬바닥에서 시작 -> 유동적인 높이로 처리하기 위해
+                        height -> max-height*/
+                    max-height: 5.5rem; /* (최대)3 줄 높이 (lh * 3 보다 약간크게 ) */
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-box-orient: vertical;
+                }
+
+                & a {
+                    /* 20x20 + 5px 띄우기 */
+                    padding-left: 25px;
+
+                    line-height: 20px;
+                    font-size: 15px;
+                    color: var(--gold);
+                    font-weight: 350;
+
+                    @media (max-width: 767px) {
+                        line-height: 20px;
+                        font-size: 13px;
+                    }
+
+                    &.account {
+                        background-image: url("../../images/svg/icons/profile-account-gold.svg");
+                        font-weight: 400;
+                    }
+
+                    &.mobile {
+                        background-image: url("../../images/svg/icons/profile-mobile-gold.svg");
+                    }
+                }
+            }
+        }
+    }
+
+    & button.detail-btn {
+        display: inline-block;
+        border: 1px solid #CEA869;
+        /*border-radius: 10%;*/
+        /* 작은화면 가운데정렬로 벌어질 때 크기 fix*/
+        max-width: 250px;
+        /* 큰화면 좌측정렬로 안벌어질 때 padding으로 크기 fix*/
+        padding: 6px 28px !important;
+        padding-right: 56px !important; /*이건 after > 버튼을 염두에 둔 것*/
+
+        font-size: 13px;
+        @media (min-width: 768px) {
+            font-size: 17px;
+        }
+
+        color: var(--gold);
+        text-shadow: var(--profile-shadow);
+        font-family: 'Noto Serif KR', sans-serif;
+        font-weight: 550;
+
+        position: relative;
+
+        &::after {
+            content: ">";
+            display: block;
+            position: absolute;
+            font-size: inherit;
+            font-weight: 900;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 24px; /* 버튼 pe-24px 더 준만큼 가기*/
+        }
+
+        &:hover {
+            color: white;
+            background-color: var(--gold);
+        }
+    }
+
+    /* image swiper */
+
+    & .swiper[x-ref="image_swiper"] {
+        width: 100% !important;
+        /* active img보다 더 크게 */
+        /*height: 24rem !important;*/
+        /*@media (max-width: 767px) {*/
+        /*    height: 17rem !important;*/
+        /*}*/
+        height: 25rem !important;
+        @media (max-width: 767px) {
+            height: 23rem !important;
+        }
+
+        & .swiper-wrapper {
+            top: 0px !important;
+            bottom: 0px !important;
+
+            & .swiper-slide {
+                height: 100% !important;
+
+                position: relative;
+
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+
+                /*justify-content: end;*/
+                justify-content: center;
+
+                /* active slide는 세로방향 요소 수직정렬 세로위쪽으로 높이기 */
+
+                &.swiper-slide-active {
+                    justify-content: flex-start !important;
+                }
+
+                & h1 {
+                    color: white;
+                    text-shadow: var(--profile-shadow);
+                    font-family: "Noto Serif KR", serif;
+                    padding-left: 0.8rem;
+                    @media (max-width: 767px) {
+                        padding-left: 0.2rem;
+                    }
+
+                    font-size: 1.3rem;
+                    @media (max-width: 767px) {
+                        font-size: 1.1rem;
+                    }
+                    line-height: 1.5;
+
+                    .swiper-slide-active & {
+                        font-size: 1.7rem;
+                        @media (max-width: 767px) {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+
+                & img {
+                    position: relative;
+                    /* w100% .col .swiper .swiper-wrapper .slide 내부
+                       여러장 보일거 고려해서 px로 지정 */
+
+                    /*width: 80% !important;*/
+                    width: auto !important;
+                    min-width: 240px !important;
+
+                    /* 일반 slide 높이 */
+                    opacity: 0.8;
+                    height: 20rem !important;
+                    @media (max-width: 767px) {
+                        height: 14rem !important;
+                    }
+
+                    /* active slide 높이 */
+
+                    .swiper-slide-active & {
+                        opacity: 1;
+                        height: 24rem !important;
+                        @media (max-width: 767px) {
+                            height: 17rem !important;
+                        }
+                    }
+
+                    object-fit: cover;
+                    object-position: center;
+
+                    transition-property: all;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 500ms;
+
+                }
+            }
+        }
+    }
+
+    & .buttons button {
+
+        @media (max-width: 767px) {
+            transform: scale(0.85)!important;
+        }
+    }
+}
 
 /* 광고 영역 */
 .advertisement {

@@ -32,9 +32,16 @@
     /* 즐겨찾는 메뉴 */
     --blueeb: #2b5cd2;
     --rede4: #E4032F;
-    --purple6f:#6f49fa;
+    --purple6f: #6f49fa;
     --green05: #053863;
     --orangef8: #F8633F;
+
+    /* profile */
+    --gold: #deb97b;
+    --grey-zinc: #F4F4F5FF;
+
+    --profile-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+
 
     /* 상품 텍스트 */
     --skyblue: #28aeed;

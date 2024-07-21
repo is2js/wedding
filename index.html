@@ -9,6 +9,7 @@
     <!-- font -->
     <link rel="stylesheet" as="style" crossorigin
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
@@ -395,510 +396,632 @@
 
 
     <!-- more product section -->
-    <section class="herb-medicine layout-center mt65 section-border">
-        <div class="d-flex align-items-center justify-content-between">
-            <h2 class="section-title">initProduct('more', )</h2>
-            <a href="" class="button-more bg-img bg-img-x-right d-none d-md-inline">더보기</a>
-        </div>
-        <!-- more type -->
-        <div class="swiper product-list list-more mt35">
-            <div class="swiper-wrapper">
-                <!--                &lt;!&ndash; no label &ndash;&gt;-->
-                <!--                <div class="swiper-slide">-->
-                <!--                    <a href="" class="product d-block">-->
-                <!--                        <figure>-->
-                <!--                            <div class="product-thumbnail position-relative">-->
-                <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
-                <!--                                <img src="images/png/product/category/hankook_logo.png"-->
-                <!--                                     class="product-thumbnail-category position-absolute"-->
-                <!--                                     alt="카테고리"-->
-                <!--                                >-->
-                <!--                            </div>-->
-                <!--                            <figcaption>-->
-                <!--                                <div class="product-category mt16">-->
-                <!--                                    <span class="sr-only">카테고리</span>-->
-                <!--                                    다이어트-->
-                <!--                                </div>-->
-                <!--                                <div class="product-title mt16">-->
-                <!--                                    <span class="sr-only">제품명</span>-->
-                <!--                                    비움탕-->
-                <!--                                </div>-->
-                <!--                                <div class="product-description mt12">-->
-                <!--                                    <span class="sr-only">설명</span>-->
-                <!--                                    체질을 고려한 마황제-->
-                <!--                                </div>-->
-                <!--                                <div class="product-price d-flex align-items-center mt12">-->
-                <!--                                    <div class="product-discount">-->
-                <!--                                        <span class="sr-only">할인율</span>-->
-                <!--                                        20%-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-value">-->
-                <!--                                        <span class="sr-only">판매가</span>-->
-                <!--                                        198,000원-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
-                <!--                                    <div class="product-rating">-->
-                <!--                                        <span class="sr-only">별점</span>-->
-                <!--                                        4.6-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-review-count">-->
-                <!--                                        <span class="sr-only">리뷰 갯수</span>-->
-                <!--                                        (1,450)-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
-                <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
-                <!--                                    <span class="sr-only">해시태그</span>-->
-                <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                </div>-->
-                <!--                            </figcaption>-->
-                <!--                        </figure>-->
-                <!--                    </a>-->
-                <!--                </div>-->
-                <!--                &lt;!&ndash; new label &ndash;&gt;-->
-                <!--                <div class="swiper-slide">-->
-                <!--                    <a href="" class="product d-block">-->
-                <!--                        <figure>-->
-                <!--                            <div class="product-thumbnail position-relative">-->
-                <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
-                <!--                                <img src="images/png/product/category/hankook_logo.png"-->
-                <!--                                     class="product-thumbnail-category position-absolute"-->
-                <!--                                     alt="카테고리"-->
-                <!--                                >-->
-                <!--                                &lt;!&ndash; new label &ndash;&gt;-->
-                <!--                                <span class="product-thumbnail-label label-new position-absolute top-0 start-0 ">NEW</span>-->
-                <!--                            </div>-->
-                <!--                            <figcaption>-->
-                <!--                                <div class="product-category mt16">-->
-                <!--                                    <span class="sr-only">카테고리</span>-->
-                <!--                                    신부 아버지입니다@@@@@@@@@@@@-->
-                <!--                                </div>-->
-                <!--                                <div class="product-title mt16">-->
-                <!--                                    <span class="sr-only">제품명</span>-->
-                <!--                                    김용범@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-                <!--                                </div>-->
-                <!--                                <div class="product-description mt12">-->
-                <!--                                    <span class="sr-only">설명</span>-->
-                <!--                                    신부의 든든한 버팀목-->
-                <!--                                </div>-->
-                <!--                                <div class="product-price d-flex align-items-center mt12">-->
-                <!--                                    <div class="product-discount">-->
-                <!--                                        <span class="sr-only">할인율</span>-->
-                <!--                                        신부父-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-value">-->
-                <!--                                        <span class="sr-only">판매가</span>-->
-                <!--                                        김용범-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
-                <!--                                    <div class="product-rating">-->
-                <!--                                        <span class="sr-only">별점</span>-->
-                <!--                                        4.6-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-review-count">-->
-                <!--                                        <span class="sr-only">리뷰 갯수</span>-->
-                <!--                                        (1,450)-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
-                <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
-                <!--                                    <span class="sr-only">해시태그</span>-->
-                <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                </div>-->
-                <!--                            </figcaption>-->
-                <!--                        </figure>-->
-                <!--                    </a>-->
-                <!--                </div>-->
-                <!--                &lt;!&ndash; hot label &ndash;&gt;-->
-                <!--                <div class="swiper-slide">-->
-                <!--                    <a href="" class="product d-block">-->
-                <!--                        <figure>-->
-                <!--                            <div class="product-thumbnail position-relative">-->
-                <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
-                <!--                                <img src="images/png/product/category/hankook_logo.png"-->
-                <!--                                     class="product-thumbnail-category position-absolute"-->
-                <!--                                     alt="카테고리"-->
-                <!--                                >-->
-                <!--                                &lt;!&ndash; hot label &ndash;&gt;-->
-                <!--                                <span class="product-thumbnail-label label-hot position-absolute top-0 start-0 ">HOT</span>-->
-                <!--                            </div>-->
-                <!--                            <figcaption>-->
-                <!--                                <div class="product-category mt16">-->
-                <!--                                    <span class="sr-only">카테고리</span>-->
-                <!--                                    신부 아버지입니다@@@@@@@@@@@@-->
-                <!--                                </div>-->
-                <!--                                <div class="product-title mt16">-->
-                <!--                                    <span class="sr-only">제품명</span>-->
-                <!--                                    김용범@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-                <!--                                </div>-->
-                <!--                                <div class="product-description mt12">-->
-                <!--                                    <span class="sr-only">설명</span>-->
-                <!--                                    신부의 든든한 버팀목-->
-                <!--                                </div>-->
-                <!--                                <div class="product-price d-flex align-items-center mt12">-->
-                <!--                                    <div class="product-discount">-->
-                <!--                                        <span class="sr-only">할인율</span>-->
-                <!--                                        신부父-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-value">-->
-                <!--                                        <span class="sr-only">판매가</span>-->
-                <!--                                        김용범-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
-                <!--                                    <div class="product-rating">-->
-                <!--                                        <span class="sr-only">별점</span>-->
-                <!--                                        4.6-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-review-count">-->
-                <!--                                        <span class="sr-only">리뷰 갯수</span>-->
-                <!--                                        (1,450)-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
-                <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
-                <!--                                    <span class="sr-only">해시태그</span>-->
-                <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                </div>-->
-                <!--                            </figcaption>-->
-                <!--                        </figure>-->
-                <!--                    </a>-->
-                <!--                </div>-->
-                <!--                &lt;!&ndash; grey label &ndash;&gt;-->
-                <!--                <div class="swiper-slide">-->
-                <!--                    <a href="" class="product d-block">-->
-                <!--                        <figure>-->
-                <!--                            <div class="product-thumbnail position-relative">-->
-                <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
-                <!--                                <img src="images/png/product/category/hankook_logo.png"-->
-                <!--                                     class="product-thumbnail-category position-absolute"-->
-                <!--                                     alt="카테고리"-->
-                <!--                                >-->
-                <!--                                &lt;!&ndash; groom label &ndash;&gt;-->
-                <!--                                <span class="product-thumbnail-label label-grey position-absolute top-0 start-0 ">품절</span>-->
-                <!--                            </div>-->
-                <!--                            <figcaption>-->
-                <!--                                <div class="product-category mt16">-->
-                <!--                                    <span class="sr-only">카테고리</span>-->
-                <!--                                    다이어트-->
-                <!--                                </div>-->
-                <!--                                <div class="product-title mt16">-->
-                <!--                                    <span class="sr-only">제품명</span>-->
-                <!--                                    비움탕-->
-                <!--                                </div>-->
-                <!--                                <div class="product-description mt12">-->
-                <!--                                    <span class="sr-only">설명</span>-->
-                <!--                                    체질을 고려한 마황제-->
-                <!--                                </div>-->
-                <!--                                <div class="product-price d-flex align-items-center mt12">-->
-                <!--                                    <div class="product-discount">-->
-                <!--                                        <span class="sr-only">할인율</span>-->
-                <!--                                        20%-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-value">-->
-                <!--                                        <span class="sr-only">판매가</span>-->
-                <!--                                        198,000원-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
-                <!--                                    <div class="product-rating">-->
-                <!--                                        <span class="sr-only">별점</span>-->
-                <!--                                        4.6-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-review-count">-->
-                <!--                                        <span class="sr-only">리뷰 갯수</span>-->
-                <!--                                        (1,450)-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
-                <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
-                <!--                                    <span class="sr-only">해시태그</span>-->
-                <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                </div>-->
-                <!--                            </figcaption>-->
-                <!--                        </figure>-->
-                <!--                    </a>-->
-                <!--                </div>-->
-                <!--                &lt;!&ndash; 품절 .sold-out in imgDiv &ndash;&gt;-->
-                <!--                <div class="swiper-slide">-->
-                <!--                    <a href="" class="product d-block">-->
-                <!--                        <figure>-->
-                <!--                            &lt;!&ndash; .sold-out &ndash;&gt;-->
-                <!--                            <div class="product-thumbnail position-relative sold-out">-->
-                <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
-                <!--                                <img src="images/png/product/category/hankook_logo.png"-->
-                <!--                                     class="product-thumbnail-category position-absolute"-->
-                <!--                                     alt="카테고리"-->
-                <!--                                >-->
-                <!--                            </div>-->
-                <!--                            <figcaption>-->
-                <!--                                <div class="product-category mt16">-->
-                <!--                                    <span class="sr-only">카테고리</span>-->
-                <!--                                    다이어트-->
-                <!--                                </div>-->
-                <!--                                <div class="product-title mt16">-->
-                <!--                                    <span class="sr-only">제품명</span>-->
-                <!--                                    비움탕-->
-                <!--                                </div>-->
-                <!--                                <div class="product-description mt12">-->
-                <!--                                    <span class="sr-only">설명</span>-->
-                <!--                                    체질을 고려한 마황제-->
-                <!--                                </div>-->
-                <!--                                <div class="product-price d-flex align-items-center mt12">-->
-                <!--                                    <div class="product-discount">-->
-                <!--                                        <span class="sr-only">할인율</span>-->
-                <!--                                        20%-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-value">-->
-                <!--                                        <span class="sr-only">판매가</span>-->
-                <!--                                        198,000원-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
-                <!--                                    <div class="product-rating">-->
-                <!--                                        <span class="sr-only">별점</span>-->
-                <!--                                        4.6-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-review-count">-->
-                <!--                                        <span class="sr-only">리뷰 갯수</span>-->
-                <!--                                        (1,450)-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
-                <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
-                <!--                                    <span class="sr-only">해시태그</span>-->
-                <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                </div>-->
-                <!--                            </figcaption>-->
-                <!--                        </figure>-->
-                <!--                    </a>-->
-                <!--                </div>-->
-                <!--                <div class="swiper-slide">-->
-                <!--                    <a href="" class="product d-block">-->
-                <!--                        <figure>-->
-                <!--                            <div class="product-thumbnail position-relative">-->
-                <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
-                <!--                                <img src="images/png/product/category/hankook_logo.png"-->
-                <!--                                     class="product-thumbnail-category position-absolute"-->
-                <!--                                     alt="카테고리"-->
-                <!--                                >-->
-                <!--                            </div>-->
-                <!--                            <figcaption>-->
-                <!--                                <div class="product-category mt16">-->
-                <!--                                    <span class="sr-only">카테고리</span>-->
-                <!--                                    다이어트-->
-                <!--                                </div>-->
-                <!--                                <div class="product-title mt16">-->
-                <!--                                    <span class="sr-only">제품명</span>-->
-                <!--                                    비움탕-->
-                <!--                                </div>-->
-                <!--                                <div class="product-description mt12">-->
-                <!--                                    <span class="sr-only">설명</span>-->
-                <!--                                    체질을 고려한 마황제-->
-                <!--                                </div>-->
-                <!--                                <div class="product-price d-flex align-items-center mt12">-->
-                <!--                                    <div class="product-discount">-->
-                <!--                                        <span class="sr-only">할인율</span>-->
-                <!--                                        20%-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-value">-->
-                <!--                                        <span class="sr-only">판매가</span>-->
-                <!--                                        198,000원-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
-                <!--                                    <div class="product-rating">-->
-                <!--                                        <span class="sr-only">별점</span>-->
-                <!--                                        4.6-->
-                <!--                                    </div>-->
-                <!--                                    <div class="product-review-count">-->
-                <!--                                        <span class="sr-only">리뷰 갯수</span>-->
-                <!--                                        (1,450)-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
-                <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
-                <!--                                    <span class="sr-only">해시태그</span>-->
-                <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>-->
-                <!--                                </div>-->
-                <!--                            </figcaption>-->
-                <!--                        </figure>-->
-                <!--                    </a>-->
-                <!--                </div>-->
+    <!--    <section class="herb-medicine layout-center mt65 section-border">-->
+    <!--        <div class="d-flex align-items-center justify-content-between">-->
+    <!--            <h2 class="section-title">initProduct('more', )</h2>-->
+    <!--            <a href="" class="button-more bg-img bg-img-x-right d-none d-md-inline">더보기</a>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; more type &ndash;&gt;-->
+    <!--        <div class="swiper product-list list-more mt35">-->
+    <!--            <div class="swiper-wrapper">-->
+    <!--                &lt;!&ndash;                &lt;!&ndash; no label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <div class="swiper-slide">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="" class="product d-block">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <div class="product-thumbnail position-relative">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-category mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">카테고리</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    다이어트&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-title mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">제품명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    비움탕&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-description mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">설명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    체질을 고려한 마황제&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-price d-flex align-items-center mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-discount">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">할인율</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        20%&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-value">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">판매가</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        198,000원&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-rating">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">별점</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        4.6&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-review-count">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">리뷰 갯수</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        (1,450)&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-hashtag d-flex flex-wrap mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">해시태그</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                &lt;!&ndash; new label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <div class="swiper-slide">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="" class="product d-block">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <div class="product-thumbnail position-relative">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; new label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <span class="product-thumbnail-label label-new position-absolute top-0 start-0 ">NEW</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-category mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">카테고리</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    신부 아버지입니다@@@@@@@@@@@@&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-title mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">제품명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    김용범@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-description mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">설명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    신부의 든든한 버팀목&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-price d-flex align-items-center mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-discount">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">할인율</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        신부父&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-value">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">판매가</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        김용범&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-rating">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">별점</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        4.6&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-review-count">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">리뷰 갯수</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        (1,450)&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-hashtag d-flex flex-wrap mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">해시태그</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                &lt;!&ndash; hot label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <div class="swiper-slide">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="" class="product d-block">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <div class="product-thumbnail position-relative">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; hot label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <span class="product-thumbnail-label label-hot position-absolute top-0 start-0 ">HOT</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-category mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">카테고리</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    신부 아버지입니다@@@@@@@@@@@@&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-title mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">제품명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    김용범@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-description mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">설명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    신부의 든든한 버팀목&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-price d-flex align-items-center mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-discount">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">할인율</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        신부父&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-value">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">판매가</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        김용범&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-rating">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">별점</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        4.6&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-review-count">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">리뷰 갯수</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        (1,450)&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-hashtag d-flex flex-wrap mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">해시태그</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                &lt;!&ndash; grey label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <div class="swiper-slide">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="" class="product d-block">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <div class="product-thumbnail position-relative">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; groom label &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <span class="product-thumbnail-label label-grey position-absolute top-0 start-0 ">품절</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-category mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">카테고리</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    다이어트&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-title mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">제품명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    비움탕&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-description mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">설명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    체질을 고려한 마황제&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-price d-flex align-items-center mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-discount">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">할인율</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        20%&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-value">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">판매가</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        198,000원&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-rating">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">별점</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        4.6&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-review-count">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">리뷰 갯수</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        (1,450)&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-hashtag d-flex flex-wrap mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">해시태그</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                &lt;!&ndash; 품절 .sold-out in imgDiv &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <div class="swiper-slide">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="" class="product d-block">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            &lt;!&ndash; .sold-out &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <div class="product-thumbnail position-relative sold-out">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-category mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">카테고리</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    다이어트&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-title mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">제품명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    비움탕&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-description mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">설명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    체질을 고려한 마황제&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-price d-flex align-items-center mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-discount">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">할인율</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        20%&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-value">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">판매가</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        198,000원&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-rating">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">별점</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        4.6&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-review-count">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">리뷰 갯수</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        (1,450)&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-hashtag d-flex flex-wrap mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">해시태그</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <div class="swiper-slide">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <a href="" class="product d-block">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <div class="product-thumbnail position-relative">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            <figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-category mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">카테고리</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    다이어트&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-title mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">제품명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    비움탕&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-description mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">설명</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    체질을 고려한 마황제&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-price d-flex align-items-center mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-discount">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">할인율</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        20%&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-value">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">판매가</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        198,000원&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-rating">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">별점</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        4.6&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <div class="product-review-count">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        <span class="sr-only">리뷰 갯수</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                        (1,450)&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                <div class="product-hashtag d-flex flex-wrap mt12">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span class="sr-only">해시태그</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                            </figcaption>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        </figure>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </div>&ndash;&gt;-->
 
 
-            </div>
-        </div>
-        <!-- only more type-->
-        <a href="" class="button-more bg-img bg-img-x-right d-block d-md-none mt30">더보기</a>
-    </section>
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; only more type&ndash;&gt;-->
+    <!--        <a href="" class="button-more bg-img bg-img-x-right d-block d-md-none mt30">더보기</a>-->
+    <!--    </section>-->
 
-    <aside class="advertisement mt60 section-border">
-        <a href="">
-            <picture>
-                <!-- mobile -->
-                <source media="(max-width: 767px)"
-                        srcset="./images/png/advertisement/ad_index_mobile.png"
-                />
-                <!-- web -->
-                <img src="./images/png/advertisement/ad_index_web.png"
-                     alt="카카오페이로 마음 전달 하기"
-                />
-            </picture>
-        </a>
-    </aside>
+    <!--    <aside class="advertisement mt60 section-border">-->
+    <!--        <a href="">-->
+    <!--            <picture>-->
+    <!--                &lt;!&ndash; mobile &ndash;&gt;-->
+    <!--                <source media="(max-width: 767px)"-->
+    <!--                        srcset="./images/png/advertisement/ad_index_mobile.png"-->
+    <!--                />-->
+    <!--                &lt;!&ndash; web &ndash;&gt;-->
+    <!--                <img src="./images/png/advertisement/ad_index_web.png"-->
+    <!--                     alt="카카오페이로 마음 전달 하기"-->
+    <!--                />-->
+    <!--            </picture>-->
+    <!--        </a>-->
+    <!--    </aside>-->
 
     <!-- default product section -->
-    <section class="family layout-center mt65 section-border">
-        <div class="d-flex align-items-center justify-content-between">
-            <h2 class="section-title">initProduct('default', )</h2>
-            <!-- only more type일 때만 -> section 단위에서 결정 -->
-            <!--<a href="" class="button-more bg-img bg-img-x-right d-none d-md-inline">더보기</a>-->
-        </div>
-        <!-- default type -->
-        <div class="swiper product-list list-default tire mt35">
-            <div class="swiper-wrapper">
-                <!-- bride label & event & mobile  -->
-                <!--  <div class="swiper-slide" >
-                      &lt;!&ndash; event가 있다면, a태그에 링크를 대체한다. &ndash;&gt;
-                      <a href="" class="product d-block">
-                          <figure>
-                              <div class="product-thumbnail position-relative">
-                                  &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;
-                                  <img src="images/png/product/thumbnail/bride.png" class="product-thumbnail-image">
-                                  &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;
-                                  &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;
-                                  &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;
-                                  &lt;!&ndash;                                >&ndash;&gt;
-                                  &lt;!&ndash; bride label &ndash;&gt;
-                                  <span class="product-thumbnail-label label-bride position-absolute top-0 start-0 ">신부측 혼주</span>
-                              </div>
-                              <figcaption>
-                                  <div class="product-family-name d-flex align-items-bottom mt16">
-                                      &lt;!&ndash;                                <div class="product-family-name d-flex flex-column justify-content-center  mt16">&ndash;&gt;
-                                      <div class="product-family bride">
-                                          <span class="sr-only">가족관계</span>
-                                          신부
-                                      </div>
-                                      <div class="product-name">
-                                          <span class="sr-only">이름</span>
-                                          김석영
-                                      </div>
-                                  </div>
-                                  <div class="product-account bg-img bg-img-x-left d-flex align-items-center mt16 ellipsis">
-                                      계좌번호 복사
-                                  </div>
-                                  <div class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt12 ellipsis">
-                                      전화 걸기
-                                  </div>
-                              </figcaption>
-                          </figure>
-                      </a>
-                  </div>
-                  <div class="swiper-slide">
-                      &lt;!&ndash; event가 있다면, a태그에 링크를 대체한다. &ndash;&gt;
-                      <a class="product d-block">
-                          <figure>
-                              <div class="product-thumbnail position-relative">
-                                  <img src="images/png/product/thumbnail/groom.png" class="product-thumbnail-image">
+    <!--    <section class="family layout-center mt65 section-border">-->
+    <!--        <div class="d-flex align-items-center justify-content-between">-->
+    <!--            <h2 class="section-title">initProduct('default', )</h2>-->
+    <!--            &lt;!&ndash; only more type일 때만 -> section 단위에서 결정 &ndash;&gt;-->
+    <!--            &lt;!&ndash;<a href="" class="button-more bg-img bg-img-x-right d-none d-md-inline">더보기</a>&ndash;&gt;-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash; default type &ndash;&gt;-->
+    <!--        <div class="swiper product-list list-default tire mt35">-->
+    <!--            <div class="swiper-wrapper">-->
+    <!--                &lt;!&ndash; bride label & event & mobile  &ndash;&gt;-->
+    <!--                &lt;!&ndash;  <div class="swiper-slide" >-->
+    <!--                      &lt;!&ndash; event가 있다면, a태그에 링크를 대체한다. &ndash;&gt;-->
+    <!--                      <a href="" class="product d-block">-->
+    <!--                          <figure>-->
+    <!--                              <div class="product-thumbnail position-relative">-->
+    <!--                                  &lt;!&ndash;                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">&ndash;&gt;-->
+    <!--                                  <img src="images/png/product/thumbnail/bride.png" class="product-thumbnail-image">-->
+    <!--                                  &lt;!&ndash;                                <img src="images/png/product/category/hankook_logo.png"&ndash;&gt;-->
+    <!--                                  &lt;!&ndash;                                     class="product-thumbnail-category position-absolute"&ndash;&gt;-->
+    <!--                                  &lt;!&ndash;                                     alt="카테고리"&ndash;&gt;-->
+    <!--                                  &lt;!&ndash;                                >&ndash;&gt;-->
+    <!--                                  &lt;!&ndash; bride label &ndash;&gt;-->
+    <!--                                  <span class="product-thumbnail-label label-bride position-absolute top-0 start-0 ">신부측 혼주</span>-->
+    <!--                              </div>-->
+    <!--                              <figcaption>-->
+    <!--                                  <div class="product-family-name d-flex align-items-bottom mt16">-->
+    <!--                                      &lt;!&ndash;                                <div class="product-family-name d-flex flex-column justify-content-center  mt16">&ndash;&gt;-->
+    <!--                                      <div class="product-family bride">-->
+    <!--                                          <span class="sr-only">가족관계</span>-->
+    <!--                                          신부-->
+    <!--                                      </div>-->
+    <!--                                      <div class="product-name">-->
+    <!--                                          <span class="sr-only">이름</span>-->
+    <!--                                          김석영-->
+    <!--                                      </div>-->
+    <!--                                  </div>-->
+    <!--                                  <div class="product-account bg-img bg-img-x-left d-flex align-items-center mt16 ellipsis">-->
+    <!--                                      계좌번호 복사-->
+    <!--                                  </div>-->
+    <!--                                  <div class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt12 ellipsis">-->
+    <!--                                      전화 걸기-->
+    <!--                                  </div>-->
+    <!--                              </figcaption>-->
+    <!--                          </figure>-->
+    <!--                      </a>-->
+    <!--                  </div>-->
+    <!--                  <div class="swiper-slide">-->
+    <!--                      &lt;!&ndash; event가 있다면, a태그에 링크를 대체한다. &ndash;&gt;-->
+    <!--                      <a class="product d-block">-->
+    <!--                          <figure>-->
+    <!--                              <div class="product-thumbnail position-relative">-->
+    <!--                                  <img src="images/png/product/thumbnail/groom.png" class="product-thumbnail-image">-->
 
-                                  &lt;!&ndash; groom label &ndash;&gt;
-                                  <span class="product-thumbnail-label label-groom position-absolute top-0 start-0 ">신랑측</span>
-                              </div>
-                              <figcaption>
-                                  <div class="product-family-name d-flex align-items-bottom mt16">
-                                      <div class="product-family bride">
-                                          <span class="sr-only">가족관계</span>
-                                          신부父
-                                      </div>
-                                      <div class="product-name">
-                                          <span class="sr-only">이름</span>
-                                          김용범
-                                      </div>
-                                  </div>
-                                  <div class="product-account bg-img bg-img-x-left d-flex align-items-center mt16 ellipsis"
-                                       onclick="alert('신부측 혼주(부) 김용범님의 신한은행 계좌번호가 복사되었습니다.')"
-                                  >
-                                      [신한] 계좌번호 복사
-                                  </div>
-                                  <div class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt12 ellipsis">
-                                      전화 걸기
-                                  </div>
-                              </figcaption>
-                          </figure>
-                      </a>
-                  </div>-->
+    <!--                                  &lt;!&ndash; groom label &ndash;&gt;-->
+    <!--                                  <span class="product-thumbnail-label label-groom position-absolute top-0 start-0 ">신랑측</span>-->
+    <!--                              </div>-->
+    <!--                              <figcaption>-->
+    <!--                                  <div class="product-family-name d-flex align-items-bottom mt16">-->
+    <!--                                      <div class="product-family bride">-->
+    <!--                                          <span class="sr-only">가족관계</span>-->
+    <!--                                          신부父-->
+    <!--                                      </div>-->
+    <!--                                      <div class="product-name">-->
+    <!--                                          <span class="sr-only">이름</span>-->
+    <!--                                          김용범-->
+    <!--                                      </div>-->
+    <!--                                  </div>-->
+    <!--                                  <div class="product-account bg-img bg-img-x-left d-flex align-items-center mt16 ellipsis"-->
+    <!--                                       onclick="alert('신부측 혼주(부) 김용범님의 신한은행 계좌번호가 복사되었습니다.')"-->
+    <!--                                  >-->
+    <!--                                      [신한] 계좌번호 복사-->
+    <!--                                  </div>-->
+    <!--                                  <div class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt12 ellipsis">-->
+    <!--                                      전화 걸기-->
+    <!--                                  </div>-->
+    <!--                              </figcaption>-->
+    <!--                          </figure>-->
+    <!--                      </a>-->
+    <!--                  </div>&ndash;&gt;-->
 
-                <!--<div class="swiper-slide">
-                    <a href="" class="product d-block">
-                        <figure>
-                            <div class="product-thumbnail position-relative">
-                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">
-                                <img src="images/png/product/category/hankook_logo.png"
-                                     class="product-thumbnail-category position-absolute"
-                                     alt="카테고리"
-                                >
-                                &lt;!&ndash; groom label &ndash;&gt;
-                                <span class="product-thumbnail-label label-groom position-absolute top-0 start-0 ">신랑측</span>
-                            </div>
-                            <figcaption>
-                                <div class="product-category mt16">
-                                    <span class="sr-only">카테고리</span>
-                                    다이어트
-                                </div>
-                                <div class="product-title mt16">
-                                    <span class="sr-only">제품명</span>
-                                    비움탕
-                                </div>
-                                <div class="product-description mt12">
-                                    <span class="sr-only">설명</span>
-                                    체질을 고려한 마황제
-                                </div>
-                                <div class="product-price d-flex align-items-center mt12">
-                                    <div class="product-discount">
-                                        <span class="sr-only">할인율</span>
-                                        20%
-                                    </div>
-                                    <div class="product-value">
-                                        <span class="sr-only">판매가</span>
-                                        198,000원
-                                    </div>
-                                </div>
-                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">
-                                    <div class="product-rating">
-                                        <span class="sr-only">별점</span>
-                                        4.6
-                                    </div>
-                                    <div class="product-review-count">
-                                        <span class="sr-only">리뷰 갯수</span>
-                                        (1,450)
-                                    </div>
-                                </div>
-                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;
-                                <div class="product-hashtag d-flex flex-wrap mt12">
-                                    <span class="sr-only">해시태그</span>
-                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>
-                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>-->
+    <!--                &lt;!&ndash;<div class="swiper-slide">-->
+    <!--                    <a href="" class="product d-block">-->
+    <!--                        <figure>-->
+    <!--                            <div class="product-thumbnail position-relative">-->
+    <!--                                <img src="images/png/product/thumbnail/product_2.png" class="product-thumbnail-image">-->
+    <!--                                <img src="images/png/product/category/hankook_logo.png"-->
+    <!--                                     class="product-thumbnail-category position-absolute"-->
+    <!--                                     alt="카테고리"-->
+    <!--                                >-->
+    <!--                                &lt;!&ndash; groom label &ndash;&gt;-->
+    <!--                                <span class="product-thumbnail-label label-groom position-absolute top-0 start-0 ">신랑측</span>-->
+    <!--                            </div>-->
+    <!--                            <figcaption>-->
+    <!--                                <div class="product-category mt16">-->
+    <!--                                    <span class="sr-only">카테고리</span>-->
+    <!--                                    다이어트-->
+    <!--                                </div>-->
+    <!--                                <div class="product-title mt16">-->
+    <!--                                    <span class="sr-only">제품명</span>-->
+    <!--                                    비움탕-->
+    <!--                                </div>-->
+    <!--                                <div class="product-description mt12">-->
+    <!--                                    <span class="sr-only">설명</span>-->
+    <!--                                    체질을 고려한 마황제-->
+    <!--                                </div>-->
+    <!--                                <div class="product-price d-flex align-items-center mt12">-->
+    <!--                                    <div class="product-discount">-->
+    <!--                                        <span class="sr-only">할인율</span>-->
+    <!--                                        20%-->
+    <!--                                    </div>-->
+    <!--                                    <div class="product-value">-->
+    <!--                                        <span class="sr-only">판매가</span>-->
+    <!--                                        198,000원-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                                <div class="product-review bg-img bg-img-x-left d-flex align-items-center mt16">-->
+    <!--                                    <div class="product-rating">-->
+    <!--                                        <span class="sr-only">별점</span>-->
+    <!--                                        4.6-->
+    <!--                                    </div>-->
+    <!--                                    <div class="product-review-count">-->
+    <!--                                        <span class="sr-only">리뷰 갯수</span>-->
+    <!--                                        (1,450)-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                                &lt;!&ndash; inline에 높이 반영을 위한 block 반영을 위한 부모 flex화 &ndash;&gt;-->
+    <!--                                <div class="product-hashtag d-flex flex-wrap mt12">-->
+    <!--                                    <span class="sr-only">해시태그</span>-->
+    <!--                                    <span>여성</span> <span>다이어트</span> <span>베스트셀러</span>-->
+    <!--                                    <span>남성</span> <span>다이어트</span> <span>베스트셀러</span>-->
+    <!--                                </div>-->
+    <!--                            </figcaption>-->
+    <!--                        </figure>-->
+    <!--                    </a>-->
+    <!--                </div>&ndash;&gt;-->
 
+    <!--            </div>-->
+    <!--            &lt;!&ndash; more type이 아닐 때만, 모바일용으로 추가&ndash;&gt;-->
+    <!--            <div class="swiper-pagination d-block d-md-none position-static mt5"></div>-->
+
+    <!--        </div>-->
+
+    <!--        &lt;!&ndash; more type에서만 추가 &ndash;&gt;-->
+    <!--        &lt;!&ndash;<a href="" class="button-more bg-img bg-img-x-right d-block d-md-none mt30">더보기</a>&ndash;&gt;-->
+    <!--    </section>-->
+
+
+    <!-- 1. 배경이 있을 땐, layout-center를 내부 div에서 주고, section은 rel > img.abs로 깐다.-->
+    <section class="profile mt65 section-border position-relative"
+             x-data="profile"
+    >
+        <!-- 배경 + 필름 -->
+        <img :src="data[currentIndex].bg" :alt="data[currentIndex].name"
+             class="w-100 h-100 position-absolute top-0 start-0 z-n1 object-fit-cover object-position-center"
+        >
+        <div class="w-100 h-100 position-absolute z-n1 top-0 start-0 bg-black opacity-75"></div>
+
+        <div class="layout-center pb-md-5">
+            <!-- title -->
+            <div class="d-flex align-items-center justify-content-between">
+                <h2 class="section-title title-white mt65">신랑/신부 소개</h2>
             </div>
-            <!-- more type이 아닐 때만, 모바일용으로 추가-->
-            <div class="swiper-pagination d-block d-md-none position-static mt5"></div>
+            <!-- content-->
+            <div class="row row-gap-3 row-gap-md-5 row-cols-1 row-cols-sm-2 mt-4 mt-md-5">
+                <!-- upper or left -->
+                <!-- profile-swiper -->
+                <div class="col d-flex flex-column justify-content-center align-items-center px-4 align-items-sm-start px-sm-0">
+                    <div class="swiper" x-ref="profile_swiper">
+                        <div class="swiper-wrapper">
+                            <template x-for="(item, index) in data" :key="index">
+                                <div class="swiper-slide">
+                                    <!-- 부모 -->
+                                    <h3 x-text="item.parents" class="ms-3 d-inline-block d-md-none"></h3>
+                                    <!-- 이미지 + 소새글-->
+                                    <div class="d-flex justify-content-between align-items-start align-items-md-center">
+                                        <div class="flex-shrink-0 me-2 me-md-3 -ms-1 d-flex flex-column justify-content-start align-items-center">
+                                            <img class="object-fit-contain me-2"
+                                                 :src="item.thumbnail"
+                                                 alt="item.name">
 
+                                            <a class="account d-block mt-3 mt-md-4 bg-img bg-img-x-left cursor-pointer"
+                                               @click="copyToClipboardAndAlert(
+                                                    item.account.number,
+                                                    item.role + ' ' + item.name + '님의 \n' + item.account.bank + '은행 ' + item.account.number + '\n계좌번호가 복사되었습니다.'
+                                                )"
+                                            >
+                                                마음 전하실 곳
+                                            </a>
+                                            <a class="mobile d-block mt-2 mt-md-4 bg-img bg-img-x-left cursor-pointer">
+                                                연락 주실 곳
+                                            </a>
+                                        </div>
+                                        <div class="flex-grow-1 d-flex align-items-end justify-content-center d-block">
+                                            <div class="flex-grow-1">
+                                                <h3 x-text="item.parents" class="d-none d-md-inline-block"></h3><br/>
+                                                <h1 x-text="item.name" class="mb-0 mt-2 d-inline-block"></h1><span
+                                                    x-text="item.role"></span>
+                                                <p x-text="'&nbsp' + item.bio" class="mt-1 mt-md-3 mb-1 mb-md-3"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <!-- text 아래쪽 요소-->
+                    <!--                    <button class="btn detail-btn mt-4 ms-0 ms-md-3">-->
+                    <!--                        연락처 및 계좌-->
+                    <!--                    </button>-->
+                </div>
+
+                <!-- image-swiper -->
+                <!-- lower or right -->
+                <div class="col d-flex flex-column row-gap-3 row-gap-md-0 justify-content-center align-items-center align-items-sm-start ps-3 ps-md-5">
+                    <!-- image-swiper -->
+                    <div class="order-2 order-md-1 swiper" x-ref="image_swiper">
+                        <div class="swiper-wrapper">
+
+                            <!--<div class="swiper-slide">
+                                <h1 x-text="data[0].role" ></h1>
+                                <img :src="data[0].image" alt="data[0].name"
+                                     class="rounded-3"
+                                >
+                            </div>-->
+                            <!--<div class="swiper-slide">
+                                <h1 x-text="data[1].role"></h1>
+                                <img :src="data[1].image" alt="data[1].name"
+                                     class="rounded-3"
+                                >
+                            </div>-->
+                            <template x-for="(item, index) in data" :key="index">
+                                <div class="swiper-slide">
+                                    <h1 x-text="item.role"></h1>
+                                    <img :src="item.image" alt="item.name"
+                                         class="rounded-3 mt-2 cursor-pointer"
+                                    >
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- buttons -->
+                    <div class="buttons order-1 order-md-2 d-flex w-100 justify-content-end justify-content-md-start align-items-center mt-0 mt-md-4 gap-2 gap-md-4 ms-0 ms-md-3">
+                        <button class="btn p-1 cursor-pointer rounded-circle text-white bg-white bg-opacity-25"
+                                @click="prevSlide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor"
+                                 style="width: 1.5rem;height: 1.5rem; /* 24px */"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
+                            </svg>
+                        </button>
+                        <button class="btn p-1 cursor-pointer rounded-circle text-white bg-white bg-opacity-25"
+                                @click="nextSlide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor"
+                                 style="width: 1.5rem;height: 1.5rem; /* 24px */"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
-        <!-- more type에서만 추가 -->
-        <!--<a href="" class="button-more bg-img bg-img-x-right d-block d-md-none mt30">더보기</a>-->
     </section>
 
     <!-- default product array section -->
@@ -1358,6 +1481,7 @@
 <!-- layout -->
 <script src="./js/header.js"></script>
 <script src="./js/mainVisual.js"></script>
+<script src="./js/mainProfile.js"></script>
 <!--<script src="./js/mainProduct.js"></script>-->
 <!-- data.js를 import구문이 들어가는 순간부터는 module로 추가함 -->
 <script src="./js/mainProduct.js" type="module"></script>

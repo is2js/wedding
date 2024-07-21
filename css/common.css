@@ -111,3 +111,8 @@ Extra extra large	xxl	≥1400px
 .cursor-pointer {
     cursor: pointer;
 }
+
+/* object */
+.object-position-center{
+    background-position: center;
+}

@@ -220,21 +220,8 @@ const createProductSwiperMultipleWrapperSection = (sectionName, type = 'default'
 
 
 // 처음 실행
-// createSlides(data);
-// initProductSwiper(data);
 
-// initProductSwiper();
-// initProductSwiper('more', 'herb-medicine');
-// createFamilySlides('family', groomData);
-createProductSwiperSection('herb-medicine', 'more', productData);
-createProductSwiperSection('family', 'default', groomData);
+
+// createProductSwiperSection('herb-medicine', 'more', productData);
+// createProductSwiperSection('family', 'default', groomData);
 createProductSwiperMultipleWrapperSection('families', 'default', [brideData, groomData]);
-// 리사이즈 될 때마다 재실행
-window.addEventListener("resize", () => {
-    // initProductSwiper(data);
-    // initProductSwiper();
-    // initProductSwiper('more');
-    // initProductSwiper('more', 'herb-medicine');
-    // initProductSwiper('default', 'family');
-    // initProductSwiperMultipleWrapper('default', 'families');
-});
