@@ -163,7 +163,7 @@
                     & .dropdown-arrow {
                         width: 20px;
                         height: 20px;
-                        background-image: url('/images/svg/icons/chevron-down_mini_grey6f.svg');
+                        background-image: url('../../images/svg/icons/chevron-down_mini_grey6f.svg');
                     }
                 }
 
