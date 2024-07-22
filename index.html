@@ -279,7 +279,7 @@
                 <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
                    style="background-image: url('./images/png/favorite_nav/type1_신랑신부.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">10년을 같이한</span>
+                    <span class="favorite-nav-text-sub d-none d-md-block">9년 끝에 드디어!</span>
                     <b class="favorite-nav-text-main d-none d-md-block">신랑신부</b>
                 </a>
                 <div class="d-md-none">신랑/신부</div>
@@ -288,29 +288,29 @@
                 <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type2"
                    style="background-image: url('./images/png/favorite_nav/type2_가족.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">새롭게 하나 된</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">가족소개</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">우리들의 모습</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">갤러리</b>
                 </a>
-                <div class="d-md-none">가족소개</div>
+                <div class="d-md-none">갤러리</div>
             </li>
             <li>
                 <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type3"
                    style="background-image: url('./images/png/favorite_nav/type3_신랑신부_하트.png');"
                 >
-                    <span class="favorite-nav-text-sub d-none d-md-block">하객들을 위한</span>
-                    <b class="favorite-nav-text-main d-none d-md-block">예식 정보</b>
+                    <span class="favorite-nav-text-sub d-none d-md-block">새롭게 하나 된</span>
+                    <b class="favorite-nav-text-main d-none d-md-block">가족 소개</b>
                 </a>
-                <div class="d-md-none">예식정보</div>
+                <div class="d-md-none">가족소개</div>
             </li>
             <li>
                 <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"
                    style="background-image: url('./images/png/favorite_nav/type4_faq.png');"
                 >
                     <!--style="background-image: url('images/svg/favorite_nav/type4_협회.svg');"-->
-                    <span class="favorite-nav-text-sub d-none d-md-block">궁금한 부분 해결!</span>
+                    <span class="favorite-nav-text-sub d-none d-md-block">예식에 관련된 궁금증!</span>
                     <b class="favorite-nav-text-main d-none d-md-block">자주묻는질문</b>
                 </a>
-                <div class="d-md-none">자주묻는질문</div>
+                <div class="d-md-none">예식정보QnA</div>
             </li>
 
             <!-- type2) li에 동적 배경색 style 지정 + .bgc-dark시 text 하얀 테마로 -->
@@ -1071,7 +1071,7 @@
                             <li :class="{
                                 'timeline-inverted' : index % 2 === 1
                             }"
-                                @click="timelineOpens = timelineOpens.map((isOpen, isOpenIndex) => isOpenIndex === index ? true : false);"
+                                @click="focusElement(index); timelineOpens = timelineOpens.map((isOpen, isOpenIndex) => isOpenIndex === index ? true : false);"
                             >
                                 <div class="timeline-image rounded-circle border border-3"
                                      :class="{ 'active' : timelineOpens[index] }"

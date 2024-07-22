@@ -33,6 +33,11 @@ document.addEventListener('alpine:init', () => {
         init() {
             this.timelineOpens = Array(this.data.length).fill(false);
             this.timelineOpens[0] = true;
-        }
+        },
+        focusElement(index) {
+            if (this.$el) {
+                this.$el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        },
     }));
 });
