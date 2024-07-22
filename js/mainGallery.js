@@ -9,8 +9,8 @@ document.addEventListener('alpine:init', () => {
                 caption: "1번 사진이에요",
             },
             {
-                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ab8e2fd-6dc9-4ceb-b32b-e21f51b1db46_512.webp',
-                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ab8e2fd-6dc9-4ceb-b32b-e21f51b1db46_1920.webp',
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b2eef9b5-6604-4ac3-9692-f844c8a53131_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b2eef9b5-6604-4ac3-9692-f844c8a53131_1024.webp',
                 caption: "2번 사진이에요",
             },
             {
@@ -39,8 +39,8 @@ document.addEventListener('alpine:init', () => {
                 caption: "7번 사진이에요",
             },
             {
-                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b2eef9b5-6604-4ac3-9692-f844c8a53131_512.webp',
-                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b2eef9b5-6604-4ac3-9692-f844c8a53131_1024.webp',
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ab8e2fd-6dc9-4ceb-b32b-e21f51b1db46_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ab8e2fd-6dc9-4ceb-b32b-e21f51b1db46_1920.webp',
                 caption: "8번 사진이에요",
             },
         ],
