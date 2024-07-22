@@ -97,7 +97,6 @@ document.addEventListener('alpine:init', () => {
             const screenWidth = window.innerWidth;
             const mobileMaxWidth = 767;
             this.isMobile = screenWidth <= mobileMaxWidth;
-            console.log("isMobile", this.isMobile);
         },
 
     }));
