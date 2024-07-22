@@ -1,44 +1,46 @@
+
+
 document.addEventListener('alpine:init', () => {
     Alpine.data("gallery", () => ({
         data: [
             {
-                thumbnail: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/e50fb6df-a129-441e-9c33-d962473253d0_thumbnail.webp",
-                image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/e50fb6df-a129-441e-9c33-d962473253d0_1024.webp",
+                thumbnail: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/6fd70594-96ed-4d36-90ca-8db6ff26dbdb_512.webp",
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/6fd70594-96ed-4d36-90ca-8db6ff26dbdb_1920.webp',
                 caption: "1번 사진이에요",
             },
             {
-                thumbnail: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/e50fb6df-a129-441e-9c33-d962473253d0_thumbnail.webp",
-                image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/e50fb6df-a129-441e-9c33-d962473253d0_1024.webp",
-                caption: "이현이 사진",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ab8e2fd-6dc9-4ceb-b32b-e21f51b1db46_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ab8e2fd-6dc9-4ceb-b32b-e21f51b1db46_1920.webp',
+                caption: "2번 사진이에요",
             },
             {
-                thumbnail: "https://picsum.photos/id/301/416/650",
-                image: "https://picsum.photos/id/301/200/300",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/fbf20b6e-f6f9-4484-a5cf-532d38ac276b_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/fbf20b6e-f6f9-4484-a5cf-532d38ac276b_1920.webp',
                 caption: "3번 사진이에요",
             },
             {
-                thumbnail: "https://picsum.photos/id/302/416/650",
-                image: "https://picsum.photos/id/302/1200/650",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/088b8e2c-2889-48d3-a7f3-1a2e485a51e6_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/088b8e2c-2889-48d3-a7f3-1a2e485a51e6_1024.webp',
                 caption: "4번 사진이에요",
             },
             {
-                thumbnail: "https://picsum.photos/id/304/416/650",
-                image: "https://picsum.photos/id/304/1200/650",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/70f789a9-3254-43f3-af4a-27ce888ce4ab_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/70f789a9-3254-43f3-af4a-27ce888ce4ab_1024.webp',
                 caption: "5번 사진이에요",
             },
             {
-                thumbnail: "https://picsum.photos/id/305/416/650",
-                image: "https://picsum.photos/id/305/1200/650",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/55f532fb-d2e7-476e-9f63-4d523dc83abe_512.webp',
+                image:  'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/55f532fb-d2e7-476e-9f63-4d523dc83abe_1024.webp',
                 caption: "6번 사진이에요",
             },
             {
-                thumbnail: "https://picsum.photos/id/305/416/650",
-                image: "https://picsum.photos/id/305/1200/650",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/737effea-1c2a-44fa-a633-024b12d5d9b6_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/737effea-1c2a-44fa-a633-024b12d5d9b6_1024.webp',
                 caption: "7번 사진이에요",
             },
             {
-                thumbnail: "https://picsum.photos/id/306/416/650",
-                image: "https://picsum.photos/id/306/1200/650",
+                thumbnail: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b2eef9b5-6604-4ac3-9692-f844c8a53131_512.webp',
+                image: 'https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b2eef9b5-6604-4ac3-9692-f844c8a53131_1024.webp',
                 caption: "8번 사진이에요",
             },
         ],

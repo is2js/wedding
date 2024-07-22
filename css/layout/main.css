@@ -573,8 +573,8 @@
 
     color: var(--greyd9);
 
-    font-size: 22px;
-    letter-spacing: 1.5px;
+    font-size: 24px;
+    letter-spacing: 2px;
 
     @media (max-width: 767px) {
         letter-spacing: 0;
@@ -586,7 +586,7 @@
     & .testimonials-item {
         width: 72px; /* font * 3배 */
         height: 72px;
-        @media (max-width: 7678px) {
+        @media (max-width: 767px) {
             width: 45px;
             height: 45px;
         }
