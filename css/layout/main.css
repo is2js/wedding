@@ -302,7 +302,7 @@
                     /*height: auto !important;*/
                     height: 15rem;
                     @media (max-width: 767px) {
-                        height: 7rem;
+                        height: 8.5rem;
                     }
                     width: auto !important;
 

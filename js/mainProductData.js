@@ -13,9 +13,9 @@ const brideData = [
         },
         account: {
             bank: '신한',
-            number: '110-123-456789'
+            number: '110-304-956142'
         },
-        phone: '010-1111-1111',
+        phone: '010-3495-3380',
         tags: [],
     },
     {
@@ -30,9 +30,9 @@ const brideData = [
         },
         account: {
             bank: '신한',
-            number: '110-123-456789'
+            number: '110-304-956142'
         },
-        phone: '010-1234-5678',
+        phone: '010-3227-3380',
         tags: [],
     },
     // label / account 없는 형제자매들
@@ -42,7 +42,7 @@ const brideData = [
             family: '자매',
             name: '김나영'
         },
-        phone: '010-1234-5678',
+        phone: '010-3015-3380',
         tags: [],
     },
     {
@@ -51,7 +51,7 @@ const brideData = [
             family: '남매',
             name: '김영훈'
         },
-        phone: '010-1234-5678',
+        phone: '010-3295-3380',
         tags: [],
     },
 ];
@@ -69,10 +69,10 @@ const groomData = [
             name: '조귀남'
         },
         account: {
-            bank: '신한',
-            number: '110-123-456789'
+            bank: '농협',
+            number: '302-0674-807841'
         },
-        phone: '010-1234-5678',
+        phone: '010-4122-2224',
         tags: [
             // {name: '여성', type: 'default'},
             // {name: '다이어트', type: 'default'},
@@ -93,7 +93,7 @@ const groomData = [
         //     bank: '신한',
         //     number: '110-123-456789'
         // },
-        phone: '010-1234-5678',
+        phone: '010-3558-6106',
         tags: [],
     },
     // label / account 없는 형제자매들
@@ -103,7 +103,7 @@ const groomData = [
             family: '형제',
             name: '조재경'
         },
-        phone: '010-1234-5678',
+        phone: '010-2048-7291',
         tags: [],
     },
     {
@@ -112,7 +112,7 @@ const groomData = [
             family: '남매',
             name: '조아라'
         },
-        phone: '010-1234-5678',
+        phone: '010-5558-1388',
         tags: [],
     },
 ];
