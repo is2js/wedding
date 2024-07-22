@@ -42,7 +42,7 @@ const brideData = [
             family: '자매',
             name: '김나영'
         },
-        phone: '010-3015-3380',
+        // phone: '010-3015-3380',
         tags: [],
     },
     {
@@ -51,7 +51,7 @@ const brideData = [
             family: '남매',
             name: '김영훈'
         },
-        phone: '010-3295-3380',
+        // phone: '010-3295-3380',
         tags: [],
     },
 ];

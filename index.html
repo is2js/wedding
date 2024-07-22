@@ -956,7 +956,7 @@
                                             >
                                                 마음 전하실 곳
                                             </a>
-                                            <a class="mobile d-block mt-1 mt-md-4 bg-img bg-img-x-left cursor-pointer">
+                                            <a class="mobile d-block mt-2 mt-md-4 bg-img bg-img-x-left cursor-pointer">
                                                 연락 주실 곳
                                             </a>
                                         </div>
@@ -1787,6 +1787,7 @@
                         <!--@click="$store.modal.close()"-->
                         <button class="button-modal modal-cancel d-md-none"
                                 @click.prevent="$store.modal.close()"
+                                :disabled="loading"
                         >취소
                         </button>
                         <button class="button-modal modal-purple"

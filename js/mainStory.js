@@ -11,7 +11,7 @@ document.addEventListener('alpine:init', () => {
                 // image: "https://picsum.photos/300/300",
                 image: "./images/png/timeline/02.png",
                 createdAt: "2016 ~ 2020",
-                title: "믿음/신뢰가 쌓이는 🎶",
+                title: "믿음과 신뢰가 쌓이는 🎵",
                 body: "학업 생활에 서로 힘이 되어주며 이해하고 사랑을 키워나갔습니다. 국내 곳곳으로 힐링 여행을 다니며, 부족한 점을 서로 보완해주는 커플이 되었어요",
             },
             {
@@ -25,7 +25,7 @@ document.addEventListener('alpine:init', () => {
                 // image: "https://picsum.photos/302/302",
                 image: "./images/png/timeline/04.png",
                 createdAt: "2024. 09",
-                title: "미래를 약속 🎎",
+                title: "결혼, 미래를 약속 🎎",
                 body: "같은 직종에 종사하며 서로를 이해하고 살아간지 9년이 흘러 부부가 되려고 합니다.",
             },
         ],
