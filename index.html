@@ -1091,7 +1091,7 @@
                                                     :class="timelineOpens[index] ? 'rotate-180 duration-300' : 'duration-300'"
                                             >
                                                 <!--stroke="#0F172AFF"-->
-                                                 <!--class="w-4"-->
+                                                <!--class="w-4"-->
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                      stroke-width="3"
                                                 >
@@ -1468,6 +1468,57 @@
         </div>
     </section>
 
+    <!-- faq -->
+    <section class="faq layout-center mt65 section-border"
+             x-data="faq"
+             x-clock
+    >
+        <!-- title -->
+        <div class="d-flex align-items-center justify-content-between">
+            <h2 class="section-title">자주 묻는 질문</h2>
+        </div>
+        <!-- contents -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-10">
+                <ul class="faq-list"
+                    x-show="data.length"
+                    x-transition.duration.150ms
+                >
+                    <template x-for="(item, index) in data"
+                              :key="'f-item-' + 'idx-' + index"
+                    >
+                        <li @click="focusElement(index);faqOpens = faqOpens.map((isOpen, isOpenIndex) => isOpenIndex === index ? true : false);">
+                            <div class="faq-question d-flex align-items-center">
+                                <div class="faq-question-box flex-grow-1 d-flex flex-column flex-md-row">
+                                    <div class="faq-question-category"
+                                         x-text="item.category"
+                                    ></div>
+                                    <div class="faq-question-title"
+                                         x-text="item.question"
+                                    ></div>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="2"
+                                     class="w-6"
+                                     :class="faqOpens[index] ? 'rotate-180 duration-300' : 'duration-300'"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+                                </svg>
+                            </div>
+                            <div x-show="faqOpens[index]"
+                                 x-collapse.duration.500ms
+                            >
+                                <div class="faq-list-answer"
+                                     x-text="item.answer"
+                                ></div>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <button @click="$store.modal.open()"
     >
@@ -1769,6 +1820,7 @@
 <script src="./js/mainProfile.js"></script>
 <script src="js/mainStory.js"></script>
 <script src="./js/mainGallery.js"></script>
+<script src="./js/mainFaq.js"></script>
 <!--<script src="./js/mainProduct.js"></script>-->
 <!-- data.js를 import구문이 들어가는 순간부터는 module로 추가함 -->
 <script src="./js/mainProduct.js" type="module"></script>
