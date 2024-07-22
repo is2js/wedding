@@ -555,8 +555,51 @@
     & .buttons button {
 
         @media (max-width: 767px) {
-            transform: scale(0.85)!important;
+            transform: scale(0.85) !important;
         }
+    }
+}
+
+
+/* gallery */
+.gallery {
+    background-color: var(--grey34);
+    /* 자식 속 .layout-center의 margin collapse를 방지하기 위해 */
+    padding-top: 1px;
+
+    color: var(--greyd9);
+
+    font-size: 22px;
+    letter-spacing: 1.5px;
+
+    @media (max-width: 767px) {
+        letter-spacing: 0;
+        font-size: 15px;
+        text-align: center;
+    }
+
+
+    & .testimonials-item {
+        width: 72px; /* font * 3배 */
+        height: 72px;
+        @media (max-width: 7678px) {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    & .gallery-contents > div {
+
+        @media (max-width: 767px) {
+            aspect-ratio: 2/3;
+        }
+        @media (min-width: 768px) {
+            max-height: 43rem;
+        }
+    }
+
+    .disable-click {
+        pointer-events: none;
     }
 }
 
@@ -572,3 +615,5 @@
         }
     }
 }
+
+

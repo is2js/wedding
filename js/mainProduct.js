@@ -3,7 +3,7 @@ import {createProductCard} from "./mainProductCardTemplate.js";
 
 // console.log(brideData);
 
-const mobileMaxWidth = 768;
+const mobileMaxWidth = 767;
 const baseClass = '.swiper.product-list';
 
 // let productSwiper;

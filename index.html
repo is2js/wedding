@@ -1035,9 +1035,199 @@
         </div>
     </section>
 
+    <!-- gallery -->
+    <section class="gallery section-border position-relative"
+             x-data="gallery"
+    >
+        <!-- content-->
+        <div class="layout-center pb-md-5">
+            <!-- title -->
+            <div class="d-flex align-items-center justify-content-between">
+                <h2 class="section-title title-white">갤러리</h2>
+            </div>
+            <!-- subtitle-->
+            <div class="subtitle mt30 d-md-none">
+                <div class="testimonials-item">
+                    <button class="btn">
+                        <img src="./images/png/gallery/bride.png" alt="Testimonial bride"
+                             class="object-fit-cover object-position-center animate-testimonial-reverse"
+                        >
+                    </button>
+                </div>
+                <span> 와 </span>
+                <div class="testimonials-item">
+                    <button class="btn">
+                        <img src="./images/png/gallery/husband.png" alt="Testimonial husband"
+                             class="object-fit-cover object-position-center animate-testimonial"
+                        >
+                    </button>
+                </div>
+                <span> 는 이제 하나 ~! </span>
+            </div>
+
+            <!-- gallery -->
+            <div class="gallery-contents w-100 position-relative mt16">
+                <!-- slides -->
+                <!--style="max-height: 48rem;"-->
+                <div class="w-100 d-flex overflow-x-auto d-md-grid grid-rows-6 grid-cols-3 gap-2 gap-md-3 snap-x-mandatory"
+                     x-ref="gallery_slider"
+                     @keydown.left="prev"
+                     @keydown.right="next"
+                >
+                    <!--:data-toggle="lightboxToggle"-->
+                    <!--<div class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden">-->
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[0].caption || '1'"
+                       :href="data[0].image"
+                       x-show="data[0]"
+                    >
+                        <img class="img-fluid w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[0].caption || '1'"
+                             :src="data[0].thumbnail"
+                        >
+                    </a>
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-3 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[1].caption || '2'"
+                       :href="data[1].image"
+                       x-show="data[1]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[1].caption || '2'"
+                             :src="data[1].thumbnail"
+                        >
+                    </a>
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-1 col-span-1 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[2].caption || '3'"
+                       :href="data[2].image"
+                       x-show="data[2]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[2].caption || '3'"
+                             :src="data[2].thumbnail"
+                        >
+                    </a>
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[3].caption || '4'"
+                       :href="data[3].image"
+                       x-show="data[3]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[3].caption || '4'"
+                             :src="data[3].thumbnail"
+                        >
+                    </a>
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-1 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[4].caption || '5'"
+                       :href="data[4].image"
+                       x-show="data[4]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[4].caption || '5'"
+                             :src="data[4].thumbnail"
+                        >
+                    </a>
+                    <div class="d-none w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-1 col-span-2 overflow-hidden
+                        d-md-flex justify-content-center align-items-center">
+                        <!--<img src="https://picsum.photos/id/305/416/650"
+                             class="w-100 h-100 object-position-center object-fit-cover" alt="">-->
+                        <div class="testimonials-item">
+                            <button class="btn">
+                                <img src="./images/png/gallery/bride.png" alt="Testimonial bride"
+                                     class="object-fit-cover object-position-center animate-testimonial-reverse"
+                                >
+                            </button>
+                        </div>
+                        <span> 와 </span>
+                        <div class="testimonials-item">
+                            <button class="btn">
+                                <img src="./images/png/gallery/husband.png" alt="Testimonial husband"
+                                     class="object-fit-cover object-position-center animate-testimonial"
+                                >
+                            </button>
+                        </div>
+                        <span> 는 이제 하나 ~! </span>
+                    </div>
+
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-3 col-span-1 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[5].caption || '6'"
+                       :href="data[5].image"
+                       x-show="data[5]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[5].caption || '6'"
+                             :src="data[5].thumbnail"
+                        >
+                    </a>
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[6].caption || '7'"
+                       :href="data[6].image"
+                       x-show="data[6]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[6].caption || '7'"
+                             :src="data[6].thumbnail"
+                        >
+                    </a>
+                    <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
+                       data-toggle="lightbox"
+                       :class="{ 'disable-click': isMobile }"
+                       :data-gallery="ligthboxGalleryName"
+                       :data-caption="data[7].caption || '8'"
+                       :href="data[7].image"
+                       x-show="data[7]"
+                    >
+                        <img class="w-100 h-100 object-position-center object-fit-cover"
+                             :alt="data[7].caption || '8'"
+                             :src="data[7].thumbnail"
+                        >
+                    </a>
+                </div>
+
+                <!-- prev/next button -->
+                <button class="cursor-pointer ps-1 pe-2 position-absolute top-50 start-0 text-white d-md-none"
+                        style="transform: translateY(-50%); background-color: var(--grey34);"
+                        @click="prev"
+                >
+                    <span aria-hidden="true">❮</span>
+                    <span class="sr-only">Previous slide</span>
+                </button>
+                <button class="cursor-pointer ps-2 pe-1 position-absolute top-50 end-0 text-white d-md-none"
+                        style="transform: translateY(-50%); background-color: var(--grey34);"
+                        @click="next"
+                >
+                    <span aria-hidden="true">❯</span>
+                    <span class="sr-only">Next slide</span>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
     <!-- default product array section -->
     <!-- 첫번째만 mt35 2번째 swiper부턴 부턴 mt30 -->
-    <section class="families layout-center mt65 section-border ">
+    <section class="families layout-center mt65 section-border">
         <div class="d-flex align-items-center justify-content-between">
             <h2 class="section-title">혼주 및 직계가족</h2>
         </div>
@@ -1488,11 +1678,14 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <!-- swiper -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- lightbox for gallery -->
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
 <!-- layout -->
 <script src="./js/header.js"></script>
 <script src="./js/mainVisual.js"></script>
 <script src="./js/mainProfile.js"></script>
+<script src="./js/mainGallery.js"></script>
 <!--<script src="./js/mainProduct.js"></script>-->
 <!-- data.js를 import구문이 들어가는 순간부터는 module로 추가함 -->
 <script src="./js/mainProduct.js" type="module"></script>

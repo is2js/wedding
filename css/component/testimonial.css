@@ -1,0 +1,95 @@
+.testimonials-item {
+    /* 개별 section에서 fz에 따라 크기를 수정하자 */
+    width: 4.5rem; /* font * 3배 */
+    height: 4.5rem;
+    @media (max-width: 768px) {
+        width: 3.5rem; /* mobile font * 3배 */
+        height: 3.5rem;
+    }
+
+    /*border-radius: 20%;*/
+
+    display: inline-flex; /* span태그와 같이 쓰이면서, 자식들 가운데 정렬*/
+    justify-content: center;
+    /*align-items: baseline;*/
+
+
+    /* 자신을 inline에서 수평정렬 후 그림 5도회전 대비 조금 올리기 */
+    vertical-align: middle;
+    /*transform: translateY(-0.25rem);*/
+    position: relative;
+
+    & button {
+        cursor: none;
+
+        /*transform: rotate(4deg);*/
+
+        .testimonials-item:nth-of-type(odd) & {
+            transform: rotate(10deg);
+        }
+
+        .testimonials-item:nth-of-type(even) & {
+            transform: rotate(-10deg);
+        }
+
+        width: 100%;
+        height: 100%;
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        & img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+
+            width: 100%;
+            height: 100%;
+            /*border-radius: inherit;*/
+        }
+    }
+}
+
+
+@keyframes testimonial {
+    0%, 100% {
+        transform-origin: 50% 50%;
+        transform: translateY(-55%) rotate(0deg) translateX(0px);
+    }
+    25% {
+        transform: translateY(-55%) rotate(-2deg) translateX(-0.5px);
+    }
+    50% {
+        transform: translateY(-55%) rotate(-3deg) translateX(-1px);
+    }
+    75% {
+        transform: translateY(-55%) rotate(4deg) translateX(1px);
+    }
+}
+
+@keyframes testimonial-reverse {
+    0%, 100% {
+        transform-origin: 50% 50%;
+        transform: translateY(-55%) rotate(0deg) translateX(0px);
+    }
+    25% {
+        transform: translateY(-55%) rotate(2deg) translateX(0.5px);
+    }
+    50% {
+        transform: translateY(-55%) rotate(3deg) translateX(1px);
+    }
+    75% {
+        transform: translateY(-55%) rotate(-4deg) translateX(-1px);
+    }
+}
+
+
+.animate-testimonial {
+    animation: testimonial 3s linear infinite;
+}
+
+.animate-testimonial-reverse {
+    animation: testimonial-reverse 3s linear infinite;
+}

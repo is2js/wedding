@@ -116,3 +116,60 @@ Extra extra large	xxl	≥1400px
 .object-position-center{
     background-position: center;
 }
+
+.object-position-top {
+    object-position: top;
+}
+
+
+
+
+/* gallery */
+.disable-click {
+    pointer-events: none;
+}
+
+/* grid */
+.grid-rows-6 {
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+
+/* row */
+.row-span-1 {
+    grid-row: span 1 / span 1;
+}
+.row-span-2 {
+    grid-row: span 2 / span 2;
+}
+.row-span-3 {
+    grid-row: span 3 / span 3;
+}
+
+/* col */
+.col-span-1 {
+    grid-column: span 1 / span 1;
+}
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+.col-span-3 {
+    grid-column: span 3 / span 3;
+}
+
+/* scroll snap for slider */
+/* https://tailwindcss.com/docs/scroll-snap-align */
+
+.snap-x-mandatory {
+    /* 화면x 절반 기준 -> 넘어야 넘어가기*/
+    scroll-snap-type: x mandatory;
+}
+.snap-start	{
+    /* 부모의 화면절반에 대해 가운데가 아닌 시작점으로 만들기 */
+    scroll-snap-align: start;
+}
