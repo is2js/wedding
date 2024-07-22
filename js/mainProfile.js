@@ -2,14 +2,14 @@ document.addEventListener('alpine:init', () => {
     Alpine.data("profile", () => ({
         data: [
             {
-                image: "images/png/profile/bride.png",
-                thumbnail: "images/png/profile/thumbnail/bride.png",
-                bg: "images/jpg/profile/bg/bride.jpg",
+                image: "./images/png/profile/bride.png",
+                thumbnail: "./images/png/profile/thumbnail/bride.png",
+                bg: "./images/jpg/profile/bg/bride.jpg",
                 name: "김석영",
                 parents: "김용범과 홍선희의 장녀",
                 role: "예비신부",
                 // bio: "한의사 직업군으로 활동하고 있는 김석영이라고 해요. 공감과 소통에 관심이 많고 스포츠를 좋아하는 여성입니다^^",
-                bio: "발랄하고 호기심 많은 👰입니다. 음악과 여행을 사랑하고 세계여행이 1번 버킷리스트✨",
+                bio: "발랄하고 호기심 많은 예비👰. 음악과 여행을 사랑하고 세계여행이 1번 버킷리스트✨",
                 account: {
                     bank: '신한',
                     number: '110-195-520108'
@@ -17,14 +17,14 @@ document.addEventListener('alpine:init', () => {
                 phone: '010-5400-8397',
             },
             {
-                image: "images/png/profile/husband.png",
-                thumbnail: "images/png/profile/thumbnail/husband.png",
-                bg: "images/jpg/profile/bg/husband.jpg",
+                image: "./images/png/profile/husband.png",
+                thumbnail: "./images/png/profile/thumbnail/husband.png",
+                bg: "./images/jpg/profile/bg/husband.jpg",
                 name: "조재성",
                 parents: "조귀남과 故류정이의 장남",
                 role: "예비신랑",
                 // bio: "한의사 직업군으로 활동하고 있는 조재성입니다. 통계와 프로그래밍을 취미로 하고 운동을 좋아합니다.",
-                bio: "개발에 진심인 한의사 예비🤵입니다. 제가 만든 청첩장 어떤가요?!😁",
+                bio: "개발에 진심인 한의사 예비🤵. '제가 만든 청첩장 어떤가요?!😁'",
                 account: {
                     bank: '신한',
                     number: '110-511-219080'
