@@ -1056,7 +1056,7 @@
         <div class="layout-center pb-md-5">
             <!-- title -->
             <div class="d-flex align-items-center justify-content-between">
-                <h2 class="section-title">우리들 이야기</h2>
+                <h2 class="section-title">사랑 이야기</h2>
             </div>
 
             <!-- contents -->
@@ -1136,7 +1136,7 @@
                         >
                     </button>
                 </div>
-                <span> 와 </span>
+                <span> 💖 </span>
                 <div class="testimonials-item">
                     <button class="btn">
                         <img src="./images/png/gallery/husband.png" alt="Testimonial husband"
@@ -1144,7 +1144,7 @@
                         >
                     </button>
                 </div>
-                <span> 의 이야기 </span>
+                <!--<span> 의 이야기 </span>-->
             </div>
 
             <!-- gallery -->
@@ -1614,7 +1614,7 @@
                   id="attending-form"
                   x-data="form"
                   x-ref="form"
-                  @submit.prevent="handleSubmit"
+                  @submit.prevent="await handleSubmit"
             >
 
                 <!-- 신부/신랑측 선택 radio -->
@@ -1783,7 +1783,11 @@
                                 @click.prevent="$store.modal.close()"
                         >취소
                         </button>
-                        <button class="button-modal modal-purple">전달하기</button>
+                        <button class="button-modal modal-purple"
+                                :disabled="loading"
+                                x-text="!loading ? '전달하기' : '전송 중...'"
+                        >전달하기
+                        </button>
                     </div>
                 </div>
 

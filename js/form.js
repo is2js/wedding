@@ -1,6 +1,12 @@
 document.addEventListener('alpine:init', () => {
+    //https://aggregata.de/en/blog/alpinejs/advanced-forms-with-alpine/
     Alpine.data('form', () => ({
+        loading: false,
+        response: null,
         async handleSubmit(e) {
+            this.loading = true
+            this.response = null
+
             const form = this.$refs.form;
 
             const data = new FormData(form);
@@ -8,21 +14,24 @@ document.addEventListener('alpine:init', () => {
             const method = form.method;
 
             try {
-                const response = await fetch(action, {
+                this.response = await fetch(action, {
                     method: method,
                     body: data,
                 });
+                this.loading = false;
 
                 // 모달 닫기
-                this.$store.modal.close();
 
-                if (response.ok) {
+                if (this.response.ok) {
                     alert('참석여부가 전달됐어요!');
+                    await this.$store.modal.close();
                     // form.reset();
                 } else {
                     alert('전송 실패. 다시 시도해 주세요.');
                 }
             } catch (error) {
+                this.loading = false;
+                await this.$store.modal.close();
                 alert('전송 중 오류가 발생했습니다. 신랑/신부에게 알려주세요.');
             }
         },

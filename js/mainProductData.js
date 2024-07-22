@@ -103,7 +103,7 @@ const groomData = [
             family: '형제',
             name: '조재경'
         },
-        phone: '010-2048-7291',
+        // phone: '010-2048-7291',
         tags: [],
     },
     {
@@ -112,7 +112,7 @@ const groomData = [
             family: '남매',
             name: '조아라'
         },
-        phone: '010-5558-1388',
+        // phone: '010-5558-1388',
         tags: [],
     },
 ];
