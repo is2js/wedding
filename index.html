@@ -42,10 +42,10 @@
         <h2 class="sr-only">메뉴</h2>
         <nav class="gnb" x-ref="gnb">
             <ul class="d-flex">
-                <li><a href="">신랑/신부</a></li>
-                <li><a href="">가족소개</a></li>
-                <li><a href="">예식정보</a></li>
-                <li><a href="" class="new bg-img">자주묻는질문</a></li>
+                <li><a href="#profile">신랑신부</a></li>
+                <li><a href="#gallery">갤러리</a></li>
+                <li><a href="#families">가족소개</a></li>
+                <li><a href="#faq" class="new bg-img">자주묻는질문</a></li>
             </ul>
         </nav>
         <!-- 검색을 form에 씌워서 section사이로 이동-->
@@ -276,7 +276,7 @@
 
             <!-- type1) li에 동적 배경색 없음-->
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
+                <a href="#profile" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type1"
                    style="background-image: url('./images/png/favorite_nav/type1_신랑신부.png');"
                 >
                     <span class="favorite-nav-text-sub d-none d-md-block">9년 끝에 드디어!</span>
@@ -285,7 +285,7 @@
                 <div class="d-md-none">신랑/신부</div>
             </li>
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type2"
+                <a href="#gallery" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type2"
                    style="background-image: url('./images/png/favorite_nav/type2_가족.png');"
                 >
                     <span class="favorite-nav-text-sub d-none d-md-block">우리들의 모습</span>
@@ -294,7 +294,7 @@
                 <div class="d-md-none">갤러리</div>
             </li>
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type3"
+                <a href="#families" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type3"
                    style="background-image: url('./images/png/favorite_nav/type3_신랑신부_하트.png');"
                 >
                     <span class="favorite-nav-text-sub d-none d-md-block">새롭게 하나 된</span>
@@ -303,7 +303,7 @@
                 <div class="d-md-none">가족소개</div>
             </li>
             <li>
-                <a href="#" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"
+                <a href="#faq" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type4"
                    style="background-image: url('./images/png/favorite_nav/type4_faq.png');"
                 >
                     <!--style="background-image: url('images/svg/favorite_nav/type4_협회.svg');"-->
@@ -917,6 +917,7 @@
     <!-- 1. 배경이 있을 땐, layout-center를 내부 div에서 주고, section은 rel > img.abs로 깐다.-->
     <section class="profile mt65 section-border position-relative"
              x-data="profile"
+             id="profile"
     >
         <!-- 배경 + 필름 -->
         <img :src="data[currentIndex].bg" :alt="data[currentIndex].name"
@@ -1038,6 +1039,7 @@
     <!-- timeline -->
     <section class="story section-border position-relative overflow-hidden"
              x-data="timeline"
+             id="story"
     >
         <!-- 배경(구름) -->
         <img class="position-absolute bottom-0 w-100 z-0 object-fit-cover object-position-top h-75"
@@ -1120,6 +1122,7 @@
     <!-- gallery -->
     <section class="gallery section-border position-relative"
              x-data="gallery"
+             id="gallery"
     >
         <!-- content-->
         <div class="layout-center pb-md-5">
@@ -1309,7 +1312,9 @@
 
     <!-- default product array section -->
     <!-- 첫번째만 mt35 2번째 swiper부턴 부턴 mt30 -->
-    <section class="families layout-center mt65 section-border">
+    <section class="families layout-center mt65 section-border"
+             id="families"
+    >
         <div class="d-flex align-items-center justify-content-between">
             <h2 class="section-title">혼주 및 직계가족</h2>
         </div>
@@ -1472,6 +1477,7 @@
     <section class="faq layout-center mt65 section-border"
              x-data="faq"
              x-clock
+             id="faq"
     >
         <!-- title -->
         <div class="d-flex align-items-center justify-content-between">
