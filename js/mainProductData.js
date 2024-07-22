@@ -84,21 +84,21 @@ const groomData = [
             type: "groom",
             text: "신랑측 혼주",
         },
-        thumbnail: `${productThumbnailImgSrc}family/groom_02.png`,
+        thumbnail: `${productThumbnailImgSrc}family/groom_03.png`,
         familyName: {
-            family: '신부姑母',
-            name: '조미령'
+            family: '신랑姑母',
+            name: '조미선'
         },
-        account: {
-            bank: '신한',
-            number: '110-123-456789'
-        },
+        // account: {
+        //     bank: '신한',
+        //     number: '110-123-456789'
+        // },
         phone: '010-1234-5678',
         tags: [],
     },
     // label / account 없는 형제자매들
     {
-        thumbnail: `${productThumbnailImgSrc}family/groom_03.png`,
+        thumbnail: `${productThumbnailImgSrc}family/groom_04.png`,
         familyName: {
             family: '형제',
             name: '조재경'
@@ -107,7 +107,7 @@ const groomData = [
         tags: [],
     },
     {
-        thumbnail: `${productThumbnailImgSrc}family/groom_04.png`,
+        thumbnail: `${productThumbnailImgSrc}family/groom_05.png`,
         familyName: {
             family: '남매',
             name: '조아라'

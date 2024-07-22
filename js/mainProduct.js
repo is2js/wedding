@@ -45,6 +45,10 @@ const initProductSwiper = (type = 'default', sectionName, data) => {
         spaceBetween: 15,
         init: false,
         breakpoints: {
+            360: {
+                slidesPerView: 2.1,
+                spaceBetween: 5,
+            },
             410: {
                 slidesPerView: 2.5,
             },
@@ -113,6 +117,10 @@ const initProductSwiperMultipleWrapper = (type = 'default', sectionName, data = 
             spaceBetween: 15,
             init: false,
             breakpoints: {
+                360: {
+                    slidesPerView: 2.1,
+                    spaceBetween: 5,
+                },
                 410: {
                     slidesPerView: 2.5,
                 },
@@ -182,7 +190,6 @@ const createProductSwiperSection = (sectionName, type = 'default', data) => {
     // 3. swiper객체 생성 및 resize 이벤트
     initProductSwiper(type, sectionName);
 }
-
 
 
 // const createProductSlides = (sectionSwiperWrapper, data) => {

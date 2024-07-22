@@ -578,7 +578,7 @@
 
     @media (max-width: 767px) {
         letter-spacing: 0;
-        font-size: 15px;
+        font-size: 14px;
         text-align: center;
     }
 
@@ -587,8 +587,8 @@
         width: 72px; /* font * 3배 */
         height: 72px;
         @media (max-width: 767px) {
-            width: 45px;
-            height: 45px;
+            width: 52px;
+            height: 52px;
         }
     }
 
