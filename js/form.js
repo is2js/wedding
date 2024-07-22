@@ -53,7 +53,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('toggle', () => ({
         isOn: true,
         value: true,
-        offText: '참석 불가 😂',
+        offText: '참석 불가 😢',
         onText: '참석 가능 😍',
         toggle() {
             if (this.isOn) {

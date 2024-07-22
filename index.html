@@ -1035,6 +1035,88 @@
         </div>
     </section>
 
+    <!-- timeline -->
+    <section class="story section-border position-relative overflow-hidden"
+             x-data="timeline"
+    >
+        <!-- 배경(구름) -->
+        <img class="position-absolute bottom-0 w-100 z-0 object-fit-cover object-position-top h-75"
+             src="./images/png/timeline/clouds.png" alt="timeline-bg">
+        <!-- 비행기 -->
+        <!--<div class="position-absolute w-100 d-flex justify-content-center align-items-center"
+             style="bottom: 1.25rem;"
+        >
+            <img class="w-75 z-0 animate-fly"
+                 style="max-width: 769px;"
+                 src="./images/png/timeline/plane.png" alt="timeline-bg-object"
+            >
+        </div>-->
+
+        <!-- content -->
+        <div class="layout-center pb-md-5">
+            <!-- title -->
+            <div class="d-flex align-items-center justify-content-between">
+                <h2 class="section-title">우리들 이야기</h2>
+            </div>
+
+            <!-- contents -->
+            <div class="row">
+                <div class="col z-1">
+                    <ul class="timeline"
+                        x-show="data.length"
+                        x-transition.duration.350ms
+                    >
+                        <template x-for="(item, index) in data"
+                                  :key="'t-item-' + 'idx-' + index">
+                            <li :class="{
+                                'timeline-inverted' : index % 2 === 1
+                            }"
+                                @click="timelineOpens = timelineOpens.map((isOpen, isOpenIndex) => isOpenIndex === index ? true : false);"
+                            >
+                                <div class="timeline-image rounded-circle border border-3"
+                                     :class="{ 'active' : timelineOpens[index] }"
+                                     :style="{backgroundImage: `url(${item.image})`}"
+                                ></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <span class="mb-0" x-text="item.createdAt">2015.09</span>
+                                        <div class="d-flex justify-content-start align-items-center cursor-pointer mb-1"
+                                        >
+                                            <!--:style="timelineOpens[index] ? 'font-size: 105%;' : ''"-->
+                                            <h3 class="mb-0 me-2 pe-0" x-text="item.title"
+                                                :class="{'mb-1': timelineOpens[index]}"
+                                            >첫 만남</h3>
+                                            <button class="py-0"
+                                                    type="button"
+                                                    :class="timelineOpens[index] ? 'rotate-180 duration-300' : 'duration-300'"
+                                            >
+                                                <!--stroke="#0F172AFF"-->
+                                                 <!--class="w-4"-->
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="3"
+                                                >
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="timeline-body"
+                                         x-show="timelineOpens[index]"
+                                         x-collapse
+                                    >
+                                        <p x-text="item.body"></p>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- gallery -->
     <section class="gallery section-border position-relative"
              x-data="gallery"
@@ -1685,6 +1767,7 @@
 <script src="./js/header.js"></script>
 <script src="./js/mainVisual.js"></script>
 <script src="./js/mainProfile.js"></script>
+<script src="js/mainStory.js"></script>
 <script src="./js/mainGallery.js"></script>
 <!--<script src="./js/mainProduct.js"></script>-->
 <!-- data.js를 import구문이 들어가는 순간부터는 module로 추가함 -->

@@ -21,6 +21,7 @@
 @import url("component/productCard.css"); /* 상품 thumbnail 카드 */
 @import url("component/productSlide.css"); /* 상품 thumbnail 카드의 swiper 제어 */
 @import url("component/testimonial.css"); /* gallery 등 */
+@import url("component/timeline.css"); /* story 등 */
 
 
 

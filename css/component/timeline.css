@@ -1,0 +1,252 @@
+:root {
+}
+
+.timeline {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1.4rem 0;
+    position: relative;
+
+    /* 세로선 */
+
+    &::before {
+        content: '';
+        position: absolute;
+        /*height: 100%!important;*/
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 3px;
+        /*background-color: var(--gray);*/
+        background-color: var(--greyd9);
+    }
+
+    /* 세로선도 가성선택자라 코드를 한번 더 적어줘야한다. mobile phone( ~ sm) */
+    @media (max-width: 576px) {
+        &::before {
+            /*width: 2px;*/
+            /* my) 세로선은 모바일에서 삭제 */
+            width: 0;
+            left: 60px;
+        }
+    }
+
+    & li {
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+            @media (max-width: 576px) {
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        position: relative;
+        /* new: float를 li단위별로 after에서 해제시키기 */
+
+        &::before, &::after {
+            content: '';
+            display: table;
+        }
+
+        &::after {
+            clear: both;
+        }
+
+        /* image (abs로 가로 정중앙) */
+
+        & .timeline-image {
+            width: 120px;
+            height: 120px;
+            background-color: #ccc;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            top: -9% !important;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &.active {
+                border-color: var(--indigo) !important;
+            }
+
+            /* new */
+            /*box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, .08), 0 3px 0 4px rgba(0, 0, 0, .05);*/
+
+            /* mobile phone( ~ sm) */
+            @media (max-width: 576px) {
+                /* 세로선 땡겨 준 60px만큼을 가되 left + margin-left로 나눠서 가자 */
+                /*left: 60px;*/
+                left: 15px;
+                margin-left: 45px;
+
+                /*top: 5px;*/
+                /* my) 홀수번째는 오른쪽으로 이동시키기 (기존 left:15px 제거용 left:auto) */
+                li:not(.timeline-inverted) & {
+                    left: auto;
+                    right: 15px;
+                    transform: translateX(50%);
+                    margin-right: 45px;
+                }
+
+                width: 95px;
+                height: 95px;
+            }
+        }
+
+        /* panel (float로 왼쪽정렬 + width 40%로 중앙 이미지 안넘게) */
+
+        & .timeline-panel {
+            width: 37%;
+            float: left;
+
+            /* mobile phone( ~ sm) */
+            @media (max-width: 576px) {
+                /*width: calc(100% - 200px);*/
+                width: calc(100% - 130px);
+            }
+
+            /* 짝수번째 처리*/
+
+            li.timeline-inverted & {
+                float: right;
+            }
+
+            /*border: 1px solid var(--gray);*/
+            /*padding: 1rem 1rem 0.7rem 1rem;*/
+            padding: 0.75rem 0.75rem 0.7rem 1rem;
+            border-radius: 14px;
+
+            position: relative;
+
+            background-color: #fff;
+            /* new */
+            box-shadow: 0 3px 0 hsl(205, 38%, 89%);
+
+            &::before {
+                position: absolute;
+                content: '';
+                /*right: 0;*/
+
+                display: inline-block;
+                /*top: 40px; !* (움직x의)padding 끝위치 -> 부모에서 더 내려가게 *!*/
+                top: 26px; /* 말풍선화살표 위치 올리기 */
+                right: -10px;
+
+                /*width: 20px;*/
+                /*height: 20px;*/
+
+                /*transform: rotate(45deg);*/
+                /*z-index: -1;*/
+                /*background-color: #fff;*/
+                /*border: 1px solid var(--gray);*/
+
+                border-top: 10px solid transparent;
+                /*border-left: 10px solid var(--gray);*/
+                /*border-right: 0 solid var(--gray);*/
+                border-left: 10px solid hsl(205, 38%, 89%);
+                border-right: 0 solid hsl(205, 38%, 89%);
+                border-bottom: 10px solid transparent;
+
+            }
+
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                display: inline-block;
+                /*top: 41px; !* 중앙이 before의  top + 1px right -1px *!*/
+                top: 27px; /*  */
+                /*right: -9px;*/
+                right: -8.5px;
+                /* border는 -1px + border색은 panel과 동일한 흰색  */
+                border-top: 9px solid transparent;
+                border-left: 9px solid #fff;
+                border-right: 0 solid #fff;
+                border-bottom: 9px solid transparent;
+            }
+
+            /* 짝수번째 처리2 - 부모는 앞에 명시해야해서, 따로 정의해줘야한다. */
+
+            .timeline-inverted &::before {
+                right: auto;
+                /*left: -10px;*/
+                left: -10px;
+                /*border-left: 0 solid red;*/
+                /*border-right: 10px solid red;*/
+                border-left-width: 0;
+                border-right-width: 10px;
+            }
+
+            /* 짝수번째 처리2 - 부모는 앞에 명시해야해서, 따로 정의해줘야한다. */
+
+            .timeline-inverted &::after {
+                right: auto;
+                left: -8.5px;
+                border-left-width: 0;
+                border-right-width: 9px;
+            }
+
+            .timeline-heading {
+                /*display: flex;*/
+                /*flex-wrap: wrap;*/
+                /*align-items: center;*/
+                /*justify-content: space-between;*/
+
+                & span {
+
+                    color: #495057;
+                    padding: 0 0.4rem;
+
+                    display: inline-block;
+                    font-weight: bold;
+                    font-size: 12px;
+                    @media (min-width: 768px) {
+                        font-size: 14px;
+                    }
+                }
+
+                & h3 {
+                    /*display: inline-block;*/
+                    color: var(--indigo);
+                    font-weight: bolder;
+                    padding: 0 0.3rem;
+                    font-size: 16px;
+                    @media (min-width: 768px) {
+                        font-size: 18px;
+                    }
+                }
+
+                /* 아코디언 svg */
+
+                & svg {
+                    stroke: var(--indigo);
+                    opacity: 0.6;
+                    width: 16px;
+                }
+            }
+
+            .timeline-body {
+                & p {
+                    font-size: 13px;
+                    line-height: 1.6;
+                    @media (min-width: 768px) {
+                        font-size: 15px;
+                        line-height: 1.8;
+                    }
+                    /*color: var(--dark-gray);*/
+                    color: var(--grey66);
+                    /*color: var(--bg-slate);*/
+                    /*color: black;*/
+                    font-family: 'Noto Serif KR', serif;
+                    font-weight: 550;
+                    /*padding: 0 0.5rem;*/
+                }
+            }
+        }
+    }
+}
