@@ -13,7 +13,7 @@ const data = [
         color: "#d3e3df",
         // mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b1a54bde-4a34-4e48-9e8c-1f6f5bc75c6f_1024.webp",
         // image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/de888228-e907-4b2d-997e-c8caa12dce42_1920.webp",
-        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/202d4f93-3fa3-4158-90a7-7e1f37f09993_1024.webp",
+        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/058b69ff-444b-4869-956e-939d2430dc2c_1024.webp",
         image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ba87556-bdb5-4304-827c-56eae6008722_1920.webp",
     },
     {
@@ -22,7 +22,7 @@ const data = [
         color: "#FBD9D9",
         // mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/e3630af8-f642-4428-ba2d-20fc9927f906_1024.webp",
         // image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/c500cba6-e256-4c32-b7bd-a99cf2c10c98_1920.webp",
-        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/49814af0-7159-48d3-bcc7-d889e28437aa_1024.webp",
+        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/7fbb1ae8-70bb-489c-809f-9ed87856efef_1024.webp",
         image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/5c424fa9-b2dc-4cc3-a6da-3b8eefdf5436_4700.webp",
     },
     {
@@ -31,7 +31,7 @@ const data = [
         color: "#6f49fa",
         // mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/8867d4b2-5258-4642-8174-bbb5076312b3_1024.webp",
         // image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/0cc693cf-a587-46ab-a050-cf4a183daed2_1920.webp",
-        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b1e7d4c3-2516-4deb-bc10-7d370fc81dcd_1024.webp",
+        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/422bc33f-c3c2-4a85-8784-34bfdea53a90_1024.webp",
         image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/c9e6b2a9-d997-42bd-9503-52e5f5069682_4700.webp",
     },
     // {

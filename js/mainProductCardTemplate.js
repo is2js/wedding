@@ -46,7 +46,7 @@ function renderAccount(account, familyName) {
                     '${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.'
                 )"
     >
-        계좌번호 복사
+        마음 전하실 곳
     </div>`;
 }
 
@@ -87,7 +87,7 @@ function renderPhone(phone) {
     return `<a class="product-mobile bg-img bg-img-x-left d-flex align-items-center mt14 ellipsis cursor-pointer"
 href="tel:${phone}"
 >
-        전화 걸기
+        연락 주실 곳
     </a>`;
 }
 
