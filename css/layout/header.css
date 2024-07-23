@@ -114,6 +114,10 @@
 
 .logo {
     font-size: 0;
+    & img {
+        width: auto;
+        height: 56px;
+    }
 }
 
 
