@@ -31,7 +31,7 @@ const data = [
         color: "#6f49fa",
         // mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/8867d4b2-5258-4642-8174-bbb5076312b3_1024.webp",
         // image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/0cc693cf-a587-46ab-a050-cf4a183daed2_1920.webp",
-        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/49814af0-7159-48d3-bcc7-d889e28437aa_1024.webp",
+        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b1e7d4c3-2516-4deb-bc10-7d370fc81dcd_1024.webp",
         image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/c9e6b2a9-d997-42bd-9503-52e5f5069682_4700.webp",
     },
     // {
