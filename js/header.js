@@ -94,4 +94,19 @@ document.addEventListener('alpine:init', () => {
             });
         }
     }));
+
+    Alpine.data('audio', (index) => ({
+        isPlaying: false,
+        toggleAudio() {
+            const song = this.$refs.song;
+
+            if (this.isPlaying) {
+                song.pause();
+            } else {
+                song.play();
+            }
+
+            this.isPlaying = !this.isPlaying;
+        },
+    }));
 })

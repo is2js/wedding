@@ -34,7 +34,7 @@
     <h1 class="logo" x-ref="logo">
         <a href="" tabindex="1">
             <!--<img src="images/logo.svg" alt="결혼">-->
-            <img src="images/logo.png" alt="결혼">
+            <img src="images/logo.png" alt="로고">
         </a>
     </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
@@ -66,19 +66,42 @@
                 <!-- type1) md에서만 a>텍스트 flex(for before to block )-->
                 <!--                <li class="d-none d-md-flex align-items-center"><a href="" class="cursor-pointer">비급여안내</a></li>-->
 
+
                 <!-- type2) 모바일에서 icon(배경+높이), md에서는 a>span>텍스트 -->
                 <!--        모바일 아이콘화 spot-menu-xxx(bgurl) + .bg-img + .bg-md-img-none-->
                 <!--        + 모바일에선 글자감추기 -->
-                <li class="d-flex align-items-center">
-                    <a class="bg-img bg-md-img-none cursor-pointer"
-                       @click="$store.modal.open()"
-                       style="background-image: url('./images/svg/icons/register-person-plus.svg');"
+                <!--                <li class="d-flex align-items-center">-->
+                <!--                    <a class="bg-img bg-md-img-none cursor-pointer"-->
+                <!--                       @click="$store.modal.open()"-->
+                <!--                       style="background-image: url('./images/svg/icons/register-person-plus.svg');"-->
+                <!--                    >-->
+                <!--                        &lt;!&ndash;style="background-image: url('./images/svg/icons/phone_solid.svg');"&ndash;&gt;-->
+                <!--                        &lt;!&ndash;<span class="d-none d-md-inline">문의하기</span>&ndash;&gt;-->
+                <!--                        <span class="d-none d-md-inline">참석여부 알려주기</span>-->
+                <!--                    </a>-->
+                <!--                </li>-->
+
+                <!-- type2 + x-data audio 기능 추가 -->
+                <li class="d-flex align-items-center"
+                    x-data="audio"
+                >
+                    <!--style="background-image: url('./images/svg/icons/header-music-play.svg');"-->
+                    <a class="bg-img bg-md-img-none cursor-pointer duration-300 position-relative"
+                       @click="toggleAudio"
+                       :style="`background-image: url('./images/svg/icons/header-music-${ isPlaying ? 'pause' : 'play' }.svg');`"
                     >
-                        <!--style="background-image: url('./images/svg/icons/phone_solid.svg');"-->
-                        <!--<span class="d-none d-md-inline">문의하기</span>-->
-                        <span class="d-none d-md-inline">참석여부 알려주기</span>
+                        <!--<span class="d-none d-md-inline"-->
+                        <span class="position-absolute position-md-static d-md-inline"
+                              x-text="isPlaying? '음악 끄기' : '음악 켜기' "
+                        >음악켜기</span>
                     </a>
+
+                    <audio loop x-ref="song">
+                        <source src="./audio/default.mp3" type="audio/mp3">
+                    </audio>
+
                 </li>
+
 
                 <!--                <li class="d-none d-md-flex align-items-center"><a href="" class="cursor-pointer">마이페이지</a></li>-->
 
@@ -1529,7 +1552,6 @@
             </div>
         </div>
     </section>
-
 
 
 </main>

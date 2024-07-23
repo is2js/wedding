@@ -2295,3 +2295,196 @@ Alpine.data('gnb_dropdown', () => ({
    ```
 
    ![image-20240625160726369](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240625160726369.png)
+
+
+
+
+
+
+
+# 100 뮤직
+
+```html
+<li class="d-flex align-items-center">
+    <a class="bg-img bg-md-img-none cursor-pointer"
+       @click="	"
+       style="background-image: url('./images/svg/icons/header-music-play.svg');"
+       >
+        <span class="d-none d-md-inline">음악켜기</span>
+    </a>
+</li>
+```
+
+![image-20240723225724017](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240723225724017.png)
+
+
+
+
+
+### html 아이콘변경/텍스트 변경은 x-ref 없이 상태값 + 삼항연산자(:style, x-text) + 토글로 처리
+
+```html
+<!-- type2 + x-data audio 기능 추가 -->
+<li class="d-flex align-items-center"
+    x-data="audio"
+    >
+```
+
+- 상태값 추가후, 그에 따른 `:style` + `x-text`에 삼항연산자
+
+```js
+Alpine.data('audio', (index) => ({
+    isPlaying: false,
+}));
+```
+
+```html
+<!-- type2 + x-data audio 기능 추가 -->
+<li class="d-flex align-items-center"
+    x-data="audio"
+    >
+    <!--style="background-image: url('./images/svg/icons/header-music-play.svg');"-->
+    <a class="bg-img bg-md-img-none cursor-pointer"
+       @click=""
+       :style="`background-image: url('./images/svg/icons/header-music-${ isPlaying ? 'pause' : 'play' }.svg');`"
+       >
+        <span class="d-none d-md-inline"
+              x-text="isPlaying? '음악끄기' : '음악켜기' "
+              >음악켜기</span>
+    </a>
+</li>
+```
+
+- 바꾸기 위한 토글
+
+```js
+Alpine.data('audio', (index) => ({
+    isPlaying: false,
+    toggleAudio() {
+        this.isPlaying = !this.isPlaying;
+    },
+}));
+```
+
+```html
+<a class="bg-img bg-md-img-none cursor-pointer"
+   @click="toggleAudio"
+   :style="`background-image: url('./images/svg/icons/header-music-${ isPlaying ? 'pause' : 'play' }.svg');`"
+   >
+```
+
+![image-20240723230527036](C:\Users\is2js\AppData\Roaming\Typora\typora-user-images\image-20240723230527036.png)
+
+
+
+
+
+- 참석여부 아이콘은 지우고 **span text를 d-none -d-md-inline에서 `모바일에선 absolute bottom 5px`로 글자 작게 해서 띄우기**
+
+  - 어차피 svg가 하얀배경에 배경그림으로 들어간 상태이므로 span을 그대로 작은 글씨로 보여준다.
+
+  ```html
+  <a class="bg-img bg-md-img-none cursor-pointer duration-300 position-relative"
+     @click="toggleAudio"
+     :style="`background-image: url('./images/svg/icons/header-music-${ isPlaying ? 'pause' : 'play' }.svg');`"
+     >
+      <!--<span class="d-none d-md-inline"-->
+      <span class="position-absolute position-md-static d-md-inline"
+            x-text="isPlaying? '음악 끄기' : '음악 켜기' "
+            >음악켜기</span>
+  </a>
+  ```
+
+  - absolute의 가운데정렬은 left0 right0
+
+  ```css
+  & li[x-data="audio"] {
+      span {
+          @media (max-width: 767px) {
+              bottom: 5px;
+              left: 0;
+              right: 0;
+  
+              text-align: center;
+              font-size: 9px;
+              color: var(--grey5a);
+              font-weight: 600;
+              text-shadow: none;
+              white-space: nowrap;
+          }
+      }
+  }
+  ```
+
+  ![image-20240723234934063](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240723234934063.png)
+
+
+
+
+
+- 웹용 between gap을 4-> 모바일 1rem으로 줄임
+
+
+
+![image-20240723233354121](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240723233354121.png)
+
+```css
+.header {
+
+    gap: 4rem;
+    /* 모바일에서는 로고 <-> 아이콘들이 비좁하서 gap줄이기*/
+    @media (max-width: 767px) {
+        gap: 1rem;
+    }
+
+```
+
+
+
+### audio태그 컨트롤은 x-data내부에서 태그 + x-ref로 처리
+
+- audio폴더를 만들고 mp3파일을 올려놓는다.
+
+- x-data 내부에 audio태그를 x-ref="song"과 함께 만든다.
+
+  ```html
+  <li class="d-flex align-items-center"
+      x-data="audio"
+      >
+      <a class="bg-img bg-md-img-none cursor-pointer duration-300 position-relative"
+         @click="toggleAudio"
+         :style="`background-image: url('./images/svg/icons/header-music-${ isPlaying ? 'pause' : 'play' }.svg');`"
+         >
+          <span class="position-absolute position-md-static d-md-inline"
+                x-text="isPlaying? '음악 끄기' : '음악 켜기' "
+                >음악켜기</span>
+      </a>
+  
+      <audio loop x-ref="song">
+          <source src="./audio/default.mp3" type="audio/mp3">
+      </audio>
+  
+  </li>
+  ```
+
+- js에서 **toggleAudio에 this.$refs.song을 element로 잡아 .pause() / play()시킨다**
+
+  ```js
+  Alpine.data('audio', (index) => ({
+      isPlaying: false,
+      toggleAudio() {
+          const song = this.$refs.song;
+  
+          if (this.isPlaying) {
+              song.pause();
+          } else {
+              song.play();
+          }
+  
+          this.isPlaying = !this.isPlaying;
+      },
+  }));
+  ```
+
+  
+
