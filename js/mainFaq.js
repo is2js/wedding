@@ -35,7 +35,7 @@ document.addEventListener('alpine:init', () => {
         faqOpens: [],
         init() {
             this.faqOpens = Array(this.data.length).fill(false);
-            //this.faqOpens[0] = true;
+            this.faqOpens[0] = true;
         },
         focusElement(index) {
             if (this.$el) {

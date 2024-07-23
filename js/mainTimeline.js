@@ -4,7 +4,7 @@ document.addEventListener('alpine:init', () => {
             {
                 image: "./images/png/timeline/01.png",
                 createdAt: "2015. 09",
-                title: "대학에서 첫 만남 💕",
+                title: "캠퍼스 커플로 시작 💕",
                 body: "강의실에서 시작된 첫 만남이 연인으로 발전하였습니다.",
             },
             {
