@@ -941,7 +941,7 @@
                                 <div class="swiper-slide">
                                     <!-- 부모 -->
                                     <h3 x-text="item.parents" class="ms-3 d-inline-block d-md-none"></h3>
-                                    <!-- 이미지 + 소새글-->
+                                    <!-- 이미지 + 소개 글-->
                                     <div class="d-flex justify-content-between align-items-start align-items-md-center">
                                         <div class="flex-shrink-0 me-2 me-md-3 -ms-1 d-flex flex-column justify-content-start align-items-center">
                                             <img class="object-fit-contain me-2"
@@ -967,7 +967,9 @@
                                                 <h3 x-text="item.parents" class="d-none d-md-inline-block"></h3><br/>
                                                 <h1 x-text="item.name" class="mb-0 mt-2 d-inline-block"></h1><span
                                                     x-text="item.role"></span>
-                                                <p x-text="'&nbsp' + item.bio" class="mt-1 mt-md-3 mb-1 mb-md-3"></p>
+                                                <p x-text="'&nbsp' + item.bio" class="mt-1 mt-md-3 mb-1 mb-md-3"
+                                                   style="white-space: pre-wrap;"
+                                                ></p>
                                             </div>
                                         </div>
                                     </div>
@@ -1141,7 +1143,7 @@
                         >
                     </button>
                 </div>
-                <span> 💖 </span>
+                <span>💖</span>
                 <div class="testimonials-item">
                     <button class="btn">
                         <img src="./images/png/gallery/husband.png" alt="Testimonial husband"
