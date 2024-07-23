@@ -36,24 +36,24 @@ const brideData = [
         tags: [],
     },
     // label / account 없는 형제자매들
-    {
-        thumbnail: `${productThumbnailImgSrc}family/bride_04.png`,
-        familyName: {
-            family: '자매',
-            name: '김나영'
-        },
-        // phone: '010-3015-3380',
-        tags: [],
-    },
-    {
-        thumbnail: `${productThumbnailImgSrc}family/bride_05.png`,
-        familyName: {
-            family: '남매',
-            name: '김영훈'
-        },
-        // phone: '010-3295-3380',
-        tags: [],
-    },
+    // {
+    //     thumbnail: `${productThumbnailImgSrc}family/bride_04.png`,
+    //     familyName: {
+    //         family: '자매',
+    //         name: '김나영'
+    //     },
+    //     // phone: '010-3015-3380',
+    //     tags: [],
+    // },
+    // {
+    //     thumbnail: `${productThumbnailImgSrc}family/bride_05.png`,
+    //     familyName: {
+    //         family: '남매',
+    //         name: '김영훈'
+    //     },
+    //     // phone: '010-3295-3380',
+    //     tags: [],
+    // },
 ];
 
 
@@ -97,24 +97,24 @@ const groomData = [
         tags: [],
     },
     // label / account 없는 형제자매들
-    {
-        thumbnail: `${productThumbnailImgSrc}family/groom_04.png`,
-        familyName: {
-            family: '형제',
-            name: '조재경'
-        },
-        // phone: '010-2048-7291',
-        tags: [],
-    },
-    {
-        thumbnail: `${productThumbnailImgSrc}family/groom_05.png`,
-        familyName: {
-            family: '남매',
-            name: '조아라'
-        },
-        // phone: '010-5558-1388',
-        tags: [],
-    },
+    // {
+    //     thumbnail: `${productThumbnailImgSrc}family/groom_04.png`,
+    //     familyName: {
+    //         family: '형제',
+    //         name: '조재경'
+    //     },
+    //     // phone: '010-2048-7291',
+    //     tags: [],
+    // },
+    // {
+    //     thumbnail: `${productThumbnailImgSrc}family/groom_05.png`,
+    //     familyName: {
+    //         family: '남매',
+    //         name: '조아라'
+    //     },
+    //     // phone: '010-5558-1388',
+    //     tags: [],
+    // },
 ];
 
 
