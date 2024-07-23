@@ -4,7 +4,8 @@ document.addEventListener('alpine:init', () => {
             {
                 image: "./images/png/profile/bride.png",
                 thumbnail: "./images/png/profile/thumbnail/bride.png",
-                bg: "./images/jpg/profile/bg/bride.jpg",
+                // bg: "./images/jpg/profile/bg/bride.jpg",
+                bg: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/eca098aa-982f-4c94-a458-88c1bcb3c241_1024.webp",
                 name: "김석영",
                 parents: "김용범과 홍선희의 장녀",
                 role: "예비신부",
@@ -19,7 +20,8 @@ document.addEventListener('alpine:init', () => {
             {
                 image: "./images/png/profile/husband.png",
                 thumbnail: "./images/png/profile/thumbnail/husband.png",
-                bg: "./images/jpg/profile/bg/husband.jpg",
+                // bg: "./images/jpg/profile/bg/husband.jpg",
+                bg: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/c43f663b-1f03-4886-861e-116fc5106485_1024.webp",
                 name: "조재성",
                 parents: "조귀남과 故류정이의 장남",
                 role: "예비신랑",
