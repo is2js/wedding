@@ -17,10 +17,17 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/is2js/screenshots/main/type1_신랑신부.png">
 
+    <!-- hero -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Noto+Sans+KR:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet">
     <!-- font -->
     <link rel="stylesheet" as="style" crossorigin
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+
+
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
@@ -29,6 +36,170 @@
 
 </head>
 <body x-data>
+
+<!-- hero -->
+<section id="hero"
+         class="hero w-100 h-100 p-3 mx-auto text-center
+                d-flex justify-content-center
+                text-white">
+    <main class="d-flex flex-column justify-content-between align-items-center">
+
+        <div class="w-100 mt-4 mt-md-2">
+            <div class="d-flex justify-content-between px-3 mt-md-3 text-gray">
+                <div class="d-flex flex-column align-items-center">
+                    <h5 class="mb-1 mb-md-2">2024년 9월 7일</h5>
+                    <h5 class="text-emerald">오후 12:00</h5>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <h5 class="mb-1 mb-md-2">경기도 하남시</h5>
+                    <h5 class="text-emerald">누아주 가든</h5>
+                </div>
+            </div>
+
+            <h1 class="mt-4 mt-md-3">Chojasseong & Kimseokyoung</h1>
+            <svg class="horizontal-svg mt-5 mt-md-4" xmlns="http://www.w3.org/2000/svg">
+                <path d="M131.014 2.344s-39.52 1.318-64.973 1.593c-25.456.24-65.013-.282-65.013-.282C-.34 3.623-.332 1.732.987 1.656c0 0 39.52-1.32 64.973-1.593 25.455-.24 65.012.282 65.012.282 1.356.184 1.37 1.86.042 1.999"/>
+            </svg>
+            <div class="testimonials mt-4">
+                <span>열정 넘치는</span>
+                <div class="testimonials-item z-3"
+                     x-data="{ open: false }"
+                     :class="{ 'active' : open }"
+                     @mouseover.outside="open = false"
+                     @focusout="await $nextTick();!$el.contains($focus.focused()) && (open = false)"
+                >
+                    <button class="btn"
+                            @mouseover="open = true;"
+                            @focus="open = true;"
+                    >
+                        <img src="./images/png/hero/husband.png" alt="Testimonial husband">
+                    </button>
+
+                    <!-- tooltip content -->
+                    <!--x-ref="tooltip"-->
+                    <div class="testimonials-tooltip pt-2"
+                         id="testimonial-01"
+                         role="tooltip"
+                         x-cloak
+                    >
+                        <div class="testimonials-tooltip-item"
+                             x-show="open"
+                             x-transition:enter="ease-cubic-bezier duration-200"
+                             x-transition:enter-start="opacity-0 translate-y-2"
+                             x-transition:enter-end="opacity-100 translate-y-0"
+                             x-transition:leave="ease-cubic-bezier duration-100"
+                             x-transition:leave-start="opacity-100"
+                             x-transition:leave-end="opacity-0"
+                        >
+                            <div class="testimonials-tooltip-item-content px-3 py-2 rounded-3 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="17" height="14"
+                                     aria-hidden="true">
+                                    <path fill-rule="nonzero"
+                                          d="M2.014 3.68c.276-1.267.82-2.198 1.629-2.79C4.453.295 5.627 0 7.167 0c.514 0 .908.02 1.185.061L5.035 10.49c-.75 2.494-2.429 3.66-5.035 3.496L2.014 3.68Zm8.648 0c.237-1.227.77-2.147 1.6-2.76C13.09.307 14.274 0 15.814 0c.514 0 .909.02 1.185.061L13.683 10.49c-.79 2.494-2.468 3.66-5.035 3.496L10.662 3.68Z"/>
+                                </svg>
+                                <p>
+                                    지금 보시는 청첩장을, 결혼에 대한 설레는 마음을 담아 정성스럽게 제작하였으니 예쁘게 봐주시면 감사하겠습니다.
+                                </p>
+                                <p>
+                                    예비신랑 <span class="text-gray">-</span> <span class="text-primary">조재성</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span>예비신랑과<br> 사랑스러운 </span>
+                <div class="testimonials-item z-2"
+                     x-data="{ open: false }"
+                     :class="{ 'active' : open }"
+                     @mouseover.outside="open = false"
+                     @focusout="await $nextTick();!$el.contains($focus.focused()) && (open = false)"
+                >
+                    <button class="btn"
+                            @mouseover="open = true;"
+                            @focus="open = true;"
+                    >
+                        <img src="images/png/hero/bride.png" alt="Testimonial husband">
+                    </button>
+
+                    <!-- tooltip content -->
+                    <!--x-ref="tooltip"-->
+                    <div class="testimonials-tooltip pt-2"
+                         id="testimonial-02"
+                         role="tooltip"
+                         x-cloak
+                    >
+                        <div class="testimonials-tooltip-item"
+                             x-show="open"
+                             x-transition:enter="ease-cubic-bezier duration-200"
+                             x-transition:enter-start="opacity-0 translate-y-2"
+                             x-transition:enter-end="opacity-100 translate-y-0"
+                             x-transition:leave="ease-cubic-bezier duration-100"
+                             x-transition:leave-start="opacity-100"
+                             x-transition:leave-end="opacity-0"
+                        >
+                            <div class="testimonials-tooltip-item-content px-3 py-2 rounded-3 text-start">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="17" height="14"
+                                     aria-hidden="true">
+                                    <path fill-rule="nonzero"
+                                          d="M2.014 3.68c.276-1.267.82-2.198 1.629-2.79C4.453.295 5.627 0 7.167 0c.514 0 .908.02 1.185.061L5.035 10.49c-.75 2.494-2.429 3.66-5.035 3.496L2.014 3.68Zm8.648 0c.237-1.227.77-2.147 1.6-2.76C13.09.307 14.274 0 15.814 0c.514 0 .909.02 1.185.061L13.683 10.49c-.79 2.494-2.468 3.66-5.035 3.496L10.662 3.68Z"/>
+                                </svg>
+                                <p>
+                                    안녕하세요? 결혼식의 주인공 예비신부입니다^^ 10년동안 연인으로 지내다가 이제 새로운 발돋음을 하려하니 많은 축복 부탁드려요~!
+                                </p>
+                                <p>
+                                    예비신부 <span class="text-gray">-</span> <span class="text-primary">김석영</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span>예비신부의 결혼식에</span><br/>
+                <span class="text-emerald you">당신</span><span>을 초대합니다</span>
+            </div>
+        </div>
+
+        <div class="w-100 mb-4 mb-md-5">
+            <a href="#home" class="btn btn-lg rounded-pill px-5"
+               onClick="enableScroll()"
+            >🤵👰 보러가기
+            </a>
+            <div class="mt-5 mt-md-3 mb-0 text-gray">결혼식까지</div>
+
+            <!-- timer 시작 -->
+            <div class="timer d-flex flex-column align-items-center mt-3 mb-4 mb-md-5">
+                <div class="d-flex align-items-center justify-content-center gap-3"
+                     x-data="timer(new Date(2024, 9, 30));"
+                     x-init="init();"
+                >
+                    <div class="d-flex flex-column align-items-center px-2">
+                        <span x-text="time().days" class="text-primary">00</span>
+                        <span class="text-emerald mt-xx">일</span>
+                    </div>
+                    <span class="vertical-line"></span>
+                    <div class="d-flex flex-column align-items-center px-2">
+                        <span x-text="time().hours" class="text-gray">23</span>
+                        <span class="text-gray ">시</span>
+                    </div>
+                    <span class="vertical-line"></span>
+                    <div class="d-flex flex-column align-items-center px-2">
+                        <span x-text="time().minutes" class="text-gray">59</span>
+                        <span class="text-gray ">분</span>
+                    </div>
+                    <span class="vertical-line"></span>
+                    <div class="d-flex flex-column align-items-center px-2">
+                        <span x-text="time().seconds" class="text-gray">00</span>
+                        <span class="text-gray ">초</span>
+                    </div>
+                </div>
+            </div>
+            <!-- timer 끝 -->
+
+        </div>
+    </main>
+</section>
+
 <!--<header class="header d-flex justify-content-between align-items-center">-->
 <header x-data="header" class="header d-flex justify-content-between justify-content-lg-start align-items-center">
     <h1 class="logo" x-ref="logo">
@@ -1844,6 +2015,8 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Alpine Plugins 1. collapse -->
 <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<!-- Alpine Plugins 2. focus for hero -->
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
 <!-- Alpine Core -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <!-- swiper -->

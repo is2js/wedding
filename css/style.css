@@ -8,6 +8,7 @@
 @import url("./common.css"); /* bs5.3 모자란 것 + tailwind 대처 */
 
 /*layout*/
+@import url("layout/hero.css"); /* hero */
 @import url("layout/header.css"); /* 헤더 */
 @import url("layout/main.css"); /* main with secetions */
 @import url("layout/footer.css"); /* footer */

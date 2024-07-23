@@ -1,3 +1,6 @@
+:root {
+}
+
 /* title 바로 아래 import */
 /*
 <link
@@ -30,6 +33,13 @@ label {
 
 .text-purple {
     color: var(--purple)!important;
+}
+
+.text-emerald {
+    color: var(--emerald) !important;
+}
+.text-gray {
+    color: var(--greyd9) !important;
 }
 
 .section-title {

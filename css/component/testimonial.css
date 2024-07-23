@@ -1,3 +1,6 @@
+:root {
+}
+
 .testimonials-item {
     /* 개별 section에서 fz에 따라 크기를 수정하자 */
     width: 4.5rem; /* font * 3배 */
@@ -22,8 +25,6 @@
     & button {
         cursor: none;
 
-        /*transform: rotate(4deg);*/
-
         .testimonials-item:nth-of-type(odd) & {
             transform: rotate(10deg);
         }
@@ -47,8 +48,63 @@
 
             width: 100%;
             height: 100%;
-            /*border-radius: inherit;*/
+            border-radius: inherit;
         }
+    }
+
+
+    & .testimonials-tooltip {
+        position: absolute;
+        top: 110%;
+
+        & .testimonials-tooltip-item {
+            position: relative;
+            width: 55vw;
+            max-width: 320px;
+            /* 말풍선 위쪽 말풍선*/
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -5px; /* 6px */
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                width: 0.75rem; /* 12px */
+                height: 0.75rem; /* 12px */
+                border-radius: 10%;
+
+                background-color: var(--black-0f);
+            }
+
+            .testimonials-tooltip-item-content {
+                position: relative;
+
+                & svg {
+                    transform: scale(0.7);
+                    fill: var(--emerald);
+                }
+
+                font-family: "Noto Sans KR", sans-serif;
+                text-shadow: none;
+                font-size: 2rem;
+                line-height: 1.5rem;
+                color: white;
+                font-weight: normal;
+
+                background-color: var(--black-0f);
+                /*opacity: 0.8;*/
+            }
+        }
+    }
+
+
+}
+
+/* 부모가 달린 경우 */
+.testimonials {
+    > *:has(~.active),
+    > *.active ~ * {
+        opacity: 0.25;
     }
 }
 

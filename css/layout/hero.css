@@ -1,0 +1,128 @@
+
+:root {
+}
+
+.hero {
+    /* 배경 */
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url(https://picstargram.s3.ap-northeast-2.amazonaws.com/post/5a8f98df-2ef0-4a3f-a526-9e315ae68903_1920.webp);
+        background-size: cover;
+        background-position: center;
+        /*filter: grayscale();*/
+        filter: blur(0.4px) grayscale(0.3) brightness(0.4);
+    }
+
+    position: relative;
+    min-height: 100vh;
+
+    font-size: 0.9rem;
+
+    & h1, h4, h5 {
+        text-shadow: var(--text-shadow);
+    }
+
+    /* 이름 */
+
+    & h1 {
+        font-family: 'Sacramento', cursive;
+        font-size: 2.3rem;
+        letter-spacing: -0.1rem;
+        line-height: 1.1;
+    }
+
+    & h4 {
+        /*font-family: 'East Sea Dokdo', sans-serif !important;*/
+        font-family: 'Noto Serif KR', sans-serif;
+        font-size: 1.6rem;
+    }
+
+    /* 양쪽 시간 | 날짜 */
+
+    & h5 {
+        font-family: 'Noto Serif KR', sans-serif;
+        font-size: 0.8rem;
+        line-height: 1.8;
+    }
+
+
+    & svg.horizontal-svg {
+        display: block;
+        margin: 0 auto;
+        fill: var(--emerald);
+        width: 132px;
+        height: 4px;
+
+        & path {
+            fill-opacity: 0.9;
+            fill-rule: evenodd;
+        }
+    }
+
+    /* 설명 */
+
+    & p {
+        font-size: 0.75rem;
+    }
+
+    & .horizontal-line {
+        width: 10rem;
+        background: var(--emerald);
+        padding: 0.125rem;
+    }
+
+    & .vertical-line {
+        width: 1px;
+        height: 3rem;
+        background: var(--greyd9);
+    }
+
+    /* 보러가기 버튼 */
+
+    & a {
+        color: black;
+        font-size: 16px;
+
+        font-weight: bold;
+        background-color: var(--emerald);
+        box-shadow: var(--text-shadow);
+        font-family: 'Noto Serif KR', sans-serif;
+
+
+        &:hover {
+            color: var(--emerald);
+            background-color: white;
+        }
+    }
+
+    /* testimonial 커스텀 (갤러리에도 들어감) */
+
+
+    & .testimonials-item {
+
+        width: 44px;
+        height: 44px;
+        @media (max-width: 767px) {
+            width: 38px;
+            height: 38px;
+        }
+
+        border-radius: 20%;
+        transform: translateY(-0.25rem);
+
+    }
+
+    .testimonials > span {
+        font-family: 'East Sea Dokdo', serif !important;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+}
