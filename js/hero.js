@@ -19,9 +19,9 @@ document.addEventListener('alpine:init', () => {
             // });
 
             this.setScreenSize();
-            window.addEventListener('resize', () => {
-                this.setScreenSize();
-            });
+            // window.addEventListener('resize', () => {
+            //     this.setScreenSize();
+            // });
 
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
@@ -137,7 +137,6 @@ document.addEventListener('alpine:init', () => {
             console.log(this.$refs.hero.height)
             this.$refs.hero.height = `${100*vh}px`;
             console.log(this.$refs.hero.height)
-
         }
     }));
 });
