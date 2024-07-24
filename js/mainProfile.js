@@ -45,7 +45,7 @@ document.addEventListener('alpine:init', () => {
                 autoHeight: true, // .swiper-slide { height: auto !important; } 이후 사용
                 // loop: true,
                 loop: false,
-                allowTouchMove: false,
+                 allowTouchMove: false,
                 init: false, // Dom에서 x-for를 다 처리하고 난 뒤, 직접 초기화할 예정
                 // autoplay: {
                 //     delay: 1000,

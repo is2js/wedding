@@ -29,8 +29,14 @@
 
     <script>
         // css에서 사용할 예정이라 미리 계산
-        const vh = window.innerHeight * 0.01; // innerHeight에 0.01을 곱해서 새로운 vh 단위를 구함
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // https://velog.io/@tmdgus8911/til-t7lmmbls
+        // https://blog.leehov.in/39
+        const setScreenSize = () => {
+            const vh = window.innerHeight * 0.01; // innerHeight에 0.01을 곱해서 새로운 vh 단위를 구함
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        setScreenSize();
+        window.addEventListener('resize', setScreenSize);
     </script>
 
     <!-- swiper -->
@@ -46,11 +52,11 @@
 <!--                d-flex justify-content-center-->
 <!-- x-show로 사라지게 하기 위해선 flex!important가 적용 안되게 해야한다. -->
 <!--         x-ref="hero"-->
-   <!--      x-show="!isEntrance"
-         x-cloak
-         x-transition:leave="ease-cubic-bezier duration-1500"
-         x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-25"-->
+<!--      x-show="!isEntrance"
+      x-cloak
+      x-transition:leave="ease-cubic-bezier duration-1500"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-25"-->
 <section id="hero"
          x-data="hero(2024, 9, 7, 12, 0)"
          class="hero w-100 p-3 mx-auto text-center text-white"
@@ -98,10 +104,10 @@
                     >
                         <div class="testimonials-tooltip-item"
                              x-show="open"
-                             x-transition:enter="ease-cubic-bezier duration-200"
+                             x-transition:enter="ease-cubic-bezier duration-300"
                              x-transition:enter-start="opacity-0 translate-y-2"
                              x-transition:enter-end="opacity-100 translate-y-0"
-                             x-transition:leave="ease-cubic-bezier duration-100"
+                             x-transition:leave="ease-cubic-bezier duration-300"
                              x-transition:leave-start="opacity-100"
                              x-transition:leave-end="opacity-0"
                         >
@@ -143,10 +149,10 @@
                     >
                         <div class="testimonials-tooltip-item"
                              x-show="open"
-                             x-transition:enter="ease-cubic-bezier duration-200"
+                             x-transition:enter="ease-cubic-bezier duration-300"
                              x-transition:enter-start="opacity-0 translate-y-2"
                              x-transition:enter-end="opacity-100 translate-y-0"
-                             x-transition:leave="ease-cubic-bezier duration-100"
+                             x-transition:leave="ease-cubic-bezier duration-300"
                              x-transition:leave-start="opacity-100"
                              x-transition:leave-end="opacity-0"
                         >
@@ -164,7 +170,10 @@
                     </div>
                 </div>
                 <span>예비신부가 준비한</span><br/>
-                <span>작은 정원으로 </span><span class="text-emerald you">당신</span><span>을 초대합니다</span>
+                <span>작은 정원으로 </span>
+                <span x-ref="you" class="text-emerald you">당신</span>
+                <span x-ref="you2">을 </span>
+                <span>초대합니다</span>
             </div>
         </div>
 
@@ -2047,7 +2056,6 @@
 <script src="js/mainTimeline.js"></script>
 <script src="./js/mainGallery.js"></script>
 <script src="./js/mainFaq.js"></script>
-<!--<script src="./js/mainProduct.js"></script>-->
 <!-- data.js를 import구문이 들어가는 순간부터는 module로 추가함 -->
 <script src="./js/mainProduct.js" type="module"></script>
 <script src="./js/modal.js"></script>

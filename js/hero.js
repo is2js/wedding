@@ -4,10 +4,21 @@ document.addEventListener('alpine:init', () => {
         remaining: null,
         isPast: false,
 
-        init() {
+        setName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            if (name) {
+                this.$refs.you.innerText = name ;
+                this.$refs.you2.innerText = '님을 ';
+            }
+        }, init() {
+            // 이름 파싱
+            this.setName();
 
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
+
+
 
             // 한국시간으로 만료기한 넣기
             this.expiry = this.toKoreanTime(new Date(year, month - 1, day, hours, minutes)).getTime();
