@@ -9,7 +9,7 @@ document.addEventListener('alpine:init', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const name = urlParams.get('name');
             if (name) {
-                this.$refs.you.innerText = name ;
+                this.$refs.you.innerText = name;
                 this.$refs.you2.innerText = '님을 ';
             }
         }, init() {
@@ -127,13 +127,17 @@ document.addEventListener('alpine:init', () => {
             /* 4) 브라우저 db에 opened 상태 기록해놓기 */
             // localStorage.setItem('opened', 'true');
 
-            // 6) 첫입장시 audio / modal 키기
+            // 6) 첫입장시 audio 자동 켜기 (playAudio 내부에서, 켜진상탠지 / 끈 경험이 있는지 통과 후 켠다)
             if (!this.isEntrance && this.$store.audio) {
                 this.$store.audio.playAudio();
             }
 
+            // 7) 첫 입장시 & 전송경험 없을 때  modal 자동켜기
             if (!this.isEntrance && this.$store.modal) {
-                this.$store.modal.open();
+                // 전송경험이 없어야 킨다.
+                if (!JSON.parse(localStorage.getItem('rsvp'))) {
+                    this.$store.modal.open();
+                }
             }
 
             // last
@@ -143,7 +147,7 @@ document.addEventListener('alpine:init', () => {
             // #header로 스크롤 이동
             const header = document.getElementById('header');
             if (header) {
-                header.scrollIntoView({ behavior: 'smooth' });
+                header.scrollIntoView({behavior: 'smooth'});
             }
         }
     }));

@@ -23,11 +23,13 @@ document.addEventListener('alpine:init', () => {
                 // 모달 닫기
 
                 if (this.response.ok) {
-                    alert('참석여부가 전달됐어요!');
+                    alert('참석여부가 전달됐어요😁\n다음 접속시 자동으로 창이 뜨지 않으나,\n원하시면 재전송 가능합니다.');
                     await this.$store.modal.close();
+                    localStorage.setItem('rsvp', JSON.stringify(true));
+
                     // form.reset();
                 } else {
-                    alert('전송 실패. 다시 시도해 주세요.');
+                    alert('전송 실패. 다시 시도해 주세요.😅');
                 }
             } catch (error) {
                 this.loading = false;

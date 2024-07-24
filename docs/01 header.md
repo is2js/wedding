@@ -2529,3 +2529,117 @@ Alpine.store('audio', {
 </li>
 ```
 
+
+
+
+
+# 101 localstorage 적용하기
+
+1. **toggle**해서 상태변수가 바뀌면 **바뀐상태를 set**한다
+
+   - 로컬이 아니라 store전역이므로, watch가 필요없다
+
+   ```js
+   toggleAudio() {
+       const song = document.getElementById('song');
+   
+       if (this.isPlaying) {
+           song.pause();
+           // localStorage.setItem('audio', JSON.stringify(false));
+       } else {
+           song.volume = 0.1;
+           song.play();
+       }
+   
+       this.isPlaying = !this.isPlaying;
+       localStorage.setItem('audio', JSON.stringify(this.isPlaying))
+   },
+   ```
+
+   ![image-20240724220116673](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240724220116673.png)
+
+
+
+
+
+2. **첫 시작을 하는 곳 or init**에서 `이미 켜져있는 경우`가 아니라 **`과거에 끈 경험`이 있으면 켜지않고 play를 중단시킨다.**
+
+   ```js
+   playAudio() {
+       // 이미 켜져있거나
+       if (this.isPlaying) {
+           return
+       }
+   
+       // 과거에 끈 적이 있으면 -> 안킨다.
+       if (!JSON.parse(localStorage.getItem('audio'))){
+           return
+       }
+   
+       this.toggleAudio();
+   },
+   ```
+
+   
+
+
+
+
+
+### modal도
+
+1. modal은 토글여부가 아니라 **전송성공 한 적이 있으면, 그 경험을 set한다**
+
+   ```js
+   if (this.response.ok) {
+       alert('참석여부가 전달됐어요!\n 다음 접속시 자동으로 창이 뜨지 않으나,\n 원하시면 재전송 가능합니다.');
+       await this.$store.modal.close();
+       localStorage.setItem('rsvp', JSON.stringify(true));
+   
+       // form.reset();
+   } else {
+       alert('전송 실패. 다시 시도해 주세요.');
+   }
+   ```
+
+   ![image-20240724221053789](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240724221053789.png)
+
+2. **첫 시작open하는 hero에서 전송경험이 있는지 확인후, open한다.**
+
+   - **modal은 전송이 가능하기 때문에, 첫입장 open외부에서 검사한다. open내부에서 검사하면 안된다.**
+
+   ```js
+   // 7) 첫 입장시 & 전송경험 없을 때  modal 자동켜기
+   if (!this.isEntrance && this.$store.modal) {
+       // 전송경험이 없어야 킨다.
+       if (!JSON.parse(localStorage.getItem('rsvp'))) {
+           this.$store.modal.open();
+       }
+   }
+   ```
+
+   
+
+
+
+3. 참석여부 알려주기 텍스트를 
+
+   - 보낸 경험 있으면 `다시` 알려주기로 바꾸기
+
+   ```html
+   <!-- <span class="register-text-title">참석여부 알려주기</span>-->
+   <span class="register-text-title">참석여부 <span x-text="JSON.parse(localStorage.getItem('rsvp')) ? '다시 ': ''"></span>알려주기</span>
+   ```
+
+   ![image-20240724221923413](https://raw.githubusercontent.com/is2js/screenshots/main/image-20240724221923413.png)
+
+4. **hidden인풋으로 name="재전송여부" -> `시트에는 칼럼만 만들어주면된다`**
+
+   - localStorage를 `:value`에 넣어서 원하는 텍스트로 넣어전달하자.
+
+   ```js
+   <!-- Hidden input for 재전송 -->
+       <input type="hidden" name="재전송여부" :value="JSON.parse(localStorage.getItem('rsvp')) ? 'O' : 'X'">
+   ```
+
+   

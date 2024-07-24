@@ -277,7 +277,7 @@
                 <!--                                </li>-->
 
                 <!-- type2 + x-data audio 기능 추가 -->
-<!--                    x-data="audio"-->
+                <!--                    x-data="audio"-->
                 <li class="song d-flex align-items-center">
                     <a class="bg-img bg-md-img-none cursor-pointer duration-300 position-relative"
                        @click="$store.audio.toggleAudio()"
@@ -470,7 +470,9 @@
            @click="$store.modal.open()"
         >
             <div class="register-text d-flex flex-column flex-md-row align-items-md-center">
-                <span class="register-text-title">참석여부 알려주기</span>
+                <!--                <span class="register-text-title">참석여부 알려주기</span>-->
+                <span class="register-text-title">참석여부 <span
+                        x-text="JSON.parse(localStorage.getItem('rsvp')) ? '다시 ': ''"></span>알려주기</span>
                 <span class="register-text-subtitle">
                     참석여부 / 동행인원을 알려주세요 <strong class="d-none d-md-inline">예식준비에 큰힘이 됩니다!</strong>
                 </span>
@@ -1840,6 +1842,9 @@
                   x-ref="form"
                   @submit.prevent="await handleSubmit"
             >
+
+                <!-- Hidden input for 재전송 -->
+                <input type="hidden" name="재전송여부" :value="JSON.parse(localStorage.getItem('rsvp')) ? 'O' : 'X'">
 
                 <!-- 신부/신랑측 선택 radio -->
                 <div class="col-12">

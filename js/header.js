@@ -53,16 +53,25 @@ document.addEventListener('alpine:init', () => {
             if (this.isPlaying) {
                 song.pause();
             } else {
+                song.volume = 0.1;
                 song.play();
             }
 
             this.isPlaying = !this.isPlaying;
+            localStorage.setItem('audio', JSON.stringify(this.isPlaying))
         },
         playAudio() {
-          if (this.isPlaying) {
-              return
-          }
-          this.toggleAudio();
+            // 이미 켜져있거나
+            if (this.isPlaying) {
+                return
+            }
+            
+            // 과거에 끈 적이 있으면 -> 안킨다.
+            if (!JSON.parse(localStorage.getItem('audio'))){
+                return
+            }
+
+            this.toggleAudio();
         },
     });
 
