@@ -39,7 +39,7 @@
 
 <!-- hero -->
 <section id="hero"
-         x-data="hero"
+         x-data="hero(2024, 9, 7, 12, 0)"
          class="hero w-100 h-100 p-3 mx-auto text-center
                 d-flex justify-content-center
                 text-white">
@@ -109,7 +109,8 @@
                         </div>
                     </div>
                 </div>
-                <span>예비신랑과<br> 사랑스러운 </span>
+                <span>예비신랑과<br>
+                    사랑스러운 </span>
                 <div class="testimonials-item z-2"
                      x-data="{ open: false }"
                      :class="{ 'active' : open }"
@@ -156,9 +157,8 @@
                         </div>
                     </div>
                 </div>
-                <span>예비신부의 </span><br/>
-                <span>결혼식이 열리는 작은 정원으로</span><br/>
-                <span class="text-emerald you">당신</span><span>을 초대합니다</span>
+                <span>예비신부가 준비한</span><br/>
+                <span>작은 정원으로 </span><span class="text-emerald you">당신</span><span>을 초대합니다</span>
             </div>
         </div>
 
@@ -167,32 +167,38 @@
                @click="enableScroll()"
             >🤵👰 보러가기
             </a>
-            <div class="mt-5 mt-md-3 mb-0 text-gray">결혼식까지</div>
+            <div class="mt-5 mt-md-3 mb-0 text-gray"
+                 x-text="remaining > 0 ? `결혼식까지 ${time().days}일 남았습니다` : `결혼식 이후 ${time().days}일 지났습니다.`"
+            >결혼식까지
+            </div>
 
             <!-- timer 시작 -->
             <div class="timer d-flex flex-column align-items-center mt-3 mb-4 mb-md-5">
-                <div class="d-flex align-items-center justify-content-center gap-3"
-                >
-                    <div class="d-flex flex-column align-items-center px-2">
-                        <span x-text="time().days" class="text-emerald">00</span>
-                        <span class="text-emerald mt-xx">일</span>
+                <template x-if="!isPast">
+
+                    <div class="d-flex align-items-center justify-content-center gap-3"
+                    >
+                        <div class="d-flex flex-column align-items-center px-2">
+                            <span x-text="time().days" class="text-emerald">00</span>
+                            <span class="text-emerald mt-xx">일</span>
+                        </div>
+                        <span class="vertical-line"></span>
+                        <div class="d-flex flex-column align-items-center px-2">
+                            <span x-text="time().hours" class="text-gray">23</span>
+                            <span class="text-gray ">시</span>
+                        </div>
+                        <span class="vertical-line"></span>
+                        <div class="d-flex flex-column align-items-center px-2">
+                            <span x-text="time().minutes" class="text-gray">59</span>
+                            <span class="text-gray ">분</span>
+                        </div>
+                        <span class="vertical-line"></span>
+                        <div class="d-flex flex-column align-items-center px-2">
+                            <span x-text="time().seconds" class="text-gray">00</span>
+                            <span class="text-gray ">초</span>
+                        </div>
                     </div>
-                    <span class="vertical-line"></span>
-                    <div class="d-flex flex-column align-items-center px-2">
-                        <span x-text="time().hours" class="text-gray">23</span>
-                        <span class="text-gray ">시</span>
-                    </div>
-                    <span class="vertical-line"></span>
-                    <div class="d-flex flex-column align-items-center px-2">
-                        <span x-text="time().minutes" class="text-gray">59</span>
-                        <span class="text-gray ">분</span>
-                    </div>
-                    <span class="vertical-line"></span>
-                    <div class="d-flex flex-column align-items-center px-2">
-                        <span x-text="time().seconds" class="text-gray">00</span>
-                        <span class="text-gray ">초</span>
-                    </div>
-                </div>
+                </template>
             </div>
             <!-- timer 끝 -->
 

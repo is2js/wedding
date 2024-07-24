@@ -2,6 +2,8 @@ document.addEventListener('alpine:init', () => {
     Alpine.data("hero", (year, month, day, hours, minutes) => ({
         expiry: null,
         remaining: null,
+        isPast: false,
+
         init() {
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
@@ -11,9 +13,12 @@ document.addEventListener('alpine:init', () => {
 
             // 남은시간 한번 넣고, 1초마다 다시 계산
             this.setRemaining();
-            setInterval(() => {
-                this.setRemaining();
-            }, 1000);
+
+            if (!this.isPast) {
+                setInterval(() => {
+                    this.setRemaining();
+                }, 1000);
+            }
         },
         toKoreanTime(date) {
             // Convert local time to Korean Standard Time (UTC+9)
@@ -27,6 +32,8 @@ document.addEventListener('alpine:init', () => {
             const now = this.toKoreanTime(new Date()).getTime();
             const diff = this.expiry - now;
             this.remaining = Math.floor(diff / 1000);
+
+            this.isPast = this.remaining <= 0;
         },
         days() {
             const days = Math.floor(this.remaining / 86400);
@@ -51,12 +58,28 @@ document.addEventListener('alpine:init', () => {
             return ("0" + value).slice(-2);
         },
         time() {
-            return {
-                days: this.format(this.days().value),
-                hours: this.format(this.hours().value),
-                minutes: this.format(this.minutes().value),
-                seconds: this.format(this.seconds().value),
-            };
+            if (!this.isPast) {
+                return {
+                    days: this.format(this.days().value),
+                    hours: this.format(this.hours().value),
+                    minutes: this.format(this.minutes().value),
+                    seconds: this.format(this.seconds().value),
+                };
+            } else {
+                const passed = Math.abs(this.remaining);
+                const days = Math.floor(passed / 86400);
+                const remainingAfterDays = passed % 86400;
+                const hours = Math.floor(remainingAfterDays / 3600);
+                const remainingAfterHours = remainingAfterDays % 3600;
+                const minutes = Math.floor(remainingAfterHours / 60);
+                const seconds = remainingAfterHours % 60;
+                return {
+                    days: this.format(days),
+                    hours: this.format(hours),
+                    minutes: this.format(minutes),
+                    seconds: this.format(seconds),
+                };
+            }
         },
         disableScroll() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -72,10 +95,12 @@ document.addEventListener('alpine:init', () => {
             rootElement.style.scrollBehavior = 'auto';
         },
         enableScroll() {
+            /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */
             window.onscroll = function () {
 
             };
 
+            /* 2) 스크롤 움직임에 대해, 칼같이 움직이게 가능하도록 복구 */
             const rootElement = document.querySelector(':root');
             rootElement.style.scrollBehavior = 'smooth';
 
