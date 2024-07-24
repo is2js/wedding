@@ -3,9 +3,9 @@ document.addEventListener('alpine:init', () => {
         expiry: null,
         remaining: null,
         isPast: false,
-        height: null,
 
         init() {
+
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
 
@@ -97,9 +97,12 @@ document.addEventListener('alpine:init', () => {
             //
             // document.body.style.overflow = 'hidden';
         },
+
         entrance() {
-            /* height 관련 짜증나서 삭제 */
-            this.$refs.hero.classList.add('d-none');
+            setTimeout(() => {
+                    this.$refs.hero.classList.add('d-none');
+                }, 500); // 2초 후 상태 변경
+
 
             /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */
             window.onscroll = function () {
