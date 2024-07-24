@@ -91,8 +91,8 @@ document.addEventListener('alpine:init', () => {
             };
 
             /* 2) 스크롤 움직임에 대해, 칼같이 움직여서 사실상 안움직이는 것으로 추가 옵션*/
-            const rootElement = document.querySelector(':root');
-            rootElement.style.scrollBehavior = 'auto';
+            // const rootElement = document.querySelector(':root');
+            // rootElement.style.scrollBehavior = 'auto';
         },
         enableScroll() {
             /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */
@@ -101,8 +101,8 @@ document.addEventListener('alpine:init', () => {
             };
 
             /* 2) 스크롤 움직임에 대해, 칼같이 움직이게 가능하도록 복구 */
-            const rootElement = document.querySelector(':root');
-            rootElement.style.scrollBehavior = 'smooth';
+            // const rootElement = document.querySelector(':root');
+            // rootElement.style.scrollBehavior = 'smooth';
 
             /* 4) 브라우저 db에 opened 상태 기록해놓기 */
             // localStorage.setItem('opened', 'true');
