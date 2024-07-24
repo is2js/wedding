@@ -8,8 +8,8 @@
 
     &.sticky-top {
         overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.5) !important;
-        backdrop-filter: blur(4px);
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        backdrop-filter: blur(2px);
     }
 
     /* 위쪽 abs spot-menu를 위한, 위쪽 여백 48px 추가(위 | 좌=우 | 아래)*/
