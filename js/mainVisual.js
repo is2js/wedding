@@ -114,6 +114,9 @@ const initVisualSwiper = (data) => {
             },
         },
         grabCursor: true,
+        autoplay: true,
+        interval: 5000,
+        allowTouchMove: true,
     });
 
 
