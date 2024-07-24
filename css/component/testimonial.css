@@ -59,8 +59,8 @@
 
         & .testimonials-tooltip-item {
             position: relative;
-            width: 55vw;
-            max-width: 320px;
+            width: 60vw;
+            max-width: 360px;
             /* 말풍선 위쪽 말풍선*/
 
             &::after {
@@ -93,6 +93,10 @@
 
                 background-color: var(--black-0f);
                 /*opacity: 0.8;*/
+
+                & p {
+                    white-space: pre-wrap;
+                }
             }
         }
     }
