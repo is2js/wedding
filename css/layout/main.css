@@ -615,7 +615,8 @@
 
 /* story */
 .story {
-    background-color: hsl(205, 38%, calc(89% * 1.05));
+    /*background-color: hsl(205, 38%, calc(89% * 1.05));*/
+    background-color: var(--green05);
     /* 자식 속 .layout-center의 margin collapse를 방지하기 위해 */
     padding-top: 1px;
 }

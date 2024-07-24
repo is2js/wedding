@@ -58,7 +58,8 @@
         & .timeline-image {
             width: 120px;
             height: 120px;
-            background-color: #ccc;
+            /*background-color: #ccc;*/
+            background-color: var(--grey-zinc);
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -70,7 +71,8 @@
             background-repeat: no-repeat;
 
             &.active {
-                border-color: var(--indigo) !important;
+                /*border-color: var(--indigo) !important;*/
+                border-color: var(--green05) !important;
             }
 
             /* new */
@@ -198,7 +200,6 @@
                 /*justify-content: space-between;*/
 
                 & span {
-
                     color: #495057;
                     padding: 0 0.4rem;
 
@@ -212,7 +213,8 @@
 
                 & h3 {
                     /*display: inline-block;*/
-                    color: var(--indigo);
+                    /*color: var(--indigo);*/
+                    color: var(--green05);
                     font-weight: bolder;
                     padding: 0 0.3rem;
                     font-size: 15px;
@@ -224,7 +226,8 @@
                 /* 아코디언 svg */
 
                 & svg {
-                    stroke: var(--indigo);
+                    /*stroke: var(--indigo);*/
+                    stroke: var(--green05);
                     opacity: 0.6;
                     width: 16px;
                 }
