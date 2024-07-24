@@ -38,12 +38,17 @@
 <body x-data>
 
 <!-- hero -->
+<!--                d-flex justify-content-center-->
+<!-- x-show로 사라지게 하기 위해선 flex!important가 적용 안되게 해야한다. -->
 <section id="hero"
          x-data="hero(2024, 9, 7, 12, 0)"
-         class="hero w-100 h-100 p-3 mx-auto text-center
-                d-flex justify-content-center
-                text-white"
+         class="hero w-100 h-100 p-3 mx-auto text-center text-white"
          x-ref="hero"
+         x-show="!isEntrance"
+         x-cloak
+         x-transition:leave="ease-cubic-bezier duration-2000"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
 >
     <main class="d-flex flex-column justify-content-between align-items-center"
     >

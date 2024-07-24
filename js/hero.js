@@ -3,6 +3,7 @@ document.addEventListener('alpine:init', () => {
         expiry: null,
         remaining: null,
         isPast: false,
+        isEntrance: false,
 
         init() {
 
@@ -99,9 +100,10 @@ document.addEventListener('alpine:init', () => {
         },
 
         entrance() {
-            setTimeout(() => {
-                    this.$refs.hero.classList.add('d-none');
-                }, 500); // 2초 후 상태 변경
+            // setTimeout(() => {
+            //         this.$refs.hero.classList.add('d-none');
+            //     }, 500); // 2초 후 상태 변경
+            this.isEntrance = true;
 
 
             /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */

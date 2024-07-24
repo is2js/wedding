@@ -3,6 +3,8 @@
 }
 
 .hero {
+    display: flex;
+    justify-content: center;
     /* 배경 */
 
     &::before {
