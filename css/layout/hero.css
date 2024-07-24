@@ -21,10 +21,11 @@
     }
 
     position: relative;
-    /*min-height: 100vh;*/
-    /*height: 100vh;*/
-    /* 특정 브라우저에서 --vh가 작동하지 않을 수 있기에 미리 작성 */
+    min-height: 100vh;
+    /*height: auto;*/
+    /*https://blog.leehov.in/39*/
     /*height: calc(var(--vh, 1vh) * 100);*/
+
 
     font-size: 0.9rem;
 
