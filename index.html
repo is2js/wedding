@@ -249,16 +249,16 @@
                 <!-- type2) 모바일에서 icon(배경+높이), md에서는 a>span>텍스트 -->
                 <!--        모바일 아이콘화 spot-menu-xxx(bgurl) + .bg-img + .bg-md-img-none-->
                 <!--        + 모바일에선 글자감추기 -->
-                <!--                <li class="d-flex align-items-center">-->
-                <!--                    <a class="bg-img bg-md-img-none cursor-pointer"-->
-                <!--                       @click="$store.modal.open()"-->
-                <!--                       style="background-image: url('./images/svg/icons/register-person-plus.svg');"-->
-                <!--                    >-->
-                <!--                        &lt;!&ndash;style="background-image: url('./images/svg/icons/phone_solid.svg');"&ndash;&gt;-->
-                <!--                        &lt;!&ndash;<span class="d-none d-md-inline">문의하기</span>&ndash;&gt;-->
-                <!--                        <span class="d-none d-md-inline">참석여부 알려주기</span>-->
-                <!--                    </a>-->
-                <!--                </li>-->
+                <!--                                <li class="d-flex align-items-center">-->
+                <!--                                    <a class="bg-img bg-md-img-none cursor-pointer"-->
+                <!--                                       @click="$store.modal.open()"-->
+                <!--                                       style="background-image: url('./images/svg/icons/register-person-plus.svg');"-->
+                <!--                                    >-->
+                <!--                                        &lt;!&ndash;style="background-image: url('./images/svg/icons/phone_solid.svg');"&ndash;&gt;-->
+                <!--                                        &lt;!&ndash;<span class="d-none d-md-inline">문의하기</span>&ndash;&gt;-->
+                <!--                                        <span class="d-none d-md-inline">참석여부 알려주기</span>-->
+                <!--                                    </a>-->
+                <!--                                </li>-->
 
                 <!-- type2 + x-data audio 기능 추가 -->
                 <li class="d-flex align-items-center"
@@ -278,23 +278,22 @@
                     <audio loop x-ref="song">
                         <source src="./audio/default.mp3" type="audio/mp3">
                     </audio>
-
                 </li>
 
 
                 <!--                <li class="d-none d-md-flex align-items-center"><a href="" class="cursor-pointer">마이페이지</a></li>-->
 
                 <!-- type3) 모바일에서 icon(배경+높이) + dmd-none + aria-hidden="true" md부턴 아예 안보이는 button>span>텍스트 -->
-                <li class="d-flex d-md-none align-items-center"
-                    aria-hidden="true"
-                >
-                    <button href="" class="bg-img bg-md-img-none"
-                            style="background-image: url('./images/svg/icons/total_menu.svg');"
-                            @click="$store.megamenu.toggle()"
-                    >
-                        <span class="d-none d-md-inline">전체메뉴</span>
-                    </button>
-                </li>
+                <!--                <li class="d-flex d-md-none align-items-center"-->
+                <!--                    aria-hidden="true"-->
+                <!--                >-->
+                <!--                    <button href="" class="bg-img bg-md-img-none"-->
+                <!--                            style="background-image: url('./images/svg/icons/total_menu.svg');"-->
+                <!--                            @click="$store.megamenu.toggle()"-->
+                <!--                    >-->
+                <!--                        <span class="d-none d-md-inline">전체메뉴</span>-->
+                <!--                    </button>-->
+                <!--                </li>-->
 
                 <!-- type1) -->
                 <!--                <li class="d-none d-md-flex align-items-center"><a href="">로그인</a></li>-->
@@ -302,120 +301,121 @@
         </nav>
     </div>
 </header>
+
 <!-- 모바일 전체화면 -->
-<aside class="megamenu z-1000">
-    <div class="megamenu-offcanvas z-2 position-absolute w-10/12 top-0 end-0 bottom-0 overflow-y-auto"
-         x-show="$store.megamenu.isOpen"
-         x-cloak
-         x-transition:enter="ease-gentle duration-500"
-         x-transition:enter-start="translate-x-full"
-         x-transition:enter-end="translate-x-0"
-         x-transition:leave="ease-gentle duration-500"
-         x-transition:leave-start="translate-x-0"
-         x-transition:leave-end="translate-x-full"
-    >
-        <nav>
-            <ul>
-                <!-- 로그인-->
-                <li data-last><a class="d-flex align-items-center" href="">로그인</a></li>
+<!--<aside class="megamenu z-1000">-->
+<!--    <div class="megamenu-offcanvas z-2 position-absolute w-10/12 top-0 end-0 bottom-0 overflow-y-auto"-->
+<!--         x-show="$store.megamenu.isOpen"-->
+<!--         x-cloak-->
+<!--         x-transition:enter="ease-gentle duration-500"-->
+<!--         x-transition:enter-start="translate-x-full"-->
+<!--         x-transition:enter-end="translate-x-0"-->
+<!--         x-transition:leave="ease-gentle duration-500"-->
+<!--         x-transition:leave-start="translate-x-0"-->
+<!--         x-transition:leave-end="translate-x-full"-->
+<!--    >-->
+<!--        <nav>-->
+<!--            <ul>-->
+<!--                &lt;!&ndash; 로그인&ndash;&gt;-->
+<!--                <li data-last><a class="d-flex align-items-center" href="">로그인</a></li>-->
 
-                <!-- gnb 메뉴 -->
-                <!-- type1) a내부 dropdown-arrow + 형제 div.dropdown-content -->
-                <!--<li class="fw-bold">
-                    <a class="d-flex align-items-center justify-content-between" href="">
-                        병원소개
-                        <span class="dropdown-arrow bg-img"></span>
-                    </a>
-                    <div class="dropdown-content">
-                        <ul>
-                            &lt;!&ndash; a가 2줄이상 가능성 있으면 block대신 flex로 &ndash;&gt;
-                            <li><a class="d-flex align-items-center" href="">의료진소개</a></li>
-                            <li><a class="d-flex align-items-center" href="">진료시간안내</a></li>
-                            <li><a class="d-flex align-items-center" href="">오시는길</a></li>
-                            <li><a class="d-flex align-items-center" href="">진료과목</a></li>
-                            <li><a class="d-flex align-items-center" href="">진료안내</a></li>
-                        </ul>
-                    </div>
-                </li>-->
-                <li class="fw-bold"
-                    x-data="gnb_dropdown(0)"
-                >
-                    <a class="d-flex align-items-center justify-content-between"
-                       @click="toggle"
-                    >
-                        병원소개
-                        <span class="dropdown-arrow bg-img"
-                              :class="isOpen ? 'rotate-180 duration-500' : 'duration-300'"
-                        ></span>
-                    </a>
-                    <div class="dropdown-content"
-                         x-cloak x-show="isOpen"
-                         x-collapse
-                    >
-                        <ul>
-                            <!-- a가 2줄이상 가능성 있으면 block대신 flex로 -->
-                            <li><a class="d-flex align-items-center" href="">의료진소개</a></li>
-                            <li><a class="d-flex align-items-center" href="">진료시간안내</a></li>
-                            <li><a class="d-flex align-items-center" href="">오시는길</a></li>
-                            <li><a class="d-flex align-items-center" href="">진료과목</a></li>
-                            <li><a class="d-flex align-items-center" href="">진료안내</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="fw-bold"
-                    x-data="gnb_dropdown(1)"
-                >
-                    <a class="d-flex align-items-center justify-content-between"
-                       @click="toggle"
-                    >
-                        클리닉
-                        <span class="dropdown-arrow bg-img"
-                              :class="isOpen ? 'rotate-180 duration-500' : 'duration-300'"
-                        ></span>
-                    </a>
-                    <div class="dropdown-content"
-                         x-cloak x-show="isOpen"
-                         x-collapse
-                    >
-                        <ul>
-                            <!-- a가 2줄이상 가능성 있으면 block대신 flex로 -->
-                            <li><a class="d-flex align-items-center" href="">디스크 클리닉(허리/목)</a></li>
-                            <li><a class="d-flex align-items-center" href="">관절 클리닉(어깨/무릎)</a></li>
-                            <li><a class="d-flex align-items-center" href="">스포츠손상 클리닉</a></li>
-                            <li><a class="d-flex align-items-center" href="">비만 클리닉</a></li>
-                            <li><a class="d-flex align-items-center" href="">난치병 클리닉(이명/비염)</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="fw-bold"><a class="d-flex align-items-center" href="">질환별</a></li>
-                <li class="fw-bold"><a class="d-flex align-items-center" href="">치료별</a></li>
-                <li class="fw-bold" data-last><a class="d-flex align-items-center" href="">고객센터</a></li>
+<!--                &lt;!&ndash; gnb 메뉴 &ndash;&gt;-->
+<!--                &lt;!&ndash; type1) a내부 dropdown-arrow + 형제 div.dropdown-content &ndash;&gt;-->
+<!--                &lt;!&ndash;<li class="fw-bold">-->
+<!--                    <a class="d-flex align-items-center justify-content-between" href="">-->
+<!--                        병원소개-->
+<!--                        <span class="dropdown-arrow bg-img"></span>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-content">-->
+<!--                        <ul>-->
+<!--                            &lt;!&ndash; a가 2줄이상 가능성 있으면 block대신 flex로 &ndash;&gt;-->
+<!--                            <li><a class="d-flex align-items-center" href="">의료진소개</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">진료시간안내</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">오시는길</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">진료과목</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">진료안내</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </li>&ndash;&gt;-->
+<!--                <li class="fw-bold"-->
+<!--                    x-data="gnb_dropdown(0)"-->
+<!--                >-->
+<!--                    <a class="d-flex align-items-center justify-content-between"-->
+<!--                       @click="toggle"-->
+<!--                    >-->
+<!--                        병원소개-->
+<!--                        <span class="dropdown-arrow bg-img"-->
+<!--                              :class="isOpen ? 'rotate-180 duration-500' : 'duration-300'"-->
+<!--                        ></span>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-content"-->
+<!--                         x-cloak x-show="isOpen"-->
+<!--                         x-collapse-->
+<!--                    >-->
+<!--                        <ul>-->
+<!--                            &lt;!&ndash; a가 2줄이상 가능성 있으면 block대신 flex로 &ndash;&gt;-->
+<!--                            <li><a class="d-flex align-items-center" href="">의료진소개</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">진료시간안내</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">오시는길</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">진료과목</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">진료안내</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="fw-bold"-->
+<!--                    x-data="gnb_dropdown(1)"-->
+<!--                >-->
+<!--                    <a class="d-flex align-items-center justify-content-between"-->
+<!--                       @click="toggle"-->
+<!--                    >-->
+<!--                        클리닉-->
+<!--                        <span class="dropdown-arrow bg-img"-->
+<!--                              :class="isOpen ? 'rotate-180 duration-500' : 'duration-300'"-->
+<!--                        ></span>-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-content"-->
+<!--                         x-cloak x-show="isOpen"-->
+<!--                         x-collapse-->
+<!--                    >-->
+<!--                        <ul>-->
+<!--                            &lt;!&ndash; a가 2줄이상 가능성 있으면 block대신 flex로 &ndash;&gt;-->
+<!--                            <li><a class="d-flex align-items-center" href="">디스크 클리닉(허리/목)</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">관절 클리닉(어깨/무릎)</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">스포츠손상 클리닉</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">비만 클리닉</a></li>-->
+<!--                            <li><a class="d-flex align-items-center" href="">난치병 클리닉(이명/비염)</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="fw-bold"><a class="d-flex align-items-center" href="">질환별</a></li>-->
+<!--                <li class="fw-bold"><a class="d-flex align-items-center" href="">치료별</a></li>-->
+<!--                <li class="fw-bold" data-last><a class="d-flex align-items-center" href="">고객센터</a></li>-->
 
-                <!-- spot-menu 직접 나열 -->
-                <li><a class="d-flex align-items-center" href="">문의전화</a></li>
-                <li><a class="d-flex align-items-center" href="">마이페이지</a></li>
-                <li data-last><a class="d-flex align-items-center" href="">비급여안내</a></li>
-            </ul>
-        </nav>
-        <div class="info">
-            <div class="info-text">
-                의료진별 진료시간은 <span class="text-purple">실시간 반영!</span> 됩니다.
-            </div>
+<!--                &lt;!&ndash; spot-menu 직접 나열 &ndash;&gt;-->
+<!--                <li><a class="d-flex align-items-center" href="">문의전화</a></li>-->
+<!--                <li><a class="d-flex align-items-center" href="">마이페이지</a></li>-->
+<!--                <li data-last><a class="d-flex align-items-center" href="">비급여안내</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--        <div class="info">-->
+<!--            <div class="info-text">-->
+<!--                의료진별 진료시간은 <span class="text-purple">실시간 반영!</span> 됩니다.-->
+<!--            </div>-->
 
-            <a href=""><img src="images/png/icons/btn_android.png" alt="구글플레이"></a>
-            <a href=""><img src="images/png/icons/btn_iphone.png" alt="앱스토어"></a>
-        </div>
-        <button class="button-close bg-img position-absolute top-0 end-0" aria-label="닫기"
-                @click="$store.megamenu.close()"
-        ></button>
-    </div>
+<!--            <a href=""><img src="images/png/icons/btn_android.png" alt="구글플레이"></a>-->
+<!--            <a href=""><img src="images/png/icons/btn_iphone.png" alt="앱스토어"></a>-->
+<!--        </div>-->
+<!--        <button class="button-close bg-img position-absolute top-0 end-0" aria-label="닫기"-->
+<!--                @click="$store.megamenu.close()"-->
+<!--        ></button>-->
+<!--    </div>-->
 
-    <!-- backdrop -->
-    <div class="megamenu-backdrop z-1 position-fixed top-0 bottom-0 start-0 end-0"
-         x-show="$store.megamenu.isOpen"
-         @click="$store.megamenu.close()"
-    ></div>
-</aside>
+<!--    &lt;!&ndash; backdrop &ndash;&gt;-->
+<!--    <div class="megamenu-backdrop z-1 position-fixed top-0 bottom-0 start-0 end-0"-->
+<!--         x-show="$store.megamenu.isOpen"-->
+<!--         @click="$store.megamenu.close()"-->
+<!--    ></div>-->
+<!--</aside>-->
 
 
 <!-- main -->
