@@ -39,6 +39,7 @@
 
 <!-- hero -->
 <section id="hero"
+         x-data="hero"
          class="hero w-100 h-100 p-3 mx-auto text-center
                 d-flex justify-content-center
                 text-white">
@@ -162,8 +163,8 @@
         </div>
 
         <div class="w-100 mb-4 mb-md-5">
-            <a href="#home" class="btn btn-lg rounded-pill px-3 px-md-5"
-               onClick="enableScroll()"
+            <a href="#header" class="btn btn-lg rounded-pill px-3 px-md-5"
+               @click="enableScroll()"
             >🤵👰 보러가기
             </a>
             <div class="mt-5 mt-md-3 mb-0 text-gray">결혼식까지</div>
@@ -171,7 +172,6 @@
             <!-- timer 시작 -->
             <div class="timer d-flex flex-column align-items-center mt-3 mb-4 mb-md-5">
                 <div class="d-flex align-items-center justify-content-center gap-3"
-                     x-data="timer(2024, 9, 7, 12, 0);"
                 >
                     <div class="d-flex flex-column align-items-center px-2">
                         <span x-text="time().days" class="text-emerald">00</span>
@@ -201,7 +201,9 @@
 </section>
 
 <!--<header class="header d-flex justify-content-between align-items-center">-->
-<header x-data="header" class="header d-flex justify-content-between justify-content-lg-start align-items-center">
+<header x-data="header" class="header d-flex justify-content-between justify-content-lg-start align-items-center"
+        id="header"
+>
     <h1 class="logo" x-ref="logo">
         <a href="" tabindex="1">
             <!--<img src="images/logo.svg" alt="결혼">-->
