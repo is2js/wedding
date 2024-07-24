@@ -300,9 +300,9 @@
                     /*    width: 11.5rem;*/
                     /*}*/
                     /*height: auto !important;*/
-                    height: 15rem;
+                    height: 14rem;
                     @media (max-width: 767px) {
-                        height: 8.5rem;
+                        height: 7.5rem;
                     }
                     width: auto !important;
 
@@ -353,7 +353,7 @@
                     }
 
                     color: white;
-                    text-shadow: var(--profile-shadow);
+                    text-shadow: var(--text-shadow);
                     text-transform: uppercase;
                     letter-spacing: 0.4rem;
                 }
@@ -361,7 +361,7 @@
                 & span {
                     /*font-family: 'Noto Serif KR', serif;*/
                     color: white;
-                    text-shadow: var(--profile-shadow);
+                    text-shadow: var(--text-shadow);
                     text-transform: uppercase;
                     font-size: 14px;
                     @media (min-width: 768px) {
@@ -372,7 +372,7 @@
                 & p {
                     font-family: 'Noto Serif KR', serif;
                     color: var(--grey-zinc);
-                    text-shadow: var(--profile-shadow);
+                    text-shadow: var(--text-shadow);
                     font-weight: 350;
 
                     font-size: 13px;
@@ -436,7 +436,7 @@
         }
 
         color: var(--gold);
-        text-shadow: var(--profile-shadow);
+        text-shadow: var(--text-shadow);
         font-family: 'Noto Serif KR', sans-serif;
         font-weight: 550;
 
@@ -497,7 +497,7 @@
 
                 & h1 {
                     color: white;
-                    text-shadow: var(--profile-shadow);
+                    text-shadow: var(--text-shadow);
                     font-family: "Noto Serif KR", serif;
                     padding-left: 0.8rem;
                     @media (max-width: 767px) {
