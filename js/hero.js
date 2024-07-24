@@ -6,23 +6,6 @@ document.addEventListener('alpine:init', () => {
         height: null,
 
         init() {
-
-
-            // this.$refs.hero.offsetHeight = window.innerHeight * 0.01;
-            // console.log(this.$refs.hero.style.height)
-            // console.log(this.$refs.hero.style.offsetHeight)
-            // console.log(window.innerHeight)
-            // console.log(this.$refs.hero.style.offsetHeight)
-            // this.$nextTick(() => {
-            //     this.$refs.hero.style.height = `${window.innerHeight}px`;
-            //     console.log('Updated height:', this.$refs.hero.style.height);
-            // });
-
-            this.setScreenSize();
-            // window.addEventListener('resize', () => {
-            //     this.setScreenSize();
-            // });
-
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
 
@@ -114,7 +97,10 @@ document.addEventListener('alpine:init', () => {
             //
             // document.body.style.overflow = 'hidden';
         },
-        enableScroll() {
+        entrance() {
+            /* height 관련 짜증나서 삭제 */
+            this.$refs.hero.classList.add('d-none');
+
             /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */
             window.onscroll = function () {
 
@@ -124,19 +110,11 @@ document.addEventListener('alpine:init', () => {
             const rootElement = document.querySelector(':root');
             rootElement.style.scrollBehavior = 'smooth';
 
-            // document.body.style.overflow = '';
-
             /* 4) 브라우저 db에 opened 상태 기록해놓기 */
             // localStorage.setItem('opened', 'true');
 
             // 6) 보러가기 클릭 -> enableScroll -> 내부에서 audio도 작동
             // playAudio();
         },
-        setScreenSize() {
-            let vh = window.innerHeight * 0.01;
-            console.log(this.$refs.hero.height)
-            this.$refs.hero.height = `${100*vh}px`;
-            console.log(this.$refs.hero.height)
-        }
     }));
 });

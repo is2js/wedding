@@ -22,10 +22,6 @@
 
     position: relative;
     min-height: 100vh;
-    /*height: auto;*/
-    /*https://blog.leehov.in/39*/
-    /*height: calc(var(--vh, 1vh) * 100);*/
-
 
     font-size: 0.9rem;
 
