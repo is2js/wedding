@@ -22,7 +22,9 @@
 
     position: relative;
     /*min-height: 100vh;*/
-    height: 100vh;
+    /*height: 100vh;*/
+    /* 특정 브라우저에서 --vh가 작동하지 않을 수 있기에 미리 작성 */
+    /*height: calc(var(--vh, 1vh) * 100);*/
 
     font-size: 0.9rem;
 
@@ -139,6 +141,7 @@
     }
 
     /* 대상 */
+
     & span.you {
         font-size: 1.8rem;
         font-weight: 550;

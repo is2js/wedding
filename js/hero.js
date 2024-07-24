@@ -5,6 +5,18 @@ document.addEventListener('alpine:init', () => {
         isPast: false,
 
         init() {
+
+
+            // this.$refs.hero.offsetHeight = window.innerHeight * 0.01;
+            // console.log(this.$refs.hero.style.height)
+            // console.log(this.$refs.hero.style.offsetHeight)
+            // console.log(window.innerHeight)
+            console.log(this.$refs.hero.style.offsetHeight)
+            this.$nextTick(() => {
+                this.$refs.hero.style.height = `${window.innerHeight}px`;
+                console.log('Updated height:', this.$refs.hero.style.height);
+            });
+
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
 
@@ -82,33 +94,31 @@ document.addEventListener('alpine:init', () => {
             }
         },
         disableScroll() {
-            // let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            // let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
             /* 1) 스크롤 움직일 시, 복귀 (천천히) */
-            // window.onscroll = function () {
-            //     window.scrollTo(scrollTop, scrollLeft);
-            // };
+            window.onscroll = function () {
+                window.scrollTo(scrollTop, scrollLeft);
+            };
 
             /* 2) 스크롤 움직임에 대해, 칼같이 움직여서 사실상 안움직이는 것으로 추가 옵션*/
-            // const rootElement = document.querySelector(':root');
-            // rootElement.style.scrollBehavior = 'auto';
-
-            document.body.style.overflow = 'hidden';
-            // document.documentElement.style.overflow = 'hidden';
+            const rootElement = document.querySelector(':root');
+            rootElement.style.scrollBehavior = 'auto';
+            //
+            // document.body.style.overflow = 'hidden';
         },
         enableScroll() {
             /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */
-            // window.onscroll = function () {
-            //
-            // };
+            window.onscroll = function () {
+
+            };
 
             /* 2) 스크롤 움직임에 대해, 칼같이 움직이게 가능하도록 복구 */
-            // const rootElement = document.querySelector(':root');
-            // rootElement.style.scrollBehavior = 'smooth';
+            const rootElement = document.querySelector(':root');
+            rootElement.style.scrollBehavior = 'smooth';
 
-            document.body.style.overflow = '';
-            // document.documentElement.style.overflow = 'auto';
+            // document.body.style.overflow = '';
 
             /* 4) 브라우저 db에 opened 상태 기록해놓기 */
             // localStorage.setItem('opened', 'true');
