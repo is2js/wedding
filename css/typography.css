@@ -41,6 +41,9 @@ label {
 .text-gray {
     color: var(--greyd9) !important;
 }
+.text-require {
+    color: var(--require) !important;
+}
 
 .section-title {
     font-size: 24px;

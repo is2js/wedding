@@ -120,7 +120,7 @@ document.addEventListener('alpine:init', () => {
 
             /* 2) 스크롤 움직임에 대해, 칼같이 움직이게 가능하도록 복구 */
             const rootElement = document.querySelector(':root');
-            rootElement.style.scrollBehavior = 'smooth';
+            rootElement.style.scrollBehavior = '';
 
             this.scrollToHeader();
 
