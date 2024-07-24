@@ -28,9 +28,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
 
     <script>
+        // css에서 사용할 예정이라 미리 계산
         const vh = window.innerHeight * 0.01; // innerHeight에 0.01을 곱해서 새로운 vh 단위를 구함
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     </script>
+
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
@@ -43,16 +45,16 @@
 <!-- hero -->
 <!--                d-flex justify-content-center-->
 <!-- x-show로 사라지게 하기 위해선 flex!important가 적용 안되게 해야한다. -->
-<section id="hero"
-         x-data="hero(2024, 9, 7, 12, 0)"
-         class="hero w-100 p-3 mx-auto text-center text-white"
-         x-ref="hero"
->
+<!--         x-ref="hero"-->
    <!--      x-show="!isEntrance"
          x-cloak
          x-transition:leave="ease-cubic-bezier duration-1500"
          x-transition:leave-start="opacity-100"
          x-transition:leave-end="opacity-25"-->
+<section id="hero"
+         x-data="hero(2024, 9, 7, 12, 0)"
+         class="hero w-100 p-3 mx-auto text-center text-white"
+>
     <main class="d-flex flex-column justify-content-between align-items-center"
     >
 
@@ -167,7 +169,7 @@
         </div>
 
         <div class="w-100 mb-4 mb-md-5">
-            <a href="#header" class="btn btn-lg rounded-pill px-3 px-md-5"
+            <a class="btn btn-lg rounded-pill px-3 px-md-5"
                @click="entrance();"
             >🤵👰 보러가기
             </a>

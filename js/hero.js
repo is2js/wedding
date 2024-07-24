@@ -3,7 +3,6 @@ document.addEventListener('alpine:init', () => {
         expiry: null,
         remaining: null,
         isPast: false,
-        isEntrance: false,
 
         init() {
 
@@ -95,16 +94,13 @@ document.addEventListener('alpine:init', () => {
             /* 2) 스크롤 움직임에 대해, 칼같이 움직여서 사실상 안움직이는 것으로 추가 옵션*/
             const rootElement = document.querySelector(':root');
             rootElement.style.scrollBehavior = 'auto';
-            //
-            // document.body.style.overflow = 'hidden';
         },
 
         entrance() {
             // setTimeout(() => {
             //         this.$refs.hero.classList.add('d-none');
             //     }, 500); // 2초 후 상태 변경
-            this.isEntrance = true;
-
+            // this.isEntrance = true;
 
             /* 1) 스크롤 움직일 시 이벤트 비워서 제거 */
             window.onscroll = function () {
@@ -115,11 +111,20 @@ document.addEventListener('alpine:init', () => {
             const rootElement = document.querySelector(':root');
             rootElement.style.scrollBehavior = 'smooth';
 
+            this.scrollToHeader();
+
             /* 4) 브라우저 db에 opened 상태 기록해놓기 */
             // localStorage.setItem('opened', 'true');
 
             // 6) 보러가기 클릭 -> enableScroll -> 내부에서 audio도 작동
             // playAudio();
         },
+        scrollToHeader() {
+            // #header로 스크롤 이동
+            const header = document.getElementById('header');
+            if (header) {
+                header.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     }));
 });
