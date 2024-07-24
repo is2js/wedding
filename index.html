@@ -277,21 +277,18 @@
                 <!--                                </li>-->
 
                 <!-- type2 + x-data audio 기능 추가 -->
-                <li class="d-flex align-items-center"
-                    x-data="audio"
-                >
-                    <!--style="background-image: url('./images/svg/icons/header-music-play.svg');"-->
+<!--                    x-data="audio"-->
+                <li class="song d-flex align-items-center">
                     <a class="bg-img bg-md-img-none cursor-pointer duration-300 position-relative"
-                       @click="toggleAudio"
-                       :style="`background-image: url('./images/svg/icons/header-music-${ isPlaying ? 'pause' : 'play' }.svg');`"
+                       @click="$store.audio.toggleAudio()"
+                       :style="`background-image: url('./images/svg/icons/header-music-${ $store.audio.isPlaying ? 'pause' : 'play' }.svg');`"
                     >
-                        <!--<span class="d-none d-md-inline"-->
                         <span class="position-absolute position-md-static d-md-inline"
-                              x-text="isPlaying? '음악 끄기' : '음악 켜기' "
+                              x-text="$store.audio.isPlaying ? '음악 끄기' : '음악 켜기' "
                         >음악켜기</span>
                     </a>
 
-                    <audio loop x-ref="song">
+                    <audio loop id="song">
                         <source src="./audio/default.mp3" type="audio/mp3">
                     </audio>
                 </li>

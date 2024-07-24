@@ -3,6 +3,7 @@ document.addEventListener('alpine:init', () => {
         expiry: null,
         remaining: null,
         isPast: false,
+        isEntrance: false,
 
         setName() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -18,19 +19,18 @@ document.addEventListener('alpine:init', () => {
             // 스크롤 방지 by root요소를 top/left로 onscroll마다 이동
             this.disableScroll();
 
-
-
             // 한국시간으로 만료기한 넣기
             this.expiry = this.toKoreanTime(new Date(year, month - 1, day, hours, minutes)).getTime();
 
             // 남은시간 한번 넣고, 1초마다 다시 계산
             this.setRemaining();
-
             if (!this.isPast) {
                 setInterval(() => {
                     this.setRemaining();
                 }, 1000);
             }
+
+            //
         },
         toKoreanTime(date) {
             // Convert local time to Korean Standard Time (UTC+9)
@@ -127,8 +127,17 @@ document.addEventListener('alpine:init', () => {
             /* 4) 브라우저 db에 opened 상태 기록해놓기 */
             // localStorage.setItem('opened', 'true');
 
-            // 6) 보러가기 클릭 -> enableScroll -> 내부에서 audio도 작동
-            // playAudio();
+            // 6) 첫입장시 audio / modal 키기
+            if (!this.isEntrance && this.$store.audio) {
+                this.$store.audio.playAudio();
+            }
+
+            if (!this.isEntrance && this.$store.modal) {
+                this.$store.modal.open();
+            }
+
+            // last
+            this.isEntrance = true;
         },
         scrollToHeader() {
             // #header로 스크롤 이동

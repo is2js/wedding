@@ -2488,3 +2488,44 @@ Alpine.data('audio', (index) => ({
 
   
 
+
+
+
+
+### 오디오 컨트롤은 hero 등에서도 해야하니 전역 store로 옮기기
+
+```js
+Alpine.store('audio', {
+    isPlaying: false,
+    toggleAudio() {
+        const song = document.getElementById('song');
+
+        if (this.isPlaying) {
+            song.pause();
+        } else {
+            song.play();
+        }
+
+        this.isPlaying = !this.isPlaying;
+    },
+});
+```
+
+```html
+<!--                    x-data="audio"-->
+<li class="song d-flex align-items-center">
+    <a class="bg-img bg-md-img-none cursor-pointer duration-300 position-relative"
+       @click="$store.audio.toggleAudio()"
+       :style="`background-image: url('./images/svg/icons/header-music-${ $store.audio.isPlaying ? 'pause' : 'play' }.svg');`"
+       >
+        <span class="position-absolute position-md-static d-md-inline"
+              x-text="$store.audio.isPlaying ? '음악 끄기' : '음악 켜기' "
+              >음악켜기</span>
+    </a>
+
+    <audio loop id="song">
+        <source src="./audio/default.mp3" type="audio/mp3">
+    </audio>
+</li>
+```
+

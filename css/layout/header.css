@@ -114,7 +114,7 @@
             }
         }
 
-        & li[x-data="audio"] {
+        & li.song {
             span {
                 @media (max-width: 767px) {
                     bottom: 5px;
@@ -123,8 +123,9 @@
 
                     text-align: center;
                     font-size: 9px;
-                    color: var(--grey96);
-                    font-weight: 600;
+                    /*color: var(--grey96);*/
+                    color: var(--black);
+                    font-weight: 450;
                     text-shadow: none;
                     white-space: nowrap;
                 }

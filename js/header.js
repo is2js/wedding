@@ -45,6 +45,27 @@ document.addEventListener('alpine:init', () => {
         },
     });
 
+    Alpine.store('audio', {
+        isPlaying: false,
+        toggleAudio() {
+            const song = document.getElementById('song');
+
+            if (this.isPlaying) {
+                song.pause();
+            } else {
+                song.play();
+            }
+
+            this.isPlaying = !this.isPlaying;
+        },
+        playAudio() {
+          if (this.isPlaying) {
+              return
+          }
+          this.toggleAudio();
+        },
+    });
+
     Alpine.data('header', () => ({
         calculateWidths() {
             this.$nextTick(() => {
@@ -56,13 +77,6 @@ document.addEventListener('alpine:init', () => {
                 const headerPadding = parseInt(window.getComputedStyle(header).paddingLeft) + parseInt(window.getComputedStyle(header).paddingRight);
                 const headerGap = parseInt(window.getComputedStyle(header).gap);
                 const headerContentWidth = headerWidth - headerPadding - headerGap;
-
-                // console.log('logoWidth', logoWidth);
-                // console.log('gnbWidth', gnbWidth);
-                // console.log('totalWidth', headerWidth);
-                // console.log('headerPadding', headerPadding);
-                // console.log('headerGap', headerGap);
-                // console.log('headerContentWidth', headerContentWidth);
 
                 this.$store.megamenu.setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, headerGap);
             });
@@ -95,18 +109,5 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 
-    Alpine.data('audio', (index) => ({
-        isPlaying: false,
-        toggleAudio() {
-            const song = this.$refs.song;
 
-            if (this.isPlaying) {
-                song.pause();
-            } else {
-                song.play();
-            }
-
-            this.isPlaying = !this.isPlaying;
-        },
-    }));
 })
