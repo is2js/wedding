@@ -21,7 +21,9 @@
     }
 
     position: relative;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
+    /* min으로 했더니 모바일에서 내릴 때 화면 커지는 만큼 늘어나버린다?*/
+    height: 100vh;
 
     font-size: 0.9rem;
 
