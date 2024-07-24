@@ -129,11 +129,11 @@
         font-family: 'East Sea Dokdo', serif !important;
         font-weight: 350;
 
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         line-height: 32px;
 
         @media (min-width: 768px) {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             line-height: 38px;
         }
     }
