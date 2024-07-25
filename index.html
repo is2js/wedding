@@ -1201,6 +1201,11 @@
                                                  :src="item.thumbnail"
                                                  alt="item.name">
 
+                                            <a class="mobile d-block mt-2 mt-md-4 bg-img bg-img-x-left cursor-pointer"
+                                               :href="`tel:${item.phone}`"
+                                            >
+                                                연락 주실 곳
+                                            </a>
                                             <a class="account d-block mt-2 mt-md-4 bg-img bg-img-x-left cursor-pointer"
                                                @click="await copyToClipboardAndAlert(
                                                     item.account.number,
@@ -1208,11 +1213,6 @@
                                                 )"
                                             >
                                                 마음 전하실 곳
-                                            </a>
-                                            <a class="mobile d-block mt-2 mt-md-4 bg-img bg-img-x-left cursor-pointer"
-                                               :href="`tel:${item.phone}`"
-                                            >
-                                                연락 주실 곳
                                             </a>
                                         </div>
                                         <div class="flex-grow-1 d-flex align-items-end justify-content-center d-block">
@@ -1574,7 +1574,7 @@
     >
         <div class="d-flex align-items-center justify-content-between">
             <h2 class="section-title">양가 부모님</h2><span class="text-require"
-                                                       style="font-size: 11px;">*ai 추론 그림으로 대체</span>
+                                                       style="font-size: 11px;">*실제와 무관한 이미지.</span>
         </div>
         <!-- 1번째 mt35 swiper (신부측) -->
         <div class="swiper product-list list-default mt35">

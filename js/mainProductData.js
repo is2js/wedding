@@ -6,7 +6,8 @@ const brideData = [
             type: "bride",
             text: "신부측 혼주",
         },
-        thumbnail: `${productThumbnailImgSrc}family/bride_02.png`,
+        // thumbnail: `${productThumbnailImgSrc}family/bride_02.png`,
+        thumbnail: `https://picstargram.s3.ap-northeast-2.amazonaws.com/post/16dbf461-75a8-46a7-bc71-1dd7935b238d_thumbnail.webp`,
         familyName: {
             family: '신부父',
             name: '김용범'
@@ -23,7 +24,8 @@ const brideData = [
             type: "bride",
             text: "신부측 혼주",
         },
-        thumbnail: `${productThumbnailImgSrc}family/bride_03.png`,
+        // thumbnail: `${productThumbnailImgSrc}family/bride_03.png`,
+        thumbnail: `https://picstargram.s3.ap-northeast-2.amazonaws.com/post/a6a4c3db-773a-4bdd-8e21-783087e229d7_thumbnail.webp`,
         familyName: {
             family: '신부母',
             name: '홍선희'
@@ -63,7 +65,8 @@ const groomData = [
             type: "groom",
             text: "신랑측 혼주",
         },
-        thumbnail: `${productThumbnailImgSrc}family/groom_02.png`,
+        // thumbnail: `${productThumbnailImgSrc}family/groom_02.png`,
+        thumbnail: `https://picstargram.s3.ap-northeast-2.amazonaws.com/post/7e0266b4-03d3-48bb-8cb0-d5c8bcc4919a_thumbnail.webp`,
         familyName: {
             family: '신랑父',
             name: '조귀남'
@@ -84,7 +87,8 @@ const groomData = [
             type: "groom",
             text: "신랑측 혼주",
         },
-        thumbnail: `${productThumbnailImgSrc}family/groom_03.png`,
+        // thumbnail: `${productThumbnailImgSrc}family/groom_03.png`,
+        thumbnail: `https://picstargram.s3.ap-northeast-2.amazonaws.com/post/22b8b331-a116-4681-91e7-c9d7c54bbf89_thumbnail.webp`,
         familyName: {
             family: '신랑姑母',
             name: '조미선'
