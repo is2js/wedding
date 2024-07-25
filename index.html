@@ -2061,17 +2061,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
 <!-- layout -->
-<script src="./js/hero.js"></script>
-<script src="./js/header.js"></script>
-<script src="./js/mainVisual.js"></script>
-<script src="./js/mainProfile.js"></script>
-<script src="js/mainTimeline.js"></script>
-<script src="./js/mainGallery.js"></script>
-<script src="./js/mainFaq.js"></script>
+<!--비동기 로딩: <script> 태그에 async 또는 defer 속성을 추가하여 비동기로 로드할 수 있습니다.-->
+<!--async: 스크립트가 다운로드되는 동안 HTML 파싱을 중지하고, 다운로드가 완료되면 스크립트를 실행합니다.-->
+<!--defer: HTML 파싱이 끝날 때까지 스크립트 실행을 지연시킵니다. 이 속성은 스크립트 실행 순서를 보장합니다.-->
+<script src="./js/hero.js" async></script>
+<script src="./js/header.js" async></script>
+<script src="./js/mainVisual.js" async></script>
+<script src="./js/mainProfile.js" async></script>
+<script src="js/mainTimeline.js" async></script>
+<script src="./js/mainGallery.js" async></script>
+<script src="./js/mainFaq.js" async></script>
 <!-- data.js를 import구문이 들어가는 순간부터는 module로 추가함 -->
-<script src="./js/mainProduct.js" type="module"></script>
-<script src="./js/modal.js"></script>
-<script src="./js/form.js"></script>
+<script src="./js/mainProduct.js" type="module" async></script>
+<script src="./js/modal.js" async></script>
+<script src="./js/form.js" async></script>
 
 </body>
 </html>
