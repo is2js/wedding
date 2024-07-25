@@ -1202,7 +1202,7 @@
                                                  alt="item.name">
 
                                             <a class="account d-block mt-2 mt-md-4 bg-img bg-img-x-left cursor-pointer"
-                                               @click="copyToClipboardAndAlert(
+                                               @click="await copyToClipboardAndAlert(
                                                     item.account.number,
                                                     item.role + ' ' + item.name + '님의 \n' + item.account.bank + '은행 ' + item.account.number + '\n계좌번호가 복사되었습니다.'
                                                 )"

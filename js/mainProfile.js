@@ -129,8 +129,8 @@ document.addEventListener('alpine:init', () => {
             this.sliding();
         },
 
-        copyToClipboardAndAlert(text, message) {
-            navigator.clipboard.writeText(text);
+        async copyToClipboardAndAlert(text, message) {
+            await navigator.clipboard.writeText(text);
             alert(message);
         }
     }));
