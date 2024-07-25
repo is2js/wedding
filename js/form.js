@@ -42,11 +42,12 @@ document.addEventListener('alpine:init', () => {
             document.querySelector(`#${id}`).value = value;
         },
         init() {
+
             const urlParams = new URLSearchParams(window.location.search);
 
             this.parseUrlParams(urlParams, 'name');
             this.parseUrlParams(urlParams, 'parent');
-        }
+        },
     }));
 
     // toggle (checkbox)

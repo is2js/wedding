@@ -149,13 +149,13 @@ const initProductSwiperMultipleWrapper = (type = 'default', sectionName, data = 
         if (isMobile) {
             // productSwiper.init();
             // console.log("mobile / type", type);
-            console.log("mobile / sectionName - type - index", sectionName, type, index);
+            // console.log("mobile / sectionName - type - index", sectionName, type, index);
             // productSwipress[type].init();
             newSwiper.init();
 
         } else {
             // console.log("web / type", type)
-            console.log("web / sectionName - type - index", sectionName, type, index)
+            // console.log("web / sectionName - type - index", sectionName, type, index)
         }
     });
 

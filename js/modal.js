@@ -17,6 +17,22 @@ document.addEventListener('alpine:init', () => {
             this.isOpen = false;
             this.handleBodyScroll();
         },
+        handlePopState() {
+            alert("popstate")
+            if (this.isOpen) {
+                this.close();
+            }
+        },
+        init() {
+            // 뒤로가기 버튼 이벤트 리스너 추가
+            window.addEventListener('popstate', this.handlePopState);
+
+            window.addEventListener("hashchange", function (e) {
+                if (e.oldURL.length > e.newURL.length)
+                    alert("hashchange")
+            });
+        }
+
     });
 
     Alpine.data('mobileModal', () => ({
