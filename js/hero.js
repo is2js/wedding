@@ -144,11 +144,14 @@ document.addEventListener('alpine:init', () => {
             this.isEntrance = true;
         },
         scrollToHeader() {
-            // #header로 스크롤 이동
-            const header = document.getElementById('header');
-            if (header) {
-                header.scrollIntoView({behavior: 'smooth'});
-            }
+            // 0.3초 지연 실행(이동) for 애니메이션
+            setTimeout(() => {
+                // #header로 스크롤 이동
+                const header = document.getElementById('header');
+                if (header) {
+                    header.scrollIntoView({behavior: 'smooth'});
+                }
+            }, 300); 
         }
     }));
 });
