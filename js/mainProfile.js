@@ -46,12 +46,9 @@ document.addEventListener('alpine:init', () => {
                 autoHeight: true, // .swiper-slide { height: auto !important; } 이후 사용
                 // loop: true,
                 loop: false,
-                 allowTouchMove: false,
+                allowTouchMove: false,
                 init: false, // Dom에서 x-for를 다 처리하고 난 뒤, 직접 초기화할 예정
-                // autoplay: {
-                //     delay: 1000,
-                //     disableOnInteraction: false
-                // },
+
             });
 
             // image-swiper
@@ -65,10 +62,12 @@ document.addEventListener('alpine:init', () => {
                 init: false, // Dom에서 x-for를 다 처리하고 난 뒤, 직접 초기화할 예정
 
                 // image 전용
-                // autoplay: true,
-                // speed: 3000,
+                autoplay: true,
+                speed: 5000,
+
                 slidesPerView: 1,
                 spaceBetween: 0,
+
                 breakpoints: {
                     330: {
                         slidesPerView: 1.1,

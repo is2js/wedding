@@ -136,12 +136,21 @@ document.addEventListener('alpine:init', () => {
             if (!this.isEntrance && this.$store.modal) {
                 // 전송경험이 없어야 킨다.
                 if (!JSON.parse(localStorage.getItem('rsvp'))) {
-                    this.$store.modal.open();
-                }
-            }
 
-            // last
-            this.isEntrance = true;
+                    // 3초 지연 실행(이동) for 화면보고 모달 오픈
+                    setTimeout(() => {
+                        // #header로 스크롤 이동
+                        if(!this.$store.modal.isOpen){
+                            this.$store.modal.open();
+                        }
+
+                    }, 3000);
+
+                }
+
+                // last
+                this.isEntrance = true;
+            }
         },
         scrollToHeader() {
             // 0.3초 지연 실행(이동) for 애니메이션
@@ -151,7 +160,8 @@ document.addEventListener('alpine:init', () => {
                 if (header) {
                     header.scrollIntoView({behavior: 'smooth'});
                 }
-            }, 300); 
+            }, 300);
         }
     }));
-});
+})
+;

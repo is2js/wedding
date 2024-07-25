@@ -1881,9 +1881,10 @@
         <div class="mobile-modal-body">
 
             <!-- inline forms -->
+<!--                  action="https://script.google.com/macros/s/AKfycbzp4Sae5SpW_CPZ-55IOJ8wt8iE1NMjolxpIXwt4DYfsYlpVq-mG5Iro7OTevt9tTUr/exec"-->
             <form class="position-relative row row-cols-md-auto align-items-center justify-content-center"
                   method="POST"
-                  action="https://script.google.com/macros/s/AKfycbzp4Sae5SpW_CPZ-55IOJ8wt8iE1NMjolxpIXwt4DYfsYlpVq-mG5Iro7OTevt9tTUr/exec"
+                  action="https://script.google.com/macros/s/AKfycbyfRKA9vxq2QAS69G84Mtrm86ncMn-kzQVtv9vyCrjrsN2GDFefyZZSjjnay-oB4yd1/exec"
                   id="attending-form"
                   x-data="form"
                   x-ref="form"
@@ -1892,6 +1893,7 @@
 
                 <!-- Hidden input for 재전송 -->
                 <input type="hidden" name="재전송여부" :value="JSON.parse(localStorage.getItem('rsvp')) ? 'O' : 'X'">
+                <input type="hidden" name="부모님링크" id="parent" value="">
 
                 <!-- 신부/신랑측 선택 radio -->
                 <div class="col-12">
@@ -1934,20 +1936,11 @@
                         </div>
                     </div>
                 </div>
-                <script>
+                <!--<script>
                     const urlParams = new URLSearchParams(window.location.search);
-                    // const name = urlParams.get('name') || '';
                     const name = urlParams.get('name') || '';
-
-                    // hero h4 속 span에 .innerText에 입력
-                    // const nameContainer = document.querySelector('.hero2 .testimonials span.you');
-                    // if (name) {
-                    //     // '당신' 을 -> 'name님 을
-                    //     nameContainer.innerText = ${name}님;
-                    // }
-                    // rsvp form의 name input에 .value로 입력
                     document.querySelector('#name').value = name;
-                </script>
+                </script>-->
 
                 <!-- 참석여부 (select) -->
                 <!--                <div class="col-12">-->

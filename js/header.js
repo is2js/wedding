@@ -66,8 +66,9 @@ document.addEventListener('alpine:init', () => {
                 return
             }
             
-            // 과거에 끈 적이 있으면 -> 안킨다.
-            if (!JSON.parse(localStorage.getItem('audio'))){
+            // 기록이 있으면서 & 과거에 끈 적이 있으면 -> 안킨다.
+            const audioDB = JSON.parse(localStorage.getItem('audio'));
+            if (audioDB !== null && !audioDB) {
                 return
             }
 

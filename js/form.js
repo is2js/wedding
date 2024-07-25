@@ -37,6 +37,16 @@ document.addEventListener('alpine:init', () => {
                 alert('전송 중 오류가 발생했습니다. 신랑/신부에게 알려주세요.');
             }
         },
+        parseUrlParams(urlParams, id) {
+            const value = urlParams.get(`${id}`) || '';
+            document.querySelector(`#${id}`).value = value;
+        },
+        init() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            this.parseUrlParams(urlParams, 'name');
+            this.parseUrlParams(urlParams, 'parent');
+        }
     }));
 
     // toggle (checkbox)
