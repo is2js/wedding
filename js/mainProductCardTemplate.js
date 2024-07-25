@@ -1,11 +1,11 @@
 import { addComma, copyToClipboardAndAlert } from "./utils.js";
 
 // Make the function globally accessible
-// window.copyToClipboardAndAlert = copyToClipboardAndAlert;
+window.copyToClipboardAndAlert = copyToClipboardAndAlert;
 
 // alpinejs 유틸(magic, directive)은 함수명이 아니라 통째로 임의의 변수명으로 통째로 가져와서 Alpine.plugin()에 등록
-import AlpineUtil  from "./utils.js";
-Alpine.plugin(AlpineUtil);
+// import AlpineUtil  from "./utils.js";
+// Alpine.plugin(AlpineUtil);
 
 function renderThumbnail(thumbnail, label, isSoldOut, category) {
     if (!thumbnail) return '';
@@ -40,8 +40,12 @@ function renderAccount(account, familyName) {
     //     계좌번호 복사
     // </div>`;
                 /*onclick="copyToClipboardAndAlert(*/
+                // @click="$clipboard(
+                //     '${account.number}',
+                //     '${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.'
+                // )"
     return `<div class="product-account bg-img bg-img-x-left d-flex align-items-center mt10 ellipsis cursor-pointer"
-                @click="$clipboard(
+                onclick="copyToClipboardAndAlert(
                     '${account.number}', 
                     '${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.'
                 )"
