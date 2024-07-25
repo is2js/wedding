@@ -38,28 +38,23 @@
         setScreenSize();
         window.addEventListener('resize', setScreenSize);
     </script>
-
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- body js 미리 땡겨 받기 -->
     <!-- Alpine Plugins 1. collapse -->
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <!-- Alpine Plugins 2. focus for hero -->
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <!-- Alpine Core -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- lightbox for gallery -->
-    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
     <!-- hero 만 먼저 -->
     <script src="./js/hero.js"></script>
+
+
 </head>
 <body x-data>
 
@@ -536,15 +531,15 @@
                 </a>
                 <div class="d-md-none">갤러리</div>
             </li>
-<!--            <li>-->
-<!--                <a href="#gallery" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type2"-->
-<!--                   style="background-image: url('./images/png/favorite_nav/type2_가족.png');"-->
-<!--                >-->
-<!--                    <span class="favorite-nav-text-sub d-none d-md-block">우리들의 모습</span>-->
-<!--                    <b class="favorite-nav-text-main d-none d-md-block">갤러리</b>-->
-<!--                </a>-->
-<!--                <div class="d-md-none">갤러리</div>-->
-<!--            </li>-->
+            <!--            <li>-->
+            <!--                <a href="#gallery" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type2"-->
+            <!--                   style="background-image: url('./images/png/favorite_nav/type2_가족.png');"-->
+            <!--                >-->
+            <!--                    <span class="favorite-nav-text-sub d-none d-md-block">우리들의 모습</span>-->
+            <!--                    <b class="favorite-nav-text-main d-none d-md-block">갤러리</b>-->
+            <!--                </a>-->
+            <!--                <div class="d-md-none">갤러리</div>-->
+            <!--            </li>-->
             <li>
                 <a href="#families" class="d-flex flex-column justify-content-center bg-img-favorite-nav-type3"
                    style="background-image: url('./images/png/favorite_nav/type3_양가부모님.png');"
@@ -1881,7 +1876,7 @@
         <div class="mobile-modal-body">
 
             <!-- inline forms -->
-<!--                  action="https://script.google.com/macros/s/AKfycbzp4Sae5SpW_CPZ-55IOJ8wt8iE1NMjolxpIXwt4DYfsYlpVq-mG5Iro7OTevt9tTUr/exec"-->
+            <!--                  action="https://script.google.com/macros/s/AKfycbzp4Sae5SpW_CPZ-55IOJ8wt8iE1NMjolxpIXwt4DYfsYlpVq-mG5Iro7OTevt9tTUr/exec"-->
             <form class="position-relative row row-cols-md-auto align-items-center justify-content-center"
                   method="POST"
                   action="https://script.google.com/macros/s/AKfycbyfRKA9vxq2QAS69G84Mtrm86ncMn-kzQVtv9vyCrjrsN2GDFefyZZSjjnay-oB4yd1/exec"
@@ -2076,6 +2071,12 @@
     </dialog>
 </aside>
 
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- lightbox for gallery -->
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
 <!-- layout -->
 <script src="./js/header.js"></script>
