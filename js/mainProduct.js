@@ -72,9 +72,9 @@ const initProductSwiper = (type = 'default', sectionName, data) => {
         // productSwiper.init();
         // productSwiperPerSection[type].init();
         productSwiperPerSection[sectionName].init();
-        console.log("mobile / sectionName - type ", sectionName, type);
+        // console.log("mobile / sectionName - type ", sectionName, type);
     } else {
-        console.log("web / sectionName - type ", sectionName, type)
+        // console.log("web / sectionName - type ", sectionName, type)
     }
 
     window.addEventListener("resize", () => {
