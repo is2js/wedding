@@ -147,9 +147,9 @@
 
 
 .animate-testimonial {
-    animation: testimonial 3s linear infinite;
+    animation: testimonial 1.5s linear infinite;
 }
 
 .animate-testimonial-reverse {
-    animation: testimonial-reverse 3s linear infinite;
+    animation: testimonial-reverse 1.5s linear infinite;
 }
