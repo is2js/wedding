@@ -17,29 +17,26 @@ document.addEventListener('alpine:init', () => {
             history.pushState(null, '', location.href);
         },
         // close() {
-        // android back 2
-        close(updateHistory = true) {
+        // android back 4
+        close(updateHistory = false) {
             this.isOpen = false;
-            console.log('this.isOpen', this.isOpen)
             this.handleBodyScroll();
-            // android back 3
+            // android back 5
             if (updateHistory) {
                    history.back();
                }
         },
-        // android back 4
+        // android back 3
         handlePopState() {
-            console.log('this.isOpen in handlePopState', this.isOpen)
-            // alert("popstate")
             if (this.isOpen) {
-                this.close(false); // history.back() 호출 방지
+                // 실제로 back버튼을 눌러서 사라진 stack에-> 추가적인 history.back() 호출 방지
+                this.close(false);
             }
         },
         init() {
-            // android back 뒤로가기 버튼 이벤트 리스너 추가
+            // android back 2 뒤로가기 버튼 등 history변화 이벤트 리스너 추가
             window.addEventListener('popstate', this.handlePopState.bind(this));
         }
-
     });
 
     Alpine.data('mobileModal', () => ({
