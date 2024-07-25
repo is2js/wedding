@@ -32,7 +32,7 @@ document.addEventListener('alpine:init', () => {
             console.log('this.isOpen in handlePopState', this.isOpen)
             // alert("popstate")
             if (this.isOpen) {
-                this.close(true); // history.back() 호출 방지
+                this.close(false); // history.back() 호출 방지
             }
         },
         init() {
