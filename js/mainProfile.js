@@ -61,9 +61,9 @@ document.addEventListener('alpine:init', () => {
                 // allowTouchMove: false,
                 init: false, // Dom에서 x-for를 다 처리하고 난 뒤, 직접 초기화할 예정
 
-                // image 전용
-                autoplay: true,
-                speed: 5000,
+                // autoplay: true,
+                // speed: 5000,
+                // autoplay 넣으면 클릭안됨?
 
                 slidesPerView: 1,
                 spaceBetween: 0,
