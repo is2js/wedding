@@ -1946,7 +1946,51 @@
                 </script>-->
 
 
-                <!-- 동행인 수 -->
+
+  <!-- 참석여부 (select) -->
+                <!--                <div class="col-12">-->
+                <!--                    <div class="form-group d-flex flex-column">-->
+                <!--                        <label for="isAttend" class="form-label">참석 여부</label>-->
+                <!--                        <div class="form-input-wrapper d-flex align-items-center">-->
+                <!--                            <select class="form-select form-input" id="isAttend" name="참석여부"-->
+                <!--                            >-->
+                <!--                                <option value="참석" selected>참석</option>-->
+                <!--                                <option value="불참">불참</option>-->
+                <!--                                <option value="미정">미정</option>-->
+                <!--                            </select>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <!--참석여부 (checkbox -> toggle) by alpinejs-->
+                <div class="col-12">
+                    <div class="form-group d-flex flex-column"
+                         x-data="toggle"
+                    >
+                        <label for="isAttend" class="form-label">참석 여부</label>
+                        <div class="form-toggle-wrapper d-flex align-items-center">
+                            <div class="form-toggle d-flex justify-content-between align-items-center">
+                                <!-- text -->
+                                <span class="form-toggle-text"
+                                      :class="{'text-purple': isOn}"
+                                      x-text="getText()"
+                                >참석 불가</span>
+                                <!-- toggle -->
+                                <label class="form-toggle-input-wrapper d-flex align-items-center">
+                                    <input id="isAttend" type="checkbox" class="d-none"
+                                           name="참석여부"
+                                           @change="toggle()"
+                                           :value="value"
+                                    >
+                                    <!--:value="isOn"-->
+                                    <div class="form-toggle-dot"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                     <!-- 동행인 수 -->
                 <!--                <div class="col-12">-->
                 <!--                    <div class="form-group d-flex flex-column">-->
                 <!--                        <label for="attendCount" class="form-label">동행인 수</label>-->
@@ -1996,49 +2040,6 @@
                                 >
                                     <span class="bg-img button-number-handler-down"></span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-  <!-- 참석여부 (select) -->
-                <!--                <div class="col-12">-->
-                <!--                    <div class="form-group d-flex flex-column">-->
-                <!--                        <label for="isAttend" class="form-label">참석 여부</label>-->
-                <!--                        <div class="form-input-wrapper d-flex align-items-center">-->
-                <!--                            <select class="form-select form-input" id="isAttend" name="참석여부"-->
-                <!--                            >-->
-                <!--                                <option value="참석" selected>참석</option>-->
-                <!--                                <option value="불참">불참</option>-->
-                <!--                                <option value="미정">미정</option>-->
-                <!--                            </select>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-
-                <!--참석여부 (checkbox -> toggle) by alpinejs-->
-                <div class="col-12">
-                    <div class="form-group d-flex flex-column"
-                         x-data="toggle"
-                    >
-                        <label for="isAttend" class="form-label">참석 여부</label>
-                        <div class="form-toggle-wrapper d-flex align-items-center">
-                            <div class="form-toggle d-flex justify-content-between align-items-center">
-                                <!-- text -->
-                                <span class="form-toggle-text"
-                                      :class="{'text-purple': isOn}"
-                                      x-text="getText()"
-                                >참석 불가</span>
-                                <!-- toggle -->
-                                <label class="form-toggle-input-wrapper d-flex align-items-center">
-                                    <input id="isAttend" type="checkbox" class="d-none"
-                                           name="참석여부"
-                                           @change="toggle()"
-                                           :value="value"
-                                    >
-                                    <!--:value="isOn"-->
-                                    <div class="form-toggle-dot"></div>
-                                </label>
                             </div>
                         </div>
                     </div>
