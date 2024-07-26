@@ -1,19 +1,21 @@
 :root {
-
+    --spot-menu-height: 30px;
 }
 
 .header {
+
     /* bootstrap .sticky-top으로 고정*/
     /* -> .sticky-top 추가시 스크롤 늘어나는 버그 해결 */
-
-    &.sticky-top {
+    &:not(.header-on-top) {
         overflow: hidden;
         background-color: rgba(255, 255, 255, 0.3) !important;
         backdrop-filter: blur(4px);
     }
+    /* top에 있을 때*/
+    background-color: transparent;
 
     /* 위쪽 abs spot-menu를 위한, 위쪽 여백 48px 추가(위 | 좌=우 | 아래)*/
-    padding: 48px 40px 15px;
+    padding: calc(var(--spot-menu-height) + 15px) 40px 15px;
     /* 모바일에선 static spot-menu가 내부로 들어가 다시 위쪽 여백을 제거한다.*/
     @media (max-width: 767px) {
         padding: 0 15px;

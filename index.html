@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="ko-KR">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -232,12 +231,15 @@
 </section>
 
 <!--<header class="header d-flex justify-content-between align-items-center">-->
+       <!-- @scroll.window="setOnTop"
+        :class="{ 'header-on-top': onTop }"-->
 <header x-data="header"
-        class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
+        class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top duration-100"
         id="header"
 >
+        <!--:style="`margin-bottom: -${calculateHeight()}px`"-->
     <h1 class="logo" x-ref="logo">
-        <a href="" tabindex="1">
+        <a href="#header" tabindex="1">
             <!--<img src="images/logo.svg" alt="결혼">-->
             <img src="images/logo.png" alt="로고">
         </a>
@@ -262,7 +264,11 @@
         </div>-->
     </div>
     <!--<div class="spot-menu position-absolute top-0 start-0 end-0">-->
-    <div class="spot-menu position-static position-md-absolute top-0 start-0 end-0">
+       <!--  x-show="isMobile || !isMobile && onTop"
+         x-collapse.duraiton.100ms-->
+    <div class="spot-menu position-static position-md-absolute top-0 start-0 end-0"
+         x-ref="spotMenu"
+    >
         <nav class="d-flex justify-content-end">
             <ul class="d-flex">
                 <!-- ul.d-flex > li.d-flex(for before) > a|button-(css:w/h/bgi + 배경icon) -->
@@ -1939,49 +1945,6 @@
                     document.querySelector('#name').value = name;
                 </script>-->
 
-                <!-- 참석여부 (select) -->
-                <!--                <div class="col-12">-->
-                <!--                    <div class="form-group d-flex flex-column">-->
-                <!--                        <label for="isAttend" class="form-label">참석 여부</label>-->
-                <!--                        <div class="form-input-wrapper d-flex align-items-center">-->
-                <!--                            <select class="form-select form-input" id="isAttend" name="참석여부"-->
-                <!--                            >-->
-                <!--                                <option value="참석" selected>참석</option>-->
-                <!--                                <option value="불참">불참</option>-->
-                <!--                                <option value="미정">미정</option>-->
-                <!--                            </select>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-
-                <!--참석여부 (checkbox -> toggle) by alpinejs-->
-                <div class="col-12">
-                    <div class="form-group d-flex flex-column"
-                         x-data="toggle"
-                    >
-                        <label for="isAttend" class="form-label">참석 여부</label>
-                        <div class="form-toggle-wrapper d-flex align-items-center">
-                            <div class="form-toggle d-flex justify-content-between align-items-center">
-                                <!-- text -->
-                                <span class="form-toggle-text"
-                                      :class="{'text-purple': isOn}"
-                                      x-text="getText()"
-                                >참석 불가</span>
-                                <!-- toggle -->
-                                <label class="form-toggle-input-wrapper d-flex align-items-center">
-                                    <input id="isAttend" type="checkbox" class="d-none"
-                                           name="참석여부"
-                                           @change="toggle()"
-                                           :value="value"
-                                    >
-                                    <!--:value="isOn"-->
-                                    <div class="form-toggle-dot"></div>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
                 <!-- 동행인 수 -->
                 <!--                <div class="col-12">-->
@@ -2033,6 +1996,49 @@
                                 >
                                     <span class="bg-img button-number-handler-down"></span>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+  <!-- 참석여부 (select) -->
+                <!--                <div class="col-12">-->
+                <!--                    <div class="form-group d-flex flex-column">-->
+                <!--                        <label for="isAttend" class="form-label">참석 여부</label>-->
+                <!--                        <div class="form-input-wrapper d-flex align-items-center">-->
+                <!--                            <select class="form-select form-input" id="isAttend" name="참석여부"-->
+                <!--                            >-->
+                <!--                                <option value="참석" selected>참석</option>-->
+                <!--                                <option value="불참">불참</option>-->
+                <!--                                <option value="미정">미정</option>-->
+                <!--                            </select>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <!--참석여부 (checkbox -> toggle) by alpinejs-->
+                <div class="col-12">
+                    <div class="form-group d-flex flex-column"
+                         x-data="toggle"
+                    >
+                        <label for="isAttend" class="form-label">참석 여부</label>
+                        <div class="form-toggle-wrapper d-flex align-items-center">
+                            <div class="form-toggle d-flex justify-content-between align-items-center">
+                                <!-- text -->
+                                <span class="form-toggle-text"
+                                      :class="{'text-purple': isOn}"
+                                      x-text="getText()"
+                                >참석 불가</span>
+                                <!-- toggle -->
+                                <label class="form-toggle-input-wrapper d-flex align-items-center">
+                                    <input id="isAttend" type="checkbox" class="d-none"
+                                           name="참석여부"
+                                           @change="toggle()"
+                                           :value="value"
+                                    >
+                                    <!--:value="isOn"-->
+                                    <div class="form-toggle-dot"></div>
+                                </label>
                             </div>
                         </div>
                     </div>

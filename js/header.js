@@ -65,7 +65,7 @@ document.addEventListener('alpine:init', () => {
             if (this.isPlaying) {
                 return
             }
-            
+
             // 기록이 있으면서 & 과거에 끈 적이 있으면 -> 안킨다.
             const audioDB = JSON.parse(localStorage.getItem('audio'));
             if (audioDB !== null && !audioDB) {
@@ -77,6 +77,20 @@ document.addEventListener('alpine:init', () => {
     });
 
     Alpine.data('header', () => ({
+        onTop: true,
+        isMobile: false,
+
+        maxSpotMenuHeight: 0,
+        calculateHeight() {
+            this.setOnTop();
+            return this.onTop ? this.$el.offsetHeight : this.$el.offsetHeight - this.maxSpotMenuHeight;
+        },
+
+        setOnTop() {
+
+            this.onTop = (window.pageYOffset || document.documentElement.scrollTop) === 0;
+
+        },
         calculateWidths() {
             this.$nextTick(() => {
                 const logoWidth = this.$refs.logo.offsetWidth;
@@ -91,7 +105,33 @@ document.addEventListener('alpine:init', () => {
                 this.$store.megamenu.setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, headerGap);
             });
         },
-        init() {
+        checkMobile() {
+            const screenWidth = window.innerWidth;
+            const mobileMaxWidth = 767;
+            this.isMobile = screenWidth <= mobileMaxWidth;
+        },
+        setSpotMenuHeight() {
+            if (!this.isMobile && this.onTop){
+                this.maxSpotMenuHeight = this.$refs.spotMenu.offsetHeight - 1;
+            } else {
+                // this.maxSpotMenuHeight = 0;
+            }
+        }, init() {
+
+
+            // window.addEventListener("resize", () => {
+            //     this.checkMobile();
+            //     this.setSpotMenuHeight();
+            //     this.$el.style.marginBottom = `-${this.calculateHeight()}px`
+            //     // this.setOnTop();
+            //
+            // },);
+            // this.checkMobile();
+            // this.setSpotMenuHeight();
+            // this.$el.style.marginBottom = `-${this.calculateHeight()}px`
+            // this.setOnTop();
+
+
             this.calculateWidths();
             window.addEventListener('resize', () => {
                 this.calculateWidths();
