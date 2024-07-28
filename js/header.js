@@ -100,7 +100,7 @@ document.addEventListener('alpine:init', () => {
                 this.$store.megamenu.setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, headerGap);
             });
         },
-        onTop: null,
+        onTop: true,
 
         setOnTop() {
             //this.onTop = (window.pageYOffset || document.documentElement.scrollTop) === 0;
