@@ -233,18 +233,19 @@
 <!--<header class="header d-flex justify-content-between align-items-center">-->
 <!-- @scroll.window="setOnTop"
  :class="{ 'header-on-top': onTop }"-->
-<header x-data="header"
-        class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
-        id="header"
-        @scroll.window="setOnTop"
-        :class="{ 'header-on-top': onTop }"
->
-    <h1 class="logo" x-ref="logo">
-        <a href="#header" tabindex="1">
-            <!--<img src="images/logo.svg" alt="결혼">-->
-            <img src="images/logo.png" alt="로고">
-        </a>
-    </h1>
+    <header x-data="header"
+            class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
+            id="header"
+            @scroll.window="setOnTop"
+            :class="{ 'header-on-top': onTop }"
+    >
+        <h1 class="logo" x-ref="logo">
+            <a href="#header" tabindex="1">
+                <!--<img src="images/logo.svg" alt="결혼">-->
+                <!--<img src="images/logo.png" alt="로고">-->
+                <img :src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
+            </a>
+        </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
     <div class="header-nav d-none d-md-flex flex-grow-1 align-items-center justify-content-between">
         <h2 class="sr-only">메뉴</h2>

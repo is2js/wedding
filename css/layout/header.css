@@ -8,11 +8,12 @@
     /* -> .sticky-top 추가시 스크롤 늘어나는 버그 해결 */
     overflow: hidden;
 
-    background-color: rgba(255, 255, 255, 0.3)!important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
     backdrop-filter: blur(4px);
     /* top일 때 배경 -> 투명색 */
+
     &.header-on-top {
-        background-color: transparent!important;
+        background-color: transparent !important;
     }
 
     /* 모바일에선 static spot-menu가 내부로 들어가 다시 위쪽 여백을 제거한다.*/
@@ -26,12 +27,12 @@
     }
 
     /* top에 있을 때 -> paddingTop은 spot-menu 높이 30px 패딩 추가 */
+
     &.header-on-top {
         @media (min-width: 768px) {
             padding: calc(var(--spot-menu-height) + 15px) 40px 15px;
         }
     }
-
 
 
     gap: 4rem;
@@ -51,6 +52,11 @@
 
                 & a {
                     color: var(--grey28);
+
+                    .header-on-top & {
+                        color: var(--grey96);
+                    }
+
                     font-size: 1.3rem;
                     font-weight: 500;
 
@@ -76,6 +82,11 @@
 
     & .spot-menu {
         border-bottom: 1px solid var(--greye7);
+
+        .header-on-top & {
+            border-bottom: 1px solid var(--white-10);
+        }
+
         padding: 0 40px;
         /* 혹시 position left0right0 대신 w100%로 줬다면 -> padding 줄 시 hidden 안될 수 있다.
            그럴 경우, width% + padding 조합은 box-sizing: border-box;를 추가한다.
@@ -91,6 +102,10 @@
             & a {
                 font-size: 14px;
                 color: var(--grey6f);
+
+                .header-on-top & {
+                    color: var(--grey96);
+                }
             }
 
             /* 모바일에서 글자없어지고 배경 아이콘만 남을 때 높이+여백 만들어주기 */
