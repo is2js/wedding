@@ -28,7 +28,10 @@ document.addEventListener('alpine:init', () => {
                 if (window.innerWidth >= 768) {
                     this.close();
                 }
+                this.checkMobile();
             })
+            this.checkMobile();
+
             /* gnb 메뉴 토글 관련  */
             // TODO: Array(this.data.length).fill(false);
             this.isGnbOpens = Array.from({length: 5}, () => false);
@@ -42,6 +45,12 @@ document.addEventListener('alpine:init', () => {
             if (!searchBtnElement) return;
             const searchBtnWidth = searchBtnElement.offsetWidth;
             this.searchInputWidth = this.searchWidth - searchBtnWidth;
+        },
+        isMobile: null,
+        checkMobile() {
+            const screenWidth = window.innerWidth;
+            const mobileMaxWidth = 767;
+            this.isMobile = screenWidth <= mobileMaxWidth;
         },
     });
 
@@ -77,20 +86,6 @@ document.addEventListener('alpine:init', () => {
     });
 
     Alpine.data('header', () => ({
-        onTop: true,
-        isMobile: false,
-
-        maxSpotMenuHeight: 0,
-        calculateHeight() {
-            this.setOnTop();
-            return this.onTop ? this.$el.offsetHeight : this.$el.offsetHeight - this.maxSpotMenuHeight;
-        },
-
-        setOnTop() {
-
-            this.onTop = (window.pageYOffset || document.documentElement.scrollTop) === 0;
-
-        },
         calculateWidths() {
             this.$nextTick(() => {
                 const logoWidth = this.$refs.logo.offsetWidth;
@@ -105,36 +100,25 @@ document.addEventListener('alpine:init', () => {
                 this.$store.megamenu.setSearchAndInputWidths(headerContentWidth, logoWidth, gnbWidth, headerGap);
             });
         },
-        checkMobile() {
-            const screenWidth = window.innerWidth;
-            const mobileMaxWidth = 767;
-            this.isMobile = screenWidth <= mobileMaxWidth;
+        onTop: null,
+
+        setOnTop() {
+            this.onTop = (window.pageYOffset || document.documentElement.scrollTop) === 0;
         },
-        setSpotMenuHeight() {
-            if (!this.isMobile && this.onTop){
-                this.maxSpotMenuHeight = this.$refs.spotMenu.offsetHeight - 1;
-            } else {
-                // this.maxSpotMenuHeight = 0;
-            }
+        setMarginBottom() {
+            this.$nextTick(() => {
+                this.$el.style.marginBottom = `-${this.$el.offsetHeight}px`
+            });
         }, init() {
-
-
-            // window.addEventListener("resize", () => {
-            //     this.checkMobile();
-            //     this.setSpotMenuHeight();
-            //     this.$el.style.marginBottom = `-${this.calculateHeight()}px`
-            //     // this.setOnTop();
-            //
-            // },);
-            // this.checkMobile();
-            // this.setSpotMenuHeight();
-            // this.$el.style.marginBottom = `-${this.calculateHeight()}px`
-            // this.setOnTop();
-
-
             this.calculateWidths();
+
+            this.setMarginBottom();
+            this.setOnTop();
+
             window.addEventListener('resize', () => {
                 this.calculateWidths();
+
+                this.setMarginBottom();
             })
         },
     }));
@@ -158,6 +142,4 @@ document.addEventListener('alpine:init', () => {
             });
         }
     }));
-
-
 })

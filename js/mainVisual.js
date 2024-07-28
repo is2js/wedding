@@ -13,7 +13,8 @@ const data = [
         color: "#d3e3df",
         // mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/b1a54bde-4a34-4e48-9e8c-1f6f5bc75c6f_1024.webp",
         // image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/de888228-e907-4b2d-997e-c8caa12dce42_1920.webp",
-        mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/058b69ff-444b-4869-956e-939d2430dc2c_1024.webp",
+        // mobileImage: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/058b69ff-444b-4869-956e-939d2430dc2c_1024.webp",
+        mobileImage: "./images/png/banner/banner01.png",
         image: "https://picstargram.s3.ap-northeast-2.amazonaws.com/post/4ba87556-bdb5-4304-827c-56eae6008722_1920.webp",
     },
     {

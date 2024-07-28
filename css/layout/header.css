@@ -6,20 +6,33 @@
 
     /* bootstrap .sticky-top으로 고정*/
     /* -> .sticky-top 추가시 스크롤 늘어나는 버그 해결 */
-    &:not(.header-on-top) {
-        overflow: hidden;
-        background-color: rgba(255, 255, 255, 0.3) !important;
-        backdrop-filter: blur(4px);
-    }
-    /* top에 있을 때*/
-    background-color: transparent;
+    overflow: hidden;
 
-    /* 위쪽 abs spot-menu를 위한, 위쪽 여백 48px 추가(위 | 좌=우 | 아래)*/
-    padding: calc(var(--spot-menu-height) + 15px) 40px 15px;
+    background-color: rgba(255, 255, 255, 0.3)!important;
+    backdrop-filter: blur(4px);
+    /* top일 때 배경 -> 투명색 */
+    &.header-on-top {
+        background-color: transparent!important;
+    }
+
     /* 모바일에선 static spot-menu가 내부로 들어가 다시 위쪽 여백을 제거한다.*/
+    /* 위쪽 abs spot-menu를 위한, 위쪽 여백 48px 추가(위 | 좌=우 | 아래)*/
+    /*padding: calc(var(--spot-menu-height) + 15px) 40px 15px;*/
+
+    /* top이 아닐 때 padding top은 bottom과 동일한 15px */
+    padding: 15px 40px 15px;
     @media (max-width: 767px) {
         padding: 0 15px;
     }
+
+    /* top에 있을 때 -> paddingTop은 spot-menu 높이 30px 패딩 추가 */
+    &.header-on-top {
+        @media (min-width: 768px) {
+            padding: calc(var(--spot-menu-height) + 15px) 40px 15px;
+        }
+    }
+
+
 
     gap: 4rem;
     /* 모바일에서는 로고 <-> 아이콘들이 비좁하서 gap줄이기*/

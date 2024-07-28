@@ -231,13 +231,14 @@
 </section>
 
 <!--<header class="header d-flex justify-content-between align-items-center">-->
-       <!-- @scroll.window="setOnTop"
-        :class="{ 'header-on-top': onTop }"-->
+<!-- @scroll.window="setOnTop"
+ :class="{ 'header-on-top': onTop }"-->
 <header x-data="header"
-        class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top duration-100"
+        class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
         id="header"
+        @scroll.window="setOnTop"
+        :class="{ 'header-on-top': onTop }"
 >
-        <!--:style="`margin-bottom: -${calculateHeight()}px`"-->
     <h1 class="logo" x-ref="logo">
         <a href="#header" tabindex="1">
             <!--<img src="images/logo.svg" alt="결혼">-->
@@ -263,11 +264,12 @@
             <button aria-label="검색" class="btn-search bg-img"></button>
         </div>-->
     </div>
-    <!--<div class="spot-menu position-absolute top-0 start-0 end-0">-->
-       <!--  x-show="isMobile || !isMobile && onTop"
-         x-collapse.duraiton.100ms-->
+    <!--  x-show="isMobile || !isMobile && onTop"
+      x-collapse.duraiton.100ms-->
+         <!--x-show="onTop"-->
     <div class="spot-menu position-static position-md-absolute top-0 start-0 end-0"
-         x-ref="spotMenu"
+         x-show="$store.megamenu.isMobile || onTop"
+         x-collapse.duraiton.100ms
     >
         <nav class="d-flex justify-content-end">
             <ul class="d-flex">
@@ -1384,7 +1386,7 @@
              id="gallery"
     >
         <!-- content-->
-<!--        <div class="layout-center pb-md-5">-->
+        <!--        <div class="layout-center pb-md-5">-->
         <div class="layout-center pb-5">
             <!-- title -->
             <div class="d-flex align-items-center justify-content-between">
@@ -1421,9 +1423,10 @@
                 >
                     <!--:data-toggle="lightboxToggle"-->
                     <!--<div class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden">-->
+                       <!--:class="{ 'disable-click': isMobile }"-->
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[0].caption || '1'"
                        :href="data[0].image"
@@ -1436,7 +1439,7 @@
                     </a>
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-3 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[1].caption || '2'"
                        :href="data[1].image"
@@ -1449,7 +1452,7 @@
                     </a>
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-1 col-span-1 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[2].caption || '3'"
                        :href="data[2].image"
@@ -1462,7 +1465,7 @@
                     </a>
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[3].caption || '4'"
                        :href="data[3].image"
@@ -1475,7 +1478,7 @@
                     </a>
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-1 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[4].caption || '5'"
                        :href="data[4].image"
@@ -1510,7 +1513,7 @@
 
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-3 col-span-1 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[5].caption || '6'"
                        :href="data[5].image"
@@ -1523,7 +1526,7 @@
                     </a>
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[6].caption || '7'"
                        :href="data[6].image"
@@ -1536,7 +1539,7 @@
                     </a>
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
                        data-toggle="lightbox"
-                       :class="{ 'disable-click': isMobile }"
+                       :class="{ 'disable-click': $store.megamenu.isMobile }"
                        :data-gallery="ligthboxGalleryName"
                        :data-caption="data[7].caption || '8'"
                        :href="data[7].image"
@@ -1946,8 +1949,7 @@
                 </script>-->
 
 
-
-  <!-- 참석여부 (select) -->
+                <!-- 참석여부 (select) -->
                 <!--                <div class="col-12">-->
                 <!--                    <div class="form-group d-flex flex-column">-->
                 <!--                        <label for="isAttend" class="form-label">참석 여부</label>-->
@@ -1990,7 +1992,7 @@
                     </div>
                 </div>
 
-                     <!-- 동행인 수 -->
+                <!-- 동행인 수 -->
                 <!--                <div class="col-12">-->
                 <!--                    <div class="form-group d-flex flex-column">-->
                 <!--                        <label for="attendCount" class="form-label">동행인 수</label>-->
