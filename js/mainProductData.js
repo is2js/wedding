@@ -72,8 +72,8 @@ const groomData = [
             name: '조귀남'
         },
         account: {
-            bank: '농협',
-            number: '302-0674-807841'
+            bank: '수협',
+            number: '0010-4122-2224'
         },
         phone: '010-4122-2224',
         tags: [

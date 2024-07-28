@@ -46,7 +46,7 @@ function renderAccount(account, familyName) {
                 // )"
     return `<div class="product-account bg-img bg-img-x-left d-flex align-items-center mt10 ellipsis cursor-pointer"
                 onclick="copyToClipboardAndAlert(
-                    '${account.number}', 
+                    '${account.number} ${account.bank}', 
                     '${familyName.family} ${familyName.name}님의 \\n${account.bank}은행 ${account.number}\\n계좌번호가 복사되었습니다.'
                 )"
     >
