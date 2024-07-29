@@ -117,6 +117,9 @@ document.addEventListener('alpine:init', () => {
         onTop: true,
         loaded: false,
 
+        hover: false,
+        focus: false,
+
         setOnTop() {
             console.log('setOnTop')
             //this.onTop = (window.pageYOffset || document.documentElement.scrollTop) === 0;

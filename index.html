@@ -236,22 +236,29 @@
 <!--<header class="header d-flex justify-content-between align-items-center">-->
 <!-- @scroll.window="setOnTop"
  :class="{ 'header-on-top': onTop }"-->
-    <!--:class="{ 'header-on-top': onTop }"-->
-    <!--@scroll.window="setOnTop"-->
-    <header x-data="header"
-            class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
-            id="header"
-            x-intersect.full="if ($store.hero.isEntrance) {setTimeout(() => { console.log('loaded');  loaded = true;}, 2000) }"
-            @scroll.window="loaded && setOnTop"
-            :class="{ 'active': !onTop }"
-    >
-        <h1 class="logo" x-ref="logo">
-            <a href="#register" tabindex="1">
-                <!--<img src="images/logo.png" alt="로고">-->
-                <img src="images/logo_on_top.png"
-                     :src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
-            </a>
-        </h1>
+<!--:class="{ 'header-on-top': onTop }"-->
+<!--@scroll.window="setOnTop"-->
+        <!--:class="{ 'active': !onTop }"-->
+<header x-data="header"
+        class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
+        id="header"
+        x-intersect.once.full="if ($store.hero.isEntrance) {setTimeout(() => { console.log('loaded');  loaded = true;}, 2000) }"
+        @scroll.window="loaded && setOnTop"
+
+        @mouseenter="hover = true"
+        @mouseleave="hover = false"
+        @focusin="focus = true"
+        @focusout="focus = false"
+        :class="{ 'active duration-100': !onTop, 'active active-on-top' : (onTop && hover) || (onTop && focus) }"
+>
+    <h1 class="logo" x-ref="logo">
+        <a href="#register" tabindex="1">
+            <!--<img src="images/logo.png" alt="로고">-->
+                 <!--:src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">-->
+            <img src="images/logo_on_top.png"
+                 :src="!hover && !focus && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
+        </a>
+    </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
     <div class="header-nav d-none d-md-flex flex-grow-1 align-items-center justify-content-between">
         <h2 class="sr-only">메뉴</h2>
@@ -273,7 +280,7 @@
     </div>
     <!--  x-show="isMobile || !isMobile && onTop"
       x-collapse.duraiton.100ms-->
-         <!--x-show="onTop"-->
+    <!--x-show="onTop"-->
     <div class="spot-menu position-static position-md-absolute top-0 start-0 end-0"
          x-show="$store.megamenu.isMobile || onTop"
          x-collapse.duraiton.100ms
@@ -1435,7 +1442,7 @@
                 >
                     <!--:data-toggle="lightboxToggle"-->
                     <!--<div class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden">-->
-                       <!--:class="{ 'disable-click': isMobile }"-->
+                    <!--:class="{ 'disable-click': isMobile }"-->
                     <a class="w-100 flex-shrink-0 snap-start h-auto rounded-3 row-span-2 overflow-hidden"
                        data-toggle="lightbox"
                        :class="{ 'disable-click': $store.megamenu.isMobile }"

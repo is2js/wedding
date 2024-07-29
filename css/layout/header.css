@@ -17,9 +17,13 @@
     /*}*/
 
     background-color: transparent !important;
+
     &.active {
         background-color: rgba(255, 255, 255, 0.3) !important;
         backdrop-filter: blur(4px);
+        &.active-on-top {
+            background-color: var(--white) !important;
+        }
     }
 
     /* 모바일에선 static spot-menu가 내부로 들어가 다시 위쪽 여백을 제거한다.*/
@@ -41,17 +45,18 @@
     /*}*/
 
     padding: calc(var(--spot-menu-height) + 15px) 40px 15px;
-    &.active {
+
+    &.active:not(.active-on-top) {
         @media (min-width: 768px) {
             padding: 15px 40px 15px;
         }
     }
+
     @media (max-width: 767px) {
         padding: 0 15px;
     }
 
     /* top에 있을 때 -> paddingTop은 spot-menu 높이 30px 패딩 추가 */
-
 
 
     gap: 4rem;
@@ -75,6 +80,7 @@
                     .active & {
                         color: var(--grey28);
                     }
+
                     /*color: var(--grey28);*/
 
                     /*.header-on-top & {*/
@@ -105,10 +111,10 @@
     }
 
     & .spot-menu {
-        border-bottom: 1px solid var(--greye7);
+        border-bottom: 1px solid var(--white-20);
 
-        .header-on-top & {
-            border-bottom: 1px solid var(--white-10);
+        .active & {
+            border-bottom: 1px solid var(--greydd);
         }
 
         padding: 0 40px;
@@ -125,10 +131,10 @@
 
             & a {
                 font-size: 14px;
-                color: var(--grey6f);
+                color: var(--grey96);
 
-                .header-on-top & {
-                    color: var(--grey96);
+                .active & {
+                    color: var(--grey6f);
                 }
             }
 
