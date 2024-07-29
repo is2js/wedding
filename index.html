@@ -242,7 +242,7 @@
 <header x-data="header"
         class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
         id="header"
-        x-intersect.once.full="if ($store.hero.isEntrance) {setTimeout(() => { console.log('loaded');  loaded = true;}, 2000) }"
+        x-intersect.full="if ($store.hero.isEntrance) {setTimeout(() => { console.log('loaded');  loaded = true;}, 2000) }"
         @scroll.window="loaded && setOnTop"
 
         @mouseenter="hover = true"
