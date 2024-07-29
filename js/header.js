@@ -117,7 +117,7 @@ document.addEventListener('alpine:init', () => {
             if (this.$store.hero.isEntrance) {
                 setTimeout(() => {
                     this.isEntranced = true;
-                }, 1000)
+                }, 800)
             }
         },
         isHovered: false,
