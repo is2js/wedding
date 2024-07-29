@@ -2044,8 +2044,6 @@
                                    x-model="value"
                                    @blur="checkValid"
 
-                                   inputmode="numeric"
-                                   pattern="[0-9]*"
                             >
                             <!--                                   x-on:input="checkValid"-->
                             <div class="form-input-number-handler-wrapper">
@@ -2076,16 +2074,17 @@
                     <!-- 모바일 위쪽 그라디언트 -->
                     <div class="form-buttons-bottom-gradient d-md-none"></div>
                     <div class="form-buttons d-flex gap-2">
-                        <!--@click="$store.modal.close()"-->
-                        <button class="button-modal modal-cancel d-md-none"
-                                @click.prevent="$store.modal.close()"
-                                :disabled="loading"
-                        >취소
-                        </button>
-                        <button class="button-modal modal-purple"
+                        <!-- 보이기는 전달버튼이 우측 뒤에 나오나, 마지막input enter잇슈로 먼저 html 정의 -->
+                        <button class="order-2 button-modal modal-purple"
                                 :disabled="loading"
                                 x-text="!loading ? '전달하기' : '전송 중...'"
                         >전달하기
+                        </button>
+                        <!--@click="$store.modal.close()"-->
+                        <button class="order-1 button-modal modal-cancel d-md-none"
+                                @click.prevent="$store.modal.close()"
+                                :disabled="loading"
+                        >취소
                         </button>
                     </div>
                 </div>
