@@ -250,14 +250,14 @@
         @focusin="isFocused = true"
         @isFocusedout="isFocused = false"
 
-        :class="{ 'active duration-100': !onTop || isHovered || isFocused, 'active active-on-top duration-100' : (onTop && isHovered) || (onTop && isFocused) }"
+        :class="{ 'active duration-100': !onTop , 'active active-on-top duration-100' : !$store.megamenu.isMobile && (onTop && isHovered) || (onTop && isFocused) }"
 >
     <h1 class="logo" x-ref="logo">
         <a href="#register" tabindex="1">
             <!--<img src="images/logo.png" alt="로고">-->
                  <!--:src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">-->
             <img src="images/logo_on_top.png"
-                 :src="!isHovered && !isFocused && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
+                 :src="!(onTop && isHovered) && !(onTop && isFocused) && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
         </a>
     </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
