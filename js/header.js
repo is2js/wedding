@@ -124,7 +124,7 @@ document.addEventListener('alpine:init', () => {
         isFocused: false,
 
         setOnTop() {
-            console.log('setOnTop')
+            // console.log('setOnTop')
             //this.onTop = (window.pageYOffset || document.documentElement.scrollTop) === 0;
             // top의 기준을 0으로 주면, x-show로 사라지는 spot-menu가 스크롤보다 더 작아지면서 0에 한번 더 도달해서 버그
             // top의 기준을 여유 있게 header의 높이로 주고, 그것을 초과해야 top이 아닌 상태

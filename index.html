@@ -257,7 +257,7 @@
             <!--<img src="images/logo.png" alt="로고">-->
                  <!--:src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">-->
             <img src="images/logo_on_top.png"
-                 :src="!(onTop && isHovered) && !(onTop && isFocused) && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
+                 :src="!(!$store.megamenu.isMobile && onTop && isHovered) && !(!$store.megamenu.isMobile && onTop && isFocused) && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
         </a>
     </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
