@@ -248,9 +248,11 @@
         @mouseenter="isHovered = true"
         @mouseleave="isHovered = false"
         @focusin="isFocused = true"
-        @isFocusedout="isFocused = false"
+        @focusout="isFocused = false"
 
-        :class="{ 'active duration-100': !onTop , 'active active-on-top duration-100' : !$store.megamenu.isMobile && (onTop && isHovered) || (onTop && isFocused) }"
+        :class="{ 'active duration-100': !onTop ,
+        'active active-on-top duration-100' : !$store.megamenu.isMobile && (onTop && isHovered) || (onTop && isFocused)
+        }"
 >
     <h1 class="logo" x-ref="logo">
         <a href="#register" tabindex="1">
