@@ -113,7 +113,7 @@
     & .spot-menu {
         border-bottom: 1px solid var(--white-20);
 
-        .active & {
+        .active.active-on-top & {
             border-bottom: 1px solid var(--greydd);
         }
 
@@ -122,7 +122,7 @@
            그럴 경우, width% + padding 조합은 box-sizing: border-box;를 추가한다.
         */
         @media (max-width: 767px) {
-            border: none;
+            border: none!important;
             padding: 0;
         }
 

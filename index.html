@@ -242,21 +242,22 @@
 <header x-data="header"
         class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
         id="header"
-        x-intersect.once.full="if ($store.hero.isEntrance) {setTimeout(() => { console.log('loaded');  loaded = true;}, 1000) }"
-        @scroll.window="loaded && setOnTop"
+        x-intersect.once.full="setIsEntranced"
+        @scroll.window="isEntranced && setOnTop"
 
-        @mouseenter="hover = true"
-        @mouseleave="hover = false"
-        @focusin="focus = true"
-        @focusout="focus = false"
-        :class="{ 'active duration-100': !onTop, 'active active-on-top' : (onTop && hover) || (onTop && focus) }"
+        @mouseenter="isHovered = true"
+        @mouseleave="isHovered = false"
+        @focusin="isFocused = true"
+        @isFocusedout="isFocused = false"
+
+        :class="{ 'active duration-100': !onTop || isHovered || isFocused, 'active active-on-top duration-100' : (onTop && isHovered) || (onTop && isFocused) }"
 >
     <h1 class="logo" x-ref="logo">
         <a href="#register" tabindex="1">
             <!--<img src="images/logo.png" alt="로고">-->
                  <!--:src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">-->
             <img src="images/logo_on_top.png"
-                 :src="!hover && !focus && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
+                 :src="!isHovered && !isFocused && onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
         </a>
     </h1>
     <!--<div class="header-nav d-none d-md-flex align-items-center">-->
