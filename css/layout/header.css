@@ -111,10 +111,10 @@
     }
 
     & .spot-menu {
-        border-bottom: 1px solid var(--white-20);
+        border-bottom: 1px solid var(--white-10);
 
         .active.active-on-top & {
-            border-bottom: 1px solid var(--greydd);
+            border-bottom: 1px solid var(--greyf1);
         }
 
         padding: 0 40px;
