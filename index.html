@@ -48,8 +48,11 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <!-- Alpine Plugins 2. focus for hero -->
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Plugins 3. intersect for header -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <!-- Alpine Core -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <!-- hero 만 먼저 -->
     <script src="./js/hero.js"></script>
 
@@ -233,17 +236,19 @@
 <!--<header class="header d-flex justify-content-between align-items-center">-->
 <!-- @scroll.window="setOnTop"
  :class="{ 'header-on-top': onTop }"-->
+    <!--:class="{ 'header-on-top': onTop }"-->
+    <!--@scroll.window="setOnTop"-->
     <header x-data="header"
             class="header d-flex justify-content-between justify-content-lg-start align-items-center sticky-top"
             id="header"
-            @scroll.window="setOnTop"
-            :class="{ 'header-on-top': onTop }"
+            x-intersect.full="if ($store.hero.isEntrance) {setTimeout(() => { console.log('loaded');  loaded = true;}, 2000) }"
+            @scroll.window="loaded && setOnTop"
+            :class="{ 'active': !onTop }"
     >
         <h1 class="logo" x-ref="logo">
-            <a href="#header" tabindex="1">
-                <!--<img src="images/logo.svg" alt="결혼">-->
+            <a href="#register" tabindex="1">
                 <!--<img src="images/logo.png" alt="로고">-->
-                <img src="images/logo.png"
+                <img src="images/logo_on_top.png"
                      :src="onTop ? 'images/logo_on_top.png' : 'images/logo.png'" alt="로고">
             </a>
         </h1>
@@ -486,7 +491,9 @@
     <!--        </div>-->
     <!--    </form>-->
 
-    <section class="register layout-center">
+    <section class="register layout-center"
+             id="register"
+    >
         <a class="bg-img bg-img-x-left-20px d-flex align-items-center justify-content-between "
            @click="$store.modal.open()"
         >
@@ -502,7 +509,9 @@
         </a>
     </section>
 
-    <section class="favorite-nav layout-center section-border">
+    <section class="favorite-nav layout-center section-border"
+             id="favorite-nav"
+    >
         <ul class="d-grid">
             <!-- 우측 센터 아이콘: .cls 주고 + style bg-image: url()-->
             <!-- w  50~99px: bg-img-favorite-nav -->

@@ -13,6 +13,10 @@ document.addEventListener('alpine:init', () => {
                 this.$refs.you2.innerText = '님을 ';
             }
         }, init() {
+            this.$watch(() => Alpine.store('hero').isEntrance, value => {
+                this.isEntrance = value;
+            });
+
             // 이름 파싱
             this.setName();
 
@@ -31,6 +35,7 @@ document.addEventListener('alpine:init', () => {
             }
 
             //
+
         },
         toKoreanTime(date) {
             // Convert local time to Korean Standard Time (UTC+9)
@@ -149,7 +154,8 @@ document.addEventListener('alpine:init', () => {
                 }
 
                 // last
-                this.isEntrance = true;
+                // this.isEntrance = true;
+                this.$store.hero.isEntrance = true;
             }
         },
         scrollToHeader() {
