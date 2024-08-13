@@ -115,9 +115,11 @@ const initVisualSwiper = (data) => {
             },
         },
         grabCursor: true,
-        // autoplay: true,
-        // interval: 5000,
         allowTouchMove: true,
+
+        // loop false라도 자동으로 넘어가게
+        autoplay: true,
+        interval: 10000,
     });
 
 
