@@ -21,6 +21,27 @@ document.addEventListener('alpine:init', () => {
         },
         /* gnb 메뉴 토글 관련  */
         isGnbOpens: [],
+        isFullScreen: false,
+        toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                const sectionElement = this.$el.closest('section');
+
+                if (sectionElement.requestFullscreen) return sectionElement.requestFullscreen();
+                if (sectionElement.webkitRequestFullscreen) return sectionElement.webkitRequestFullscreen();
+                if (sectionElement.mozRequestFullScreen) return sectionElement.mozRequestFullScreen();
+                if (sectionElement.msRequestFullscreen) return sectionElement.msRequestFullscreen();
+            } else {
+                // this.isFullScreen = false;
+                if (document.exitFullscreen) return document.exitFullscreen();
+                if (document.webkitCancelFullscreen) return document.webkitCancelFullscreen();
+                if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+                if (document.msExitFullscreen) return document.msExitFullscreen();
+            }
+        },
+        fullscreenChangeHandler() {
+            // 현재 전체화면 상태를 확인 -> 여부에 따라 상태값 변경 -> view에서 icon변경
+            this.isFullScreen = !!document.fullscreenElement;
+        },
         init() {
             /* megamenu toggle 관련  */
             // Watch for resize and close megamenu if window width >= 768
@@ -35,6 +56,9 @@ document.addEventListener('alpine:init', () => {
             /* gnb 메뉴 토글 관련  */
             // TODO: Array(this.data.length).fill(false);
             this.isGnbOpens = Array.from({length: 5}, () => false);
+
+            // fullscreenchange 이벤트 인지
+            document.addEventListener('fullscreenchange', this.fullscreenChangeHandler.bind(this));
         },
         /* header abs search width 계산용 */
         searchWidth: 0,

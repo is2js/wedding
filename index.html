@@ -488,6 +488,11 @@
             <!--            <div class="swiper-slide">Slide 1</div>-->
         </div>
         <div class="swiper-pagination visual-paging d-flex justify-content-center align-items-center"></div>
+
+         <!-- 전체화면 버튼 -->
+        <button @click="$store.megamenu.toggleFullscreen" class="fullscreen bg-img d-none d-md-block"
+                :style="`background-image: url('./images/svg/icons/fullscreen-${ $store.megamenu.isFullScreen ? 'off' : 'on' }.svg');`"
+        ></button>
     </section>
 
     <!--    <form action="">-->
