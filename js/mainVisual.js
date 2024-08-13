@@ -117,9 +117,14 @@ const initVisualSwiper = (data) => {
         grabCursor: true,
         allowTouchMove: true,
 
-        // loop false라도 자동으로 넘어가게
-        autoplay: true,
-        interval: 10000,
+        // autoplay: true,
+        // 슬라이드 간의 전환 시간을 제어합니다 (ms 단위)
+        autoplay: {
+            delay: 10000, // 15초 대기 후 자동 슬라이드
+        },
+
+        // 슬라이드 전환 애니메이션의 속도 (ms 단위)
+        speed: 1500, // 슬라이드 전환에 1초 소요
     });
 
 
